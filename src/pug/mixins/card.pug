@@ -1,0 +1,34 @@
+mixin card(img, from, to, date, title, like, dislike, flag, isLiked)
+    .card
+        .panel.panel-default
+            .panel-heading
+                img.card__img.img-responsive(src=img, alt="#")
+                .card__img-info
+                    .card__routes
+                        div
+                            span.glyphicon.glyphicon-share-alt.reverse
+                            | Откуда: #{from}
+                        div
+                            span.glyphicon.glyphicon-share-alt
+                             | Куда: #{to}
+                    .card__members
+                        b Члены команды:
+                        span.card__members-names
+            .panel-body
+                .text-muted.card__date= date
+                .card__meta
+                    .pull-left
+                        h3= title
+                        .card__likes
+                            span.glyphicon.glyphicon-thumbs-up
+                            span.card__like-count= like
+                            span.glyphicon.glyphicon-thumbs-down
+                            span.card__dislike-count= dislike
+                    .pull-right
+                        .card__flag
+                            img(src=flag, alt="flag")
+                        .card__liked
+                            if isLiked
+                                span.glyphicon.glyphicon-heart
+                            else
+                                span.glyphicon.glyphicon-heart-empty

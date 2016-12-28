@@ -1,0 +1,17 @@
+include ../mixins/lang.pug
+include ../mixins/log-btn.pug
+header#header.row
+	.col-xs-12.col-md-3
+		+langSwitcher(['ENG', 'RUS', 'GER'], true)
+	.col-xs-12.col-md-6.text-center
+		header
+			h1.site-title HortalWall
+			p.site-description
+				| Best free stock photos in one place.
+				a(href="#") Learn more.
+		.center-block
+			.pull-right: b Quick filters:
+			.pull-right
+				include quick-filters.pug
+	.col-xs-12.col-md-3
+		+logBtn('home')

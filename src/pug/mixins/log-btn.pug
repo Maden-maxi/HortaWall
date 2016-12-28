@@ -1,0 +1,44 @@
+mixin logBtn(page)
+	case page
+		when 'home'
+			.row
+				.col-xs-6
+					span Login
+				.col-xs-6
+					span Registration
+				.col-xs-12
+					a(href="#").btn.btn-primary Add arrive
+			- break
+		when 'page'
+			.row
+				.col-xs-6
+					a(href="#").btn.btn-primary Add arrive
+				.col-xs-3
+					span Login
+				.col-xs-3
+					span Registration
+			- break
+		when 'login-page'
+			.row
+				.col-xs-12
+					span Log in your account
+				.col-xs-12
+					a(href="#").btn.btn-primary Add arrive
+			- break
+		when 'login'
+			.row
+				.col-xs-12
+					a(href="#").btn.btn-primary Add arrive
+				.col-xs-12
+					a(href="#") username
+			- break
+		when 'not-login'
+				.row
+					.col-xs-6
+						a(href="#").btn.btn-default Add arrive
+					.col-xs-3
+						span login
+					.col-xs-3
+						span Registration
+		default
+			h3= page + ' state undefined'
