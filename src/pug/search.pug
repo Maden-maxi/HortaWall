@@ -1,0 +1,29 @@
+extends layouts/page
+block title
+    title Поиск
+block content
+    include partials/navbar
+    section#search
+        h2 По вашему запросу найдено 20 фото
+        .form-inline
+            .form-group
+                label(for="date") Дата
+                .divider
+                input.form-control#date(type="date", name="date")
+            .form-group
+                label(for="year")!= 'Год: <span class="year">2012</span>'
+                .divider
+                input.form-control#year(type="range", name="year", data-slider-id="year-range", data-slider-min="2010")
+            .form-control
+                label(for="country") Страна
+                .divider
+                select#country.selectpicker(name="county")
+                    each option in ['','Уругвай', 'Панама', 'США']
+                        option(value=option)=option
+            .form-control
+                label(for="type-of-people") Тип людей
+                .divider
+                select#type-of-people.selectpicker(name="typeOfPeople")
+                    each type in ['', 'низкий', 'средний', 'високий']
+                        option(value=type)=type
+    include partials/search-result

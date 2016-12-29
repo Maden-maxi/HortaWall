@@ -1,34 +1,62 @@
-mixin card(img, from, to, date, title, like, dislike, flag, isLiked)
-    .card
-        .panel.panel-default
-            .panel-heading
-                img.card__img.img-responsive(src=img, alt="#")
+mixin card(card, withFooter)
+    if !withFooter
+        .card
+            .panel.panel-default
+                .panel-heading.card__img-container
+                    img.card__img.img-responsive(src=card.img, alt=card.img)
+                    .card__img-info
+                        .card__routes
+                            div
+                                span.glyphicon.glyphicon-share-alt.reverse
+                                sapn From: #{card.from}
+                            div
+                                span.glyphicon.glyphicon-share-alt
+                                span To: #{card.to}
+                        .card__members
+                            b Team members:
+                            div
+                                span.card__members-names=card.members
+                .panel-body
+                    .text-muted.card__date=card.date
+                    .card__meta
+                        .pull-left
+                            h3.card__title: a(href="#")= card.title
+                            .card__likes
+                                .card__like.pull-left.text-success
+                                    span.glyphicon.glyphicon-thumbs-up
+                                    span.card__like-count=card.likes
+                                .card__dislike.pull-left.text-warning
+                                    span.glyphicon.glyphicon-thumbs-down
+                                    span.card__dislike-count=card.dislikes
+                        .pull-right
+                            .card__flag
+                                img(src=card.flag, alt="flag")
+                            .card__liked.text-danger
+                                if card.isLiked
+                                    span.glyphicon.glyphicon-heart
+                                else
+                                    span.glyphicon.glyphicon-heart-empty
+    else
+        .card
+            .card__img-container
+                img.img-responsive.card__img(src=card.img, alt=card.img)
                 .card__img-info
-                    .card__routes
-                        div
-                            span.glyphicon.glyphicon-share-alt.reverse
-                            | Откуда: #{from}
-                        div
-                            span.glyphicon.glyphicon-share-alt
-                             | Куда: #{to}
-                    .card__members
-                        b Члены команды:
-                        span.card__members-names
-            .panel-body
-                .text-muted.card__date= date
-                .card__meta
-                    .pull-left
-                        h3= title
-                        .card__likes
-                            span.glyphicon.glyphicon-thumbs-up
-                            span.card__like-count= like
-                            span.glyphicon.glyphicon-thumbs-down
-                            span.card__dislike-count= dislike
-                    .pull-right
-                        .card__flag
-                            img(src=flag, alt="flag")
-                        .card__liked
-                            if isLiked
-                                span.glyphicon.glyphicon-heart
-                            else
-                                span.glyphicon.glyphicon-heart-empty
+                    .divider
+                    .card__meta
+                        .pull-left
+                            h3.card__title: a(href="#")= card.title
+                            .card__likes
+                                .card__like.pull-left.text-success
+                                    span.glyphicon.glyphicon-thumbs-up
+                                    span.card__like-count= card.likes
+                                .card__dislikes.pull-left.text-warning
+                                    span.glyphicon.glyphicon-thumbs-down
+                                    span.card__dislike-count= card.dislikes
+                        .pull-right
+                            .card__flag
+                                img(src=card.flag, alt="flag")
+                            .card__liked.text-danger
+                                if card.isLiked
+                                    span.glyphicon.glyphicon-heart
+                                else
+                                    span.glyphicon.glyphicon-heart-empty

@@ -1,0 +1,17 @@
+-
+    var PATH = 'img/';
+    var languages = [{img: PATH + 'uk.png', code: 'ENG'},{img: PATH + 'ru.png', code: 'RU'}];
+include ../mixins/lang
+footer#footer
+    .container-fluid
+        .col-xs-12.col-sm-4.col-md-3.col-lg-2
+            span lang
+            +langSwitcher(languages, false)
+        .col-xs-12.col-sm-4.col-md-6.col-lg-8
+            ul.nav.navbar-nav
+                each li in ['about', 'regulations', 'add promouters', 'contacts']
+                    li: a(href="#")= li
+        .col-xs-12.col-sm-4.col-md-3.col-lg-2
+            ul.nav.navbar-nav
+                li twitter
+                li facebook

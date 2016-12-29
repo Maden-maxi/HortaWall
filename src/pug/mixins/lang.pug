@@ -2,6 +2,6 @@ mixin langSwitcher(langs, showAbbr)
 	ul.lang-switcher
 		each lang in langs
 			li.lang
-				img(class="img-circle", src= 'index' + lang+'.png', alt=lang)
+				img(class="img-circle", src=lang.img, alt=lang)
 				if showAbbr
-					span= lang
+					span= lang,code

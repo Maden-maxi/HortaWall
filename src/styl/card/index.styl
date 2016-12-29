@@ -1,0 +1,28 @@
+.card
+    &:hover &__img-info
+        opacity: 1
+    .panel-heading
+        padding: 0
+    &__img
+        padding: 0
+        &-container
+            position: relative
+        &-info
+            position: absolute
+            top: 0
+            left: 0
+            bottom: 0
+            right: 0
+            background-color: rgba(0, 0, 0, 0.7)
+            padding: 10px 15px
+            opacity: 0
+            color: #fff
+            transition opacity .3s
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+    &__title
+        margin-top: 0
+        font-size: 1.75rem
+    &__like
+        margin-right: 5px

@@ -26,12 +26,13 @@ html(lang="ru")
 			block content
 				h1 Hello Pug!
 			block footer
-				footer Footer
+				include ../partials/adds
+				include ../partials/footer
 		block scripts
-			//build:js js/vendor.js
-			//bower:js
-			//endbower
-			//endbuild
+			// build:js js/vendor.js
+			// bower:js
+			// endbower
+			// endbuild
 
 			//build:js js/app.js
 			script(src="js/jquery-1.10.2.min.js")

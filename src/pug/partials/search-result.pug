@@ -1,0 +1,27 @@
+include ../mixins/card
+-
+    function Card(img, title, likes, dislikes, flag, isLiked)
+    {
+        this.img = img;
+        this.title = title;
+        this.likes = likes;
+        this.dislikes = dislikes;
+        this.flag = flag;
+        this.isLiked = isLiked;
+    }
+    var PATH = 'img/';
+    var cards = [
+        new Card(PATH + 'lion.jpg', 'Lion', '66', '5', PATH + 'ru.png', true),
+        new Card(PATH + 'lion.jpg', 'Keen', '65', '4', PATH + 'uk.png', true),
+        new Card(PATH + 'lion.jpg', 'Kong', '63', '2', PATH + 'ru.png', false),
+        new Card(PATH + 'lion.jpg', 'John', '61', '0', PATH + 'uk.png', true),
+        new Card(PATH + 'lion.jpg', 'Mike', '59', '1', PATH + 'ru.png', true),
+        new Card(PATH + 'lion.jpg', 'Sandy', '58', '2', PATH + 'ru.png', false),
+        new Card(PATH + 'lion.jpg', 'Elise', '57', '3', PATH + 'uk.png', false),
+        new Card(PATH + 'lion.jpg', 'Mikek', '58', '4', PATH + 'ru.png', true)
+    ];
+section#search-results
+    .grid-results
+        each card in cards
+            .grid-result
+                +card(card, true)

@@ -1,0 +1,25 @@
+extends layouts/login
+block title
+    title Login
+block content
+    include partials/header
+    section#registration
+        .form-horizontal.login-form
+            fieldset
+                legend Регистарция
+                p.text-muted Вы можете зарегестрироваться с помощью своего емаил адреса
+                .form-group
+                    label.control-label.sr-only(for="email") Email
+                    input#email.form-control(name="email", type="email", placeholder="Email",required)
+                p.text-muted или использовать свой профиль в соц сетях:
+                ul.socials
+                    each social in ['Google+', 'Instagram', 'Twitter', 'Facebook']
+                        li: a(href="#"): img(src="#" alt=social)
+                p.text-muted
+                    | Нажимая на
+                    q Зарегестрироваться
+                    | , вы подтверждаете, что ознакомлены и полностью согласны с
+                    a(href="#", target="_blank") условиями использования сайта.
+            .divider
+            div
+                a.btn.btn-primary(href="#") Зарегестрироваться

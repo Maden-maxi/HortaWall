@@ -1,0 +1,41 @@
+doctype html
+html(lang="ru")
+    head
+        block meta
+            meta(charset="UTF-8")
+            meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
+            meta(http-equiv="x-ua-compatible", content="ie=edge")
+        block link
+            //build:css css/vendor.css
+            //bower:css
+            //endbower
+            //endbuild
+
+            //build:css css/style.css
+            link(href="css/bootstrap.min.css", rel="stylesheet", type="text/css")
+            link(href="css/style.css", rel="stylesheet", type="text/css")
+            //endbuild
+            = '\n'
+            != "<!--[if IE]>"
+            script(src="//html5shiv.googlecode.com/svn/trunk/html5.js")
+            != "<![endif]-->"
+        block title
+            title Главная
+    body
+        #wrapper
+            block content
+                h1 Hello Pug!
+            block footer
+                include ../partials/adds
+                include ../partials/footer
+        block scripts
+            //build:js js/vendor.js
+            //bower:js
+            //endbower
+            //endbuild
+
+            //build:js js/app.js
+            script(src="js/jquery-1.10.2.min.js")
+            script(src="js/bootstrap.min.js")
+            script(src="js/app.js")
+            //endbuild

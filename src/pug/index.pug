@@ -1,3 +1,15 @@
 extends layouts/home.pug
 block content
 	include partials/header.pug
+	include partials/card-section
+	section.section
+		.container
+			.center-block.text-center
+				h2 HortalWall
+				p Текст про проект
+				p  и призыв зарегестрироваться
+				p (Возможно мы покажем как пользоваться этим сайтом и зачем)
+				div
+					a(href="#").btn.btn-default Registration
+					| /
+					a(href="#").btn.btn-info Subscribe
