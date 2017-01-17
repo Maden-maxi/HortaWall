@@ -1,0 +1,23 @@
+include ../mixins/card
+-
+    function CardMore(title, img, flag, date, likes, dislikes, isLiked)
+    {
+        this.title = title;
+        this.img = img;
+        this.flag = flag;
+        this.likes = likes;
+        this.dislikes = dislikes;
+        this.isLiked = isLiked;
+    }
+    var PATH = "assets/img/"
+    var cards=[
+        new CardMore('Title', PATH + "lion.jpg", PATH + "langs/uk.png", "21.22.20", 50, 4, true),
+        new CardMore('Title', PATH + "lion.jpg", PATH + "langs/uk.png", "21.22.11", 45, 14, false),
+        new CardMore('Title', PATH + "lion.jpg", PATH + "langs/uk.png", "21.22.15", 75, 8, true),
+        new CardMore('Title', PATH + "lion.jpg", PATH + "langs/uk.png", "21.22.16", 155, 20, false),
+        new CardMore('Title', PATH + "lion.jpg", PATH + "langs/uk.png", "21.22.14", 55, 24, true)
+    ];
+section#more
+    .grid-results
+        each card in cards
+            +card(card, true)

@@ -1,0 +1,349 @@
+.card {
+  margin: auto;
+  max-width: 310px;
+}
+.card_square {
+  margin: 5px;
+  max-width: 210px;
+}
+.card:hover .card__img-info {
+  opacity: 1;
+}
+.card .panel-heading {
+  padding: 0;
+}
+.card__img {
+  padding: 0;
+}
+.card__img-container {
+  position: relative;
+}
+.card__img-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.7);
+  padding: 10px 15px;
+  opacity: 0;
+  color: #fff;
+  transition: opacity 0.3s;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+}
+.card__title {
+  margin-top: 0;
+  font-size: 1.75rem;
+}
+.card__likes_pb {
+  padding-bottom: 25px;
+}
+.card__likes span {
+  padding-right: 5px;
+}
+.card__liked {
+  margin-top: 10px;
+}
+.card__date {
+  position: absolute;
+  bottom: -1px;
+  left: 20px;
+  background-color: #fff;
+  color: #000;
+}
+.card__date_center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.card__members {
+  margin-bottom: 50px;
+}
+.quick-filters li a {
+  font-size: 1rem;
+}
+.menu-title {
+  margin-top: 20px;
+}
+#search .form-group {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+#search .bootstrap-select .dropdown-toggle,
+#search #date .form-control {
+  background-color: #82ca87;
+  color: #555;
+}
+#header {
+  color: #fff;
+  background-image: url("../img/bg-header.png");
+  background-size: cover;
+}
+#header .help-block {
+  color: #fff;
+}
+#header .site-description a {
+  font-family: "Raleway", sans-serif;
+}
+#footer {
+  background-color: #0c0d0d;
+  padding: 25px 0;
+}
+.select-lang {
+  margin-top: 20px;
+}
+.select-lang li {
+  list-style: none;
+  color: #fff;
+}
+.select-lang li span {
+  margin-left: 10px;
+  vertical-align: middle;
+}
+.select-lang button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+.select-lang .dropdown-menu {
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+  outline: none;
+}
+.select-lang .dropdown-menu li {
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.btn-transparent {
+  color: #fff !important;
+  background-color: transparent !important;
+  border-color: transparent;
+}
+.btn-transparent:hover {
+  border-color: #fff;
+}
+.actions {
+  margin-top: 15px;
+}
+@media screen and (max-width: 767px) {
+  .actions {
+    margin-bottom: 80px;
+  }
+}
+.actions .pull-left {
+  margin-right: 15px;
+}
+.actions .bootstrap-select {
+  width: auto !important;
+}
+.actions .bootstrap-select .dropdown-toggle {
+  background-color: #f0ad4e;
+  border: 1px solid #f0ad4e;
+}
+.actions #add-arrive {
+  width: 100%;
+}
+#registration-section {
+  margin: 50px auto;
+}
+.login-container {
+  background-image: url("../img/bg-login.png");
+  background-size: cover;
+}
+.login-container input {
+  color: #555;
+  text-align: center;
+  margin: 25px auto;
+  max-width: 300px;
+  background-color: #f5cf8c;
+  box-shadow: 0 10px 10px rgba(10,10,10,0.7);
+}
+.login-container input::placeholer {
+  color: #555;
+}
+.login-form {
+  background-color: #fff;
+  max-width: 600px;
+  border-radius: 5px;
+  margin: 20px auto;
+  padding: 50px;
+}
+.login-form-container {
+  max-width: 420px;
+  margin: auto;
+}
+.login-form .login-container {
+  max-width: 350px;
+  margin: auto;
+}
+.login-form .login-help {
+  text-align: center;
+  margin: auto;
+  max-width: 240px;
+}
+.menu {
+  list-style-type: none;
+  padding-left: 0;
+}
+.menu li {
+  display: inline-block;
+}
+.mirror {
+  transform: scale(-1, 1);
+}
+.section {
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.section-title {
+  position: absolute;
+  left: -15px;
+  padding-left: 0;
+}
+.section-title h2 {
+  -webkit-writing-mode: vertical-lr;
+      -ms-writing-mode: tb-lr;
+          writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  padding: 20px 5px;
+  margin: 0 0 0 -5px;
+  height: 340px;
+  font-size: 2rem;
+}
+.search {
+  max-width: 550px;
+  position: relative;
+  margin-top: 50px;
+}
+#q {
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+#submit {
+  position: absolute;
+  right: 0;
+  top: 9px;
+  border: none;
+  background-color: transparent;
+}
+#submit i {
+  color: #b3b3b3;
+}
+#project {
+  background: url("../img/bg-section.png");
+  background-size: cover;
+  color: #fff;
+}
+#project h3 {
+  margin: 0;
+  padding: 0;
+}
+#project p {
+  margin: 50px 0;
+}
+.text-brand {
+  color: #80c785;
+}
+.circle-o {
+  text-align: center;
+  width: 45px;
+  height: 45px;
+  line-height: 25px !important;
+  border-radius: 100% !important;
+  background-color: #000 !important;
+  border: 1px solid #80c785 !important;
+  color: #80c785;
+}
+.lang-switcher-wrapper {
+  position: relative;
+}
+.lang-switcher {
+  cursor: pointer;
+  position: relative;
+  list-style-type: none;
+  margin-top: 10px;
+}
+.lang-switcher:hover .lang {
+  display: block;
+}
+.lang {
+  color: #fff;
+  display: none;
+}
+.lang img {
+  width: 40px;
+}
+.lang span {
+  margin-left: 10px;
+}
+.lang.active {
+  display: block;
+}
+#history {
+  background: url("../img/bg-light.png");
+  background-color: #92d3e9;
+  background-size: cover;
+}
+#history .jumbotron {
+  background-color: transparent;
+}
+#add .jumbotron {
+  background-color: #e6e5e6;
+}
+#carousel-imgs .carousel-control.left,
+#carousel-imgs .carousel-control.right {
+  background-image: none;
+  color: #0c0e0d;
+}
+#carousel-imgs .slide-text {
+  margin: 25px auto;
+}
+#carousel-imgs .slide-likes {
+  margin: 25px 0;
+}
+#carousel-imgs .slide-likes > span {
+  margin-left: 10px;
+}
+.navbar-black {
+  background-color: #000;
+}
+.title-border {
+  display: inline-block;
+  border: 2px solid #3fad46;
+  border-radius: 5px;
+  background-color: rgba(10,10,10,0.5);
+  padding: 10px;
+}
+.page-title h1 {
+  font-size: 4em;
+}
+.relawey {
+  font-family: "Raleway", sans-serif;
+}
+.border-brand img {
+  padding: 20px;
+  background: transparent url("../img/border-brand.png");
+  background-size: 100% 100%;
+}
+.flex-between {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+}
+.member-name,
+.member-pos {
+  max-width: 80px;
+  margin: 5px auto;
+}
+.navbar-form .form-group {
+  position: relative;
+}
+
+/*# sourceMappingURL=style.css.map */

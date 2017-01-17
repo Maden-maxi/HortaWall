@@ -1,3 +1,35 @@
+-
+    function Card (img, from, to, members, date, title, likes, dislikes, flag, isLiked)
+    {
+        this.img = img;
+        this.from = from;
+        this.to = to;
+        this.members = members;
+        this.date = date;
+        this.title = title;
+        this.likes = likes;
+        this.dislikes = dislikes;
+        this.flag = flag;
+        this.isLiked = isLiked;
+    }
+    function searchCard (img, title, likes, dislikes, flag, isLiked)
+    {
+        this.img = img;
+        this.title = title;
+        this.likes = likes;
+        this.dislikes = dislikes;
+        this.flag = flag;
+        this.isLiked = isLiked;
+    }
+    function CardMore(title, img, flag, date, likes, dislikes, isLiked)
+    {
+        this.title = title;
+        this.img = img;
+        this.flag = flag;
+        this.likes = likes;
+        this.dislikes = dislikes;
+        this.isLiked = isLiked;
+    }
 mixin card(card, withFooter)
     if !withFooter
         .card
@@ -6,57 +38,57 @@ mixin card(card, withFooter)
                     img.card__img.img-responsive(src=card.img, alt=card.img)
                     .card__img-info
                         .card__routes
-                            div
-                                span.glyphicon.glyphicon-share-alt.reverse
-                                sapn From: #{card.from}
-                            div
-                                span.glyphicon.glyphicon-share-alt
-                                span To: #{card.to}
                         .card__members
-                            b Team members:
                             div
-                                span.card__members-names=card.members
-                .panel-body
+                                p.text-warning Откуда
+                                p
+                                    span.fa.fa-arrow-right.text-warning
+                                    b=card.from
+                            div
+                                p.text-warning Куда
+                                p
+                                    span.fa.fa-arrow-right.text-warning
+                                    b=card.to
                     .text-muted.card__date=card.date
+                .panel-body
                     .card__meta
                         .pull-left
                             h3.card__title: a(href="#")= card.title
                             .card__likes
                                 .card__like.pull-left.text-success
-                                    span.glyphicon.glyphicon-thumbs-up
+                                    span.fa.fa-thumbs-up
                                     span.card__like-count=card.likes
                                 .card__dislike.pull-left.text-warning
-                                    span.glyphicon.glyphicon-thumbs-down
+                                    span.fa.fa-thumbs-down
                                     span.card__dislike-count=card.dislikes
                         .pull-right
                             .card__flag
                                 img(src=card.flag, alt="flag")
-                            .card__liked.text-danger
+                            .card__liked.text-danger.text-center
                                 if card.isLiked
-                                    span.glyphicon.glyphicon-heart
+                                    span.fa.fa-heart
                                 else
-                                    span.glyphicon.glyphicon-heart-empty
+                                    span.fa.fa-heart-o
     else
-        .card
+        .card.card_square
             .card__img-container
                 img.img-responsive.card__img(src=card.img, alt=card.img)
                 .card__img-info
                     .divider
                     .card__meta
-                        .pull-left
-                            h3.card__title: a(href="#")= card.title
-                            .card__likes
-                                .card__like.pull-left.text-success
-                                    span.glyphicon.glyphicon-thumbs-up
-                                    span.card__like-count= card.likes
-                                .card__dislikes.pull-left.text-warning
-                                    span.glyphicon.glyphicon-thumbs-down
-                                    span.card__dislike-count= card.dislikes
-                        .pull-right
-                            .card__flag
-                                img(src=card.flag, alt="flag")
-                            .card__liked.text-danger
-                                if card.isLiked
-                                    span.glyphicon.glyphicon-heart
-                                else
-                                    span.glyphicon.glyphicon-heart-empty
+                        .card__flag
+                            img.center-block(src=card.flag, alt="flag")
+                        h3.card__title.text-center: a(href="#")= card.title
+                    .card__likes.card__likes_pb.text-center
+                        span.card__like.text-success
+                            span.glyphicon.glyphicon-thumbs-up
+                            span.card__like-count= card.likes
+                        span.card__dislikes.text-warning
+                            span.glyphicon.glyphicon-thumbs-down
+                            span.card__dislike-count= card.dislikes
+                        span.card__liked.text-danger
+                            if card.isLiked
+                                span.glyphicon.glyphicon-heart
+                            else
+                                span.glyphicon.glyphicon-heart-empty
+                    .text-muted.card__date.card__date_center=card.date

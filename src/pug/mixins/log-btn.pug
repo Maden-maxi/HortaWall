@@ -1,44 +1,45 @@
 mixin logBtn(page)
 	case page
 		when 'home'
-			.row
-				.col-xs-6
-					span Login
-				.col-xs-6
-					span Registration
-				.col-xs-12
-					a(href="#").btn.btn-primary Add arrive
+			.actions.text-center
+				.pull-right
+					a#registration.btn.btn-transparent(href="/login.html") Регистрация
+				.pull-right
+					a#login.btn.btn-transparent(href="/login.html") Войти
+				.center-block
+					a#add-arrive.btn.btn-primary(href="#") Добавить прибытие
 			- break;
 		when 'page'
-			.row
-				.col-xs-6
-					a(href="#").btn.btn-primary Add arrive
-				.col-xs-3
-					span Login
-				.col-xs-3
-					span Registration
+			.actions
+				.pull-left
+					a#add-arrive.btn.btn-primary(href="#") Добавить прибытие
+				.pull-left
+					a#login.btn.btn-transparent(href="/login.html") Войти
+				.pull-left
+					a#registration.btn.btn-transparent(href="/login.html") Регистрация
 			- break;
 		when 'login-page'
-			.row
+			.row.actions
 				.col-xs-12
-					span Log in your account
+					a(href="/login.html").btn.btn-default Войти в свой аккаунт
 				.col-xs-12
-					a(href="#").btn.btn-primary Add arrive
+					a(href="#").btn.btn-primary Добавить прибытие
 			- break;
 		when 'login'
-			.row
-				.col-xs-12
-					a(href="#").btn.btn-primary Add arrive
-				.col-xs-12
-					a(href="#") username
+			.actions
+				.pull-left
+					a(href="#").btn.btn-primary Добавить прибытие
+				.pull-left
+					select#user.selectpicker(name="user")
+						option(value="name") levlev
 			- break;
 		when 'not-login'
-				.row
+				.row.actions
 					.col-xs-6
-						a(href="#").btn.btn-default Add arrive
+						a(href="#").btn.btn-default Добавить прибытие
 					.col-xs-3
-						span login
+						a(href="/login.html").btn.btn-default Войти
 					.col-xs-3
-						span Registration
+						a(href="/login.html").btn.btn-default Регистрация
 		default
 			h3= page + ' state undefined'

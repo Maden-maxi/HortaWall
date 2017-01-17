@@ -1,7 +1,41 @@
+-
+	function Lang(img, code) {
+		this.img = img;
+		this.code = code;
+	}
+	var PATH = 'assets/img/langs/';
+
+	var languages = [
+		new Lang(PATH + 'ru.png', 'RU'),
+		new Lang(PATH + 'ua.png', 'UA'),
+		new Lang(PATH + 'uk.png', 'UK')
+	];
 mixin langSwitcher(langs, showAbbr)
-	ul.lang-switcher
-		each lang in langs
-			li.lang
-				img(class="img-circle", src=lang.img, alt=lang)
-				if showAbbr
-					span= lang,code
+	.lang-switcher-wrapper
+		ul.lang-switcher
+			each lang, id in langs
+				if id == 0
+					li.lang.active
+						img(class="img-circle", src=lang.img, alt=lang.code)
+						if showAbbr
+							span=lang.code
+				else
+					li.lang
+						img(class="img-circle", src=lang.img, alt=lang.code)
+						if showAbbr
+							span=lang.code
+
+mixin selectLang(langs, drop)
+	div(class=drop + ' select-lang')
+		each lang, id in langs
+			if id == 0
+				button(id="selectedLang", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false")
+					li.language
+						img(class="img-circle", src=lang.img, alt=lang.code)
+						span=lang.code
+		ul.dropdown-menu(aria-labelledby="selectedLang")
+			each lang, id in langs
+				if id != 0
+					li.language
+						img(class="img-circle", src=lang.img, alt=lang.code)
+						span=lang.code

@@ -4,116 +4,135 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<!--build:css css/vendor.css-->
+		<!--build:css assets/css/vendor.css-->
 		<!--bower:css-->
-		<link rel="stylesheet" href="../bower_components/bootstrap-select/dist/css/bootstrap-select.css" />
+		<link rel="stylesheet" href="bower_components/bootstrap-select/dist/css/bootstrap-select.css" />
+		<link rel="stylesheet" href="bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.css" />
+		<link rel="stylesheet" href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css" />
+		<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
 		<!--endbower-->
 		<!--endbuild-->
-		<!--build:css css/style.css-->
-		<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-		<link href="css/style.css" rel="stylesheet" type="text/css">
+		<!--build:css assets/css/style.css-->
+		<link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+		<link href="assets/css/style.css" rel="stylesheet" type="text/css">
 		<!--endbuild-->
 <!--[if IE]>
 		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 		<title>Login</title>
 	</head>
 	<body>
-		<div class="container-fluid" id="wrapper">
-			<header class="row" id="header">
-				<div class="col-xs-12 col-md-3">
-								<ul class="lang-switcher">
-									<li class="lang"><img class="img-circle" src="img/uk-UK.png" alt="{&quot;img&quot;:&quot;img/uk-UK.png&quot;,&quot;code&quot;:&quot;ENG&quot;}"><span></span>
-									</li>
-								</ul>
-				</div>
-				<div class="col-xs-12 col-md-6 text-center">
-					<header>
-						<h1 class="site-title">HortalWall</h1>
-						<p class="site-description">Best free stock photos in one place.<a href="#">Learn more.</a></p>
-					</header>
-					<div class="center-block">
-						<div class="pull-right"><b>Quick filters:</b></div>
+		<div class="login-container">
+			<section class="container-fluid">
+				<header class="section row">
+					<div class="container">
+						<div class="pull-left">
+											<div class="dropdown select-lang">
+												<button id="selectedLang" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+													<li class="language"><img class="img-circle" src="assets/img/langs/ru.png" alt="RU"><span>RU</span></li>
+												</button>
+												<ul class="dropdown-menu" aria-labelledby="selectedLang">
+													<li class="language"><img class="img-circle" src="assets/img/langs/ua.png" alt="UA"><span>UA</span></li>
+													<li class="language"><img class="img-circle" src="assets/img/langs/uk.png" alt="UK"><span>UK</span></li>
+												</ul>
+											</div>
+						</div>
 						<div class="pull-right">
-							<ul class="nav navbar-nav quick-filters">
-								<li><a href="/">Quick filters</a></li>
-								<li><a href="login.html">Filters</a></li>
-								<li><a href="search.html">Quirs</a></li>
-								<li><a href="article.html">Kfilters</a></li>
-								<li><a href="/">Quick Filters</a></li>
-								<li><a href="/">Flters</a></li>
-							</ul>
+											<div class="actions text-center">
+												<div class="pull-right"><a class="btn btn-transparent" id="registration" href="/login.html">Регистрация</a></div>
+												<div class="pull-right"><a class="btn btn-transparent" id="login" href="/login.html">Войти</a></div>
+												<div class="center-block"><a class="btn btn-primary" id="add-arrive" href="#">Добавить прибытие</a></div>
+											</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-xs-12 col-md-3">
-								<div class="row">
-									<div class="col-xs-6"><span>Login</span></div>
-									<div class="col-xs-6"><span>Registration</span></div>
-									<div class="col-xs-12"><a class="btn btn-primary" href="#">Add arrive</a></div>
-								</div>
-				</div>
-			</header>
-			<section id="registration">
-				<div class="form-horizontal login-form">
-					<fieldset>
-						<legend>Регистарция</legend>
-						<p class="text-muted">Вы можете зарегестрироваться с помощью своего емаил адреса</p>
-						<div class="form-group">
-							<label class="control-label sr-only" for="email">Email</label>
-							<input class="form-control" id="email" name="email" type="email" placeholder="Email" required>
-						</div>
-						<p class="text-muted">или использовать свой профиль в соц сетях:</p>
-						<ul class="socials">
-							<li><a href="#"><img src="#" alt="Google+"></a></li>
-							<li><a href="#"><img src="#" alt="Instagram"></a></li>
-							<li><a href="#"><img src="#" alt="Twitter"></a></li>
-							<li><a href="#"><img src="#" alt="Facebook"></a></li>
-						</ul>
-						<p class="text-muted">Нажимая на
-							<q>Зарегестрироваться</q>, вы подтверждаете, что ознакомлены и полностью согласны с<a href="#" target="_blank">условиями использования сайта.</a>
-						</p>
-					</fieldset>
-					<div class="divider"></div>
-					<div><a class="btn btn-primary" href="#">Зарегестрироваться</a></div>
-				</div>
+				</header>
 			</section>
-			<footer id="footer">
-				<div class="container-fluid">
-					<div class="col-xs-12 col-sm-4 col-md-3 col-lg-2"><span>lang</span>
-									<ul class="lang-switcher">
-										<li class="lang"><img class="img-circle" src="img/uk.png" alt="{&quot;img&quot;:&quot;img/uk.png&quot;,&quot;code&quot;:&quot;ENG&quot;}">
-										</li>
-										<li class="lang"><img class="img-circle" src="img/ru.png" alt="{&quot;img&quot;:&quot;img/ru.png&quot;,&quot;code&quot;:&quot;RU&quot;}">
-										</li>
-									</ul>
+			<div class="container-fluid" id="wrapper">
+				<section id="registration-section">
+					<div class="form-horizontal login-form center-block" style="max-width:600px">
+						<fieldset>
+							<h2 class="text-center">Регистарция</h2>
+							<p class="login-help">Вы можете зарегестрироваться с помощью своего емаил адреса</p>
+							<div class="login-form-container">
+								<div>
+									<label class="control-label sr-only" for="email">Email</label>
+									<input class="form-control relawey" id="email" name="email" type="email" placeholder="Email" required>
+								</div>
+								<p class="text-center">или использовать свой профиль в соц сетях:</p>
+								<ul class="text-center menu">
+									<li><a class="social-login text-success" href="#"><span class="fa fa-stack fa-lg">
+												<div class="fa fa-circle fa-stack-2x"></div><i class="fa fa-stack-1x fa-inverse fa-google-plus"></i></span></a></li>
+									<li><a class="social-login text-success" href="#"><span class="fa fa-stack fa-lg">
+												<div class="fa fa-circle fa-stack-2x"></div><i class="fa fa-stack-1x fa-inverse fa-instagram"></i></span></a></li>
+									<li><a class="social-login text-success" href="#"><span class="fa fa-stack fa-lg">
+												<div class="fa fa-circle fa-stack-2x"></div><i class="fa fa-stack-1x fa-inverse fa-twitter"></i></span></a></li>
+									<li><a class="social-login text-success" href="#"><span class="fa fa-stack fa-lg">
+												<div class="fa fa-circle fa-stack-2x"></div><i class="fa fa-stack-1x fa-inverse fa-facebook"></i></span></a></li>
+								</ul>
+								<p class="text-center text-muted">Нажимая на
+									<q>Зарегестрироваться</q>, вы подтверждаете, что ознакомлены и полностью согласны с<a href="#" target="_blank"> условиями использования сайта.</a>
+								</p>
+							</div>
+							<div class="divider"></div>
+							<div class="text-center"><a class="btn btn-primary" href="#">Зарегестрироваться</a></div>
+						</fieldset>
 					</div>
-					<div class="col-xs-12 col-sm-4 col-md-6 col-lg-8">
-						<ul class="nav navbar-nav">
-							<li><a href="#">about</a></li>
-							<li><a href="#">regulations</a></li>
-							<li><a href="#">add promouters</a></li>
-							<li><a href="#">contacts</a></li>
-						</ul>
+				</section>
+			</div>
+		</div>
+		<footer id="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-sm-2 col-md-3 col-lg-2">
+						<div class="center-block">
+									<div class="dropup select-lang">
+										<button id="selectedLang" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											<li class="language"><img class="img-circle" src="assets/img/langs/ru.png" alt="RU"><span>RU</span></li>
+										</button>
+										<ul class="dropdown-menu" aria-labelledby="selectedLang">
+											<li class="language"><img class="img-circle" src="assets/img/langs/ua.png" alt="UA"><span>UA</span></li>
+											<li class="language"><img class="img-circle" src="assets/img/langs/uk.png" alt="UK"><span>UK</span></li>
+										</ul>
+									</div>
+						</div>
 					</div>
-					<div class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
+					<div class="col-xs-12 col-sm-8 col-md-6 col-lg-8">
+						<div class="row">
+							<div class="col-xs-12 col-md-12 col-lg-8 col-lg-offset-3">
+								<ul class="nav navbar-nav center-block">
+									<li><a class="btn btn-transparent" href="index.html">Главная</a></li>
+									<li><a class="btn btn-transparent" href="article.html">Запись</a></li>
+									<li><a class="btn btn-transparent" href="login.html">Логин</a></li>
+									<li><a class="btn btn-transparent" href="search.html">Поиск</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-2 col-md-3 col-lg-2">
 						<ul class="nav navbar-nav">
-							<li>twitter</li>
-							<li>facebook</li>
+							<li class="icon-circle-wrapper"><a class="circle-o" href="#"><i class="fa fa-lg fa-twitter"></i></a></li>
+							<li class="icon-circle-wrapper"><a class="circle-o" href="#"><i class="fa fa-lg fa-facebook"></i></a></li>
 						</ul>
 					</div>
 				</div>
-			</footer>
-		</div>
-		<!--build:js js/vendor.js-->
+				<div class="row">
+					<div class="col-xs-12">
+						<p class="relawey text-muted text-center">© 2016 HortaWall. Все права защищены</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!--build:js assets/js/vendor.js-->
 		<!--bower:js-->
-		<script src="../bower_components/jquery/dist/jquery.js"></script>
-		<script src="../bower_components/bootstrap-select/dist/js/bootstrap-select.js"></script>
+		<script src="bower_components/jquery/dist/jquery.js"></script>
+		<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+		<script src="bower_components/bootstrap-select/dist/js/bootstrap-select.js"></script>
+		<script src="bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.js"></script>
+		<script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+		<script src="bower_components/masonry/dist/masonry.pkgd.js"></script>
 		<!--endbower-->
 		<!--endbuild-->
-		<!--build:js js/app.js-->
-		<script src="js/jquery-1.10.2.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/app.js"></script>
+		<!--build:js assets/js/app.js-->
+		<script src="assets/js/app.js"></script>
 		<!--endbuild-->
 	</body>
 </html>

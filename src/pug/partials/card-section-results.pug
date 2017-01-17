@@ -1,24 +1,18 @@
 include ../mixins/card
 -
-    function Card (img, title, likes, dislikes, flag, isLiked)
-    {
-        this.img = img;
-        this.title = title;
-        this.likes = likes;
-        this.dislikes = dislikes;
-        this.flag = flag;
-        this.isLiked = isLiked;
-    }
-    var PATH = 'img/';
+
+    var PATH = {
+        cards: 'assets/img/cards/',
+        flags: 'assets/img/langs/'
+    };
     var cards = [
-        new Card(PATH + 'lion.jpg', 'Leeuwenhare', '56', '2', PATH + 'uk.png', true),
-        new Card(PATH + 'lion.jpg', 'Wenhar', '44', '0', PATH + 'ru.png', true),
-        new Card(PATH + 'lion.jpg', 'Wenhar', '16', '20', PATH + 'uk.png', false),
-        new Card(PATH + 'lion.jpg', 'Leeuwenhare', '16', '2', PATH + 'ru.png', true)
+        new searchCard(PATH.cards + 'card2.png', 'Leeuwenhare', '56', '2', PATH.flags + 'uk.png', true),
+        new searchCard(PATH.cards + 'card3.png', 'Wenhar', '44', '0', PATH.flags + 'ru.png', true),
+        new searchCard(PATH.cards + 'card4.png', 'Wenhar', '16', '20', PATH.flags + 'uk.png', false),
+        new searchCard(PATH.cards + 'card5.png', 'Leeuwenhare', '16', '2', PATH.flags + 'ru.png', true)
     ];
 
 section.section.search-results
     .grid-results
         each card in cards
-            .card__container
                 +card(card)

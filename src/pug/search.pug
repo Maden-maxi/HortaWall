@@ -2,28 +2,45 @@ extends layouts/page
 block title
     title Поиск
 block content
-    include partials/navbar
-    section#search
-        h2 По вашему запросу найдено 20 фото
-        .form-inline
-            .form-group
-                label(for="date") Дата
-                .divider
-                input.form-control#date(type="date", name="date")
-            .form-group
-                label(for="year")!= 'Год: <span class="year">2012</span>'
-                .divider
-                input.form-control#year(type="range", name="year", data-slider-id="year-range", data-slider-min="2010")
-            .form-control
-                label(for="country") Страна
-                .divider
-                select#country.selectpicker(name="county")
-                    each option in ['','Уругвай', 'Панама', 'США']
-                        option(value=option)=option
-            .form-control
-                label(for="type-of-people") Тип людей
-                .divider
-                select#type-of-people.selectpicker(name="typeOfPeople")
-                    each type in ['', 'низкий', 'средний', 'високий']
-                        option(value=type)=type
+    section.section.container#search
+        .row
+            .col-xs-12
+                h2!= 'По вашему запросу <span class="text-success">Lee</span> найдено 20 фото'
+                .form-inline
+                    .form-group
+                        label(for="date") Сортировка по дате
+                        .divider
+                        .input-group.date#date(data-provide="datepicker", name="date")
+                            input.form-control(type="text")
+                            .input-group-addon
+                                span.glyphicon.glyphicon-th
+                    .form-group
+                        label(for="year")!= 'Год прибытия'
+                        .divider
+                        input.form-control#year(type="text", name="year", data-slider-id="yearSlider", data-slider-min="2010", data-slider-max="2016", data-slider-value="13" data-slider-step="1")
+                    .form-group
+                        label(for="country") Страна
+                        .divider
+                        select#country.selectpicker(name="county")
+                            each option in ['','Уругвай', 'Панама', 'США']
+                                option(value=option)=option
+                    .form-group
+                        label(for="type-of-people") Тип лодки
+                        .divider
+                        select#type-of-people.selectpicker(name="typeOfPeople")
+                            each type in ['', 'низкий', 'средний', 'високий']
+                                option(value=type)=type
     include partials/search-result
+    .container
+        -
+            var cards = [
+            new Card(PATH.cards + 'card2.png', 'Portugal', 'Ukraine', 'Name1, Name2, Name3', '20.20.12', 'Leeuwenhare', '56', '2', PATH.flags + 'uk.png', true),
+            new Card(PATH.cards + 'card3.png', 'USA', 'Russia', 'Name1, Name2, Name3', '21.12.16', 'Wenhar', '44', '0', PATH.flags + 'ru.png', true),
+            new Card(PATH.cards + 'card4.png', 'Spain', 'UK', 'Name1, Name2, Name3', '20.20.12', 'Wenhar', '16', '20', PATH.flags + 'uk.png', false),
+            new Card(PATH.cards + 'card7.png', 'Italy', 'Ukraine', 'Name1, Name2, Name3', '20.20.12', 'Leeuwenhare', '16', '2', PATH.flags + 'ru.png', true)
+            ];
+        h3 Лучшие фото
+        .row
+            each card in cards
+                .col-xs-12.col-sm-6.col-md-3
+                    +card(card)

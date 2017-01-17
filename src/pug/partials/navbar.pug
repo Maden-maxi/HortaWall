@@ -1,22 +1,19 @@
 include ../mixins/log-btn
 include ../mixins/lang
--
-    var PATH = 'img/';
-    var languages = [{img: PATH + 'uk-UK.png', code: 'ENG'}];
-nav.navbar.navbar-default
-    header.container-fluid
-        .navbar-header
-            button.navbar-toggle.collapsed(type="button", data-toggle="collapse", data-target="navbar")
-                span.sr-only Toggle nav
-                each i in [0,1,2]
-                    span.icon-bar
-            .navbar-bran
-                +langSwitcher(languages, false)
-        .navbar-form.navbar-left(role="search")
-            .form-group
-                input.form-control(type="text" placeholder="Поиск")
-        .collapse.navbar-collapse.navbar-left#navbar
-            span.pull-left Quick filters:
-            include quick-filters
-        .nav.navbar-nav
-            +logBtn('page')
+
+header#header
+    nav.navbar.navbar-default.navbar-black
+        .container
+            .navbar-header
+                button.navbar-toggle.collapsed(type="button", data-toggle="collapse", data-target="navbar")
+                    span.sr-only Toggle nav
+                    - for (var i=0; i < 3; i++)
+                        span.icon-bar
+                .navbar-bran
+                    +selectLang(languages, 'dropdown')
+            form.navbar-form.navbar-left(role="search")
+                .form-group
+                    input#q.form-control(type="search", name="q", placeholder="Поиск")
+                    button#submit(type="submit"): i.fa.fa-lg.fa-search
+            .nav.navbar-right
+                +logBtn('page')

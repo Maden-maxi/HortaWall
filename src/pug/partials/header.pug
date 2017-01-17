@@ -1,20 +1,21 @@
--
-    var PATH = 'img/';
-    var languages = [{img: PATH + 'uk-UK.png', code: 'ENG'}];
 include ../mixins/lang.pug
 include ../mixins/log-btn.pug
-header#header.row
-    .col-xs-12.col-md-3
-        +langSwitcher(languages, true)
-    .col-xs-12.col-md-6.text-center
+header.section#header.row
+    .container
+        .pull-left
+            +selectLang(languages, 'dropdown')
+        .pull-right
+            +logBtn('home')
+    .text-center.center-block
         header
             h1.site-title HortalWall
-            p.site-description
-                | Best free stock photos in one place.
-                a(href="#") Learn more.
-        .center-block
-            .pull-right: b Quick filters:
-            .pull-right
-                include quick-filters.pug
-    .col-xs-12.col-md-3
-        +logBtn('home')
+            span.site-description.title-border
+                span Все фото с Hortawall собраны здесь!
+                br
+                a(href="#") Подробнее о проєкте.
+        form.form-horizontal.center-block.search
+            div
+                label.control-label.sr-only(for="q") Искать фото
+                input#q.form-control(type="search", name="q", placeholder="Искать фото...")
+                button#submit(type="submit"): i.fa.fa-lg.fa-search
+                span.help-block Например: имя лодки, член команды, национальность, год прибытия

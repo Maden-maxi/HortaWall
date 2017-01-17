@@ -6,14 +6,14 @@ html(lang="ru")
             meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
             meta(http-equiv="x-ua-compatible", content="ie=edge")
         block link
-            //build:css css/vendor.css
+            //build:css assets/css/vendor.css
             //bower:css
             //endbower
             //endbuild
 
-            //build:css css/style.css
-            link(href="css/bootstrap.min.css", rel="stylesheet", type="text/css")
-            link(href="css/style.css", rel="stylesheet", type="text/css")
+            //build:css assets/css/style.css
+            link(href="assets/css/bootstrap.css", rel="stylesheet", type="text/css")
+            link(href="assets/css/style.css", rel="stylesheet", type="text/css")
             //endbuild
             = '\n'
             != "<!--[if IE]>"
@@ -22,19 +22,31 @@ html(lang="ru")
         block title
             title Главная
     body
-        #wrapper.container-fluid
-            block content
-                h1 Hello Pug!
-            block footer
-                include ../partials/footer
+        block header
+            .login-container
+                section.container-fluid
+                    include ../mixins/lang.pug
+                    include ../mixins/log-btn.pug
+                    header.section.row
+                        .container
+                            .pull-left
+                                +selectLang(languages, 'dropdown')
+                            .pull-right
+                                +logBtn('home')
+
+                #wrapper.container-fluid
+                    block content
+                        h1 Hello Pug!
+        block footer
+            include ../partials/footer
         block scripts
-            //build:js js/vendor.js
+            //build:js assets/js/vendor.js
             //bower:js
             //endbower
+
             //endbuild
 
-            //build:js js/app.js
-            script(src="js/jquery-1.10.2.min.js")
-            script(src="js/bootstrap.min.js")
-            script(src="js/app.js")
+            //build:js assets/js/app.js
+
+            script(src="assets/js/app.js")
             //endbuild

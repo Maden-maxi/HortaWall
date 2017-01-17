@@ -11,73 +11,71 @@ gulp.task('pug', () => {
 		.pipe($.pug({
 			pretty: '\t'
 		}))
+        .pipe(wiredep({
+            directory: './src/bower_components',
+            src: ['src/pug/layouts/*.pug'],
+            pwd: './src'
+        }))
 		.pipe(gulp.dest('src'));
 });
 
-gulp.task('pug-watch', ['pug'], reload);
+gulp.task('pug:watch', ['pug'], reload);
 
 gulp.task('watch:pug', () => {
 	gulp.watch('src/**/*.pug', ['pug']);
 });
 
-
-gulp.task('pug:parts', () => {
-	return gulp.src('src/templates/parts/*.pug')
-		.pipe($.pug({
-			pretty: '\t'
-		}))
-		.pipe(gulp.dest('src/assets/parts'));
-});
-
-gulp.task('assets', () => {
-	return gulp.src('src/assets/**/*')
-		.pipe(gulp.dest('dist/assets'));
-});
-
-gulp.task('php', () => {
-	return gulp.src('src/*.php')
-		.pipe(gulp.dest('dist'));
-});
-
 gulp.task('styl',  () => {
-	return gulp.src('src/styl/style.styl')
+	return gulp.src('src/assets/styl/style.styl')
 		.pipe($.sourcemaps.init())
 		.pipe($.stylus({compress:false}))
 		.pipe($.autoprefixer({
 			browsers: ['last 2 versions']
 		}))
 		.pipe($.sourcemaps.write('.'))
-		.pipe(gulp.dest('src/css/'));
+		.pipe(gulp.dest('src/assets/css/'));
 });
+gulp.task('watch:styl', ['styl'], reload);
 
-gulp.task('watch:styl', () => {
-	gulp.watch('src/styl/**/*', ['styl']);
+gulp.task('styl:watch', () => {
+	gulp.watch('src/assets/styl/**/*', ['styl'], reload);
 });
 
 
 
 gulp.task('js',  () => {
-	return gulp.src('src/js/app.js')
+	return gulp.src('src/assets/es6/app.js')
 		.pipe($.babel({
 			presets: ['es2015']
 		}))
-		.pipe($.uglify())
-		.pipe( gulp.dest('dist/js'));
+		//.pipe( $.uglify().on('error', e => console.log(e) ) )
+		.pipe( gulp.dest('src/assets/js'));
 });
- 
+
+gulp.task('js:watch', ['js'], reload);
+
 gulp.task('bower',  () => {
   gulp.src('src/*.html')
     .pipe(wiredep({
-    	directory: "src/bower_components"
+    	directory: 'src/bower_components'
     }))
     .pipe(gulp.dest('src'));
 });
 
+gulp.task('bower:watch', () => {
+	gulp.watch('bower.json', ['bower'], reload)
+});
 
 gulp.task('html',  () => {
-	return gulp.src('src/index.html')
-		.pipe($.useref())
-		.pipe($.if('*.js', $.babel()))
+	return gulp.src('src/*.html')
+		.pipe($.useref(/*{
+		    transformPath: function (filePath) {
+                if(filePath.indexOf('http') === -1){
+                    return filePath.replace('../', '')
+                }
+            }
+		}*/))
+		//.pipe($.if('*.js', $.babel()))
 		.pipe($.if('*.js', $.uglify()))
 		.pipe($.if('*.css', $.cleanCss()))
 		.pipe(gulp.dest('dist'));
@@ -90,19 +88,66 @@ gulp.task('clean',  () => {
 });
 
 gulp.task('dev', () => {
-	gulp.watch('src/styl/**/*.styl', ['styl']);
+	gulp.watch('src/assets/styl/**/*.styl', ['styl']);
 	gulp.watch('src/**/*.pug', ['pug']);
 	gulp.watch('bower.json', ['bower']);
-	gulp.watch('src/js/**/*.js', ['js']);
+	gulp.watch('src/assets/es6/**/*.js', ['js']);
 });
 
 gulp.task('dist', cb => {
-	sequence( 'clean', 'pug', 'styl', 'js' , 'bower', 'assets', 'php','html', cb);
+	sequence( 'clean', 'pug', 'styl', 'js' , 'bower', 'assets', 'html', cb);
+});
+
+gulp.task('assets', function () {
+	return gulp.src(['src/assets/**/*', '!src/assets/{js,css}/*'])
+		.pipe(gulp.dest('dist/assets'));
 });
 
 gulp.task('default', ['styl', 'pug'],() => {
     browserSync({server:'./src'});
 
-    gulp.watch('src/styl/**/*.styl', ['styl']);
-    gulp.watch('src/**/*.pug', ['pug-watch']);
+    watch();
 });
+
+function pug() {
+    return gulp.src('src/pug/*.pug')
+        .pipe($.pug({
+            pretty: '\t'
+        }))
+        .pipe(wiredep({
+            directory: 'src/bower_components',
+            src: ['src/pug/layouts/*.pug']
+        }))
+        .pipe(gulp.dest('src'));
+}
+
+function stylus() {
+    return gulp.src('src/assets/styl/style.styl')
+        .pipe($.sourcemaps.init())
+        .pipe($.stylus({compress:false}))
+        .pipe($.autoprefixer({
+            browsers: ['last 2 versions']
+        }))
+        .pipe($.sourcemaps.write('.'))
+        .pipe(gulp.dest('src/assets/css/'));
+}
+
+function javascript() {
+    return gulp.src('src/assets/js/app.js')
+        .pipe($.babel({
+            presets: ['es2015']
+        }))
+        //.pipe( $.uglify().on('error', e => console.log(e) ) )
+        .pipe( gulp.dest('dist/assets/js'));
+}
+
+function watch() {
+    gulp.watch('src/assets/styl/**/*.styl', ['watch:styl']);
+    gulp.watch('src/**/*.pug', ['pug:watch']);
+    gulp.watch('src/assets/es6/**/*.js', ['js:watch']);
+	gulp.watch('bower.json', ['bower:watch']);
+}
+
+function server() {
+    browserSync({server:'./dist'});
+}

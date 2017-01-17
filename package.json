@@ -4,7 +4,8 @@
   "description": "Test tasks for vocation php developer",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "server": "gulp",
+    "dist": "gulp dist"
   },
   "keywords": [
     "test",

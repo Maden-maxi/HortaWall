@@ -1,15 +1,21 @@
 extends layouts/home.pug
 block content
-	include partials/header.pug
-	include partials/card-section
-	section.section
+	.container-fluid
+		include partials/header.pug
+	.container-fluid
+		include partials/card-section
+	section#project.section
 		.container
 			.center-block.text-center
-				h2 HortalWall
-				p Текст про проект
-				p  и призыв зарегестрироваться
-				p (Возможно мы покажем как пользоваться этим сайтом и зачем)
+				h3.text-brand Project
+				h3 HortalWall
+				p.title-border!= 'Мы создали этот проект что бы<br/> помочь вас сохранять память о<br/> ваших прибытиях в Хорту'
 				div
-					a(href="#").btn.btn-default Registration
-					| /
-					a(href="#").btn.btn-info Subscribe
+					a(href="#", style={"margin-right": "5px"}).btn.btn-primary Зарегестрироваться сейчас
+					a(href="#").btn.btn-danger Подписаться на новые фото
+	include partials/search-result
+	section.section#history
+		.container
+			.jumbotron.text-center
+				h2 Horta Hisroty
+				p "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."

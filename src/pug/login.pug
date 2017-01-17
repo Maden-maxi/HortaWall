@@ -2,24 +2,27 @@ extends layouts/login
 block title
     title Login
 block content
-    include partials/header
-    section#registration
-        .form-horizontal.login-form
+    section#registration-section
+        .form-horizontal.login-form.center-block(style={"max-width": "600px"})
             fieldset
-                legend Регистарция
-                p.text-muted Вы можете зарегестрироваться с помощью своего емаил адреса
-                .form-group
-                    label.control-label.sr-only(for="email") Email
-                    input#email.form-control(name="email", type="email", placeholder="Email",required)
-                p.text-muted или использовать свой профиль в соц сетях:
-                ul.socials
-                    each social in ['Google+', 'Instagram', 'Twitter', 'Facebook']
-                        li: a(href="#"): img(src="#" alt=social)
-                p.text-muted
-                    | Нажимая на
-                    q Зарегестрироваться
-                    | , вы подтверждаете, что ознакомлены и полностью согласны с
-                    a(href="#", target="_blank") условиями использования сайта.
-            .divider
-            div
-                a.btn.btn-primary(href="#") Зарегестрироваться
+                h2.text-center Регистарция
+                p.login-help Вы можете зарегестрироваться с помощью своего емаил адреса
+                .login-form-container
+                    div
+                        label.control-label.sr-only(for="email") Email
+                        input#email.form-control.relawey(name="email", type="email", placeholder="Email",required)
+                    p.text-center или использовать свой профиль в соц сетях:
+                    ul.text-center.menu
+                        each social in ['google-plus', 'instagram', 'twitter', 'facebook']
+                            li: a.social-login.text-success(href="#")
+                                span.fa.fa-stack.fa-lg
+                                    .fa.fa-circle.fa-stack-2x
+                                    i(class="fa fa-stack-1x fa-inverse fa-"+ social)
+                    p.text-center.text-muted
+                        | Нажимая на
+                        q Зарегестрироваться
+                        | , вы подтверждаете, что ознакомлены и полностью согласны с
+                        a(href="#", target="_blank")  условиями использования сайта.
+                .divider
+                div.text-center
+                    a.btn.btn-primary(href="#") Зарегестрироваться

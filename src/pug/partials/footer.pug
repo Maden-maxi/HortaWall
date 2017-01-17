@@ -1,17 +1,22 @@
 -
-    var PATH = 'img/';
-    var languages = [{img: PATH + 'uk.png', code: 'ENG'},{img: PATH + 'ru.png', code: 'RU'}];
+    var menu = {'index': 'Главная', 'article': 'Запись', 'login': 'Логин', 'search': 'Поиск'};
 include ../mixins/lang
 footer#footer
-    .container-fluid
-        .col-xs-12.col-sm-4.col-md-3.col-lg-2
-            span lang
-            +langSwitcher(languages, false)
-        .col-xs-12.col-sm-4.col-md-6.col-lg-8
-            ul.nav.navbar-nav
-                each li in ['about', 'regulations', 'add promouters', 'contacts']
-                    li: a(href="#")= li
-        .col-xs-12.col-sm-4.col-md-3.col-lg-2
-            ul.nav.navbar-nav
-                li twitter
-                li facebook
+    .container
+        .row
+            .col-xs-12.col-sm-2.col-md-3.col-lg-2
+                .center-block
+                    +selectLang(languages, 'dropup')
+            .col-xs-12.col-sm-8.col-md-6.col-lg-8
+                .row
+                    .col-xs-12.col-md-12.col-lg-8.col-lg-offset-3
+                        ul.nav.navbar-nav.center-block
+                            each value, key in menu
+                                li: a.btn.btn-transparent(href=key+'.html')= value
+            .col-xs-12.col-sm-2.col-md-3.col-lg-2
+                ul.nav.navbar-nav
+                    li.icon-circle-wrapper: a.circle-o(href="#"): i.fa.fa-lg.fa-twitter
+                    li.icon-circle-wrapper: a.circle-o(href="#"): i.fa.fa-lg.fa-facebook
+        .row
+            .col-xs-12
+                p.relawey.text-muted.text-center © 2016 HortaWall. Все права защищены

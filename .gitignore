@@ -1,6 +1,7 @@
 node_modules
 src/bower_components
 .bowerr
-src/css
+dist
+src/assets/css
 src/index.html
 .idea
