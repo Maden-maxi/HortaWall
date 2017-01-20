@@ -275,8 +275,18 @@
   margin-right: 5px;
 }
 .slide-stats {
-  max-width: 800px;
+  max-width: 970px;
   margin: 50px auto;
+}
+.slide-desc {
+  margin-top: 40px;
+  font-size: 18px;
+}
+.slide-img {
+  margin-top: 40px;
+}
+.slide-likes {
+  margin: 30px 0;
 }
 .slide-list {
   font-family: "Raleway";

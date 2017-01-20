@@ -28,14 +28,14 @@ block content
             img: 'assets/img/'
         }
         var slides = [
-            new Slide('Leeuwenhare', 'uk_UK', '@levlev', 19, 2, false, PATH.img + 'lion.jpg', 'Leeuwenhare', 'Яхта', 'Украина', 2004, [
+            new Slide('Leeuwenhare', 'uk_UK', '@levlev', 19, 2, false, PATH.img + 'wave.png', 'Leeuwenhare', 'Яхта', 'Украина', 2004, [
                 {"name": "Андрей Иевлев", "avatar": PATH.team + "capitan.png", "pos": "Капитан"},
                 {"name": "Анна Иевлева", "avatar": PATH.team + "capitan-woman.png", "pos": "Капитан"},
                 {"name": "Муся", "avatar": PATH.team + "cat.png", "pos": "Первий помошник"},
                 {"name": "Антон Щербаков", "avatar": PATH.team + "man.png", "pos": "Пассажыр"},
                 {"name": "Олег Путин", "avatar": PATH.team + "matros.png", "pos": "Матрос"},
                 {"name": "Ольга Путина", "avatar": PATH.team + "matros-woman.png", "pos": "Матрос"}
-            ], 'Фраза', 'Описание'),
+            ], 'Товарищи! начало повседневной работы по формированию позиции требуют от нас анализа позиций.. ', 'Повседневная практика показывает, что сложившаяся структура организации позволяет выполнять важные задания по разработке систем массового участия. Разнообразный и богатый опыт новая модель организационной деятельности способствует подготовки и реализации новых предложений.'),
             new Slide('Syllogic', 'uk_UK', '@levlev', 20, 2, true, PATH.img + 'wave.png', 'Leeuwenhare', 'Украина', 'Яхта', 2004, [
                 {"name": "Андрей Иевлев", "avatar": PATH.team + "capitan.png", "pos": "Капитан"},
                 {"name": "Анна Иевлева", "avatar": PATH.team + "capitan-woman.png", "pos": "Капитан"},
@@ -78,21 +78,19 @@ block content
             .row
                 .col-xs-12
                     .row
-                        .col-xs-6
-                            .pull-left
-                                h3.image-title
-                                    span Leeuwenahre
-                                    img(src="assets/img/langs/"+ slides[0].flag +".png", alt=slides[0].flag)
-                                a.nickname.text-warning(href=slides[0].nick)=slides[0].nick
-                        .col-xs-6
-                            .pull-right.slide-likes
-                                +likes(slides[0].likes, slides[0].dislikes, true)
-                    .row
+                        .pull-left
+                            h3.image-title
+                                span Leeuwenahre
+                                img(src="assets/img/langs/"+ slides[0].flag +".png", alt=slides[0].flag)
+                            a.nickname.text-warning(href=slides[0].nick)=slides[0].nick
+                        .pull-right.slide-likes
+                            +likes(slides[0].likes, slides[0].dislikes, true)
+                    .row.slide-img
                         .col-xs-12
                             .border-brand-wrapper
                                 .border-corners
                                     .border-brand
-                                    img.center-block(src=slides[0].photo)
+                                    img.center-block.img-responsive(src=slides[0].photo)
                     .row.slide-text
                         .col-xs-12
                             .row.slide-stats
@@ -112,12 +110,13 @@ block content
                                             b: a(href="#")= slides[0].national
                                 .col-sm-12.col-md-6
                                     .pull-right
-                                        p= slides[0].frase
-                            p.text-center= slides[0].desc
+                                        p.text-right= slides[0].frase
+                                .col-sm-12
+                                    p.slide-desc.text-center= slides[0].desc
                             .row
-                                .col-xs-2
+                                .col-xs-12.col-md-2
                                     h3 Экипаж:
-                                .col-xs-10
+                                .col-xs-12.col-md-10
                                     div.flex-between
                                         each member in slides[0].team
                                             div.text-center
