@@ -1,9 +1,12 @@
 .card
     margin: auto
     max-width: 310px
+    font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif
     &_square
         margin: 5px
         max-width: 210px
+        .card__title
+            margin-top: 15px
     &:hover &__img-info
         opacity: 1
     .panel-heading
@@ -30,16 +33,21 @@
         margin-top: 0
         font-size: 1.75rem
     &__likes
+        font-size: 18px
         &_pb
             padding-bottom: 25px
         span
             padding-right: 5px
     &__liked
+        font-size: 18px
         margin-top: 10px
+    &__like-count
+        font-family: "Georgia", sans-serif;
     &__date
         position: absolute
         bottom: -1px
         left: 20px
+        padding: 0 10px
         background-color: #ffffff
         color: #000000
         &_center
@@ -47,3 +55,5 @@
             transform translateX(-50%)
     &__members
         margin-bottom: 50px
+        .fa
+            margin-right: 10px

@@ -5,7 +5,8 @@ block content
     section.section.container#search
         .row
             .col-xs-12
-                h2!= 'По вашему запросу <span class="text-success">Lee</span> найдено 20 фото'
+                .col-xs-12
+                    h2!= 'По вашему запросу <span class="text-success">Lee</span> найдено 20 фото'
                 .form-inline
                     .form-group
                         label(for="date") Сортировка по дате
@@ -17,7 +18,12 @@ block content
                     .form-group
                         label(for="year")!= 'Год прибытия'
                         .divider
-                        input.form-control#year(type="text", name="year", data-slider-id="yearSlider", data-slider-min="2010", data-slider-max="2016", data-slider-value="13" data-slider-step="1")
+                        //-input.form-control#year(type="text", name="year", data-slider-id="yearSlider", data-slider-min="2010", data-slider-max="2016", data-slider-value="13" data-slider-step="1")
+                        select#year.selectpicker(name="year")
+                            each option, idx in ['2012','2013', '2014', '2015', 'Все года']
+                                option(value=option)=option
+                                if option.length-1 == idx
+                                    option.divider
                     .form-group
                         label(for="country") Страна
                         .divider
@@ -39,7 +45,12 @@ block content
             new Card(PATH.cards + 'card4.png', 'Spain', 'UK', 'Name1, Name2, Name3', '20.20.12', 'Wenhar', '16', '20', PATH.flags + 'uk.png', false),
             new Card(PATH.cards + 'card7.png', 'Italy', 'Ukraine', 'Name1, Name2, Name3', '20.20.12', 'Leeuwenhare', '16', '2', PATH.flags + 'ru.png', true)
             ];
-        h3 Лучшие фото
+        h4 Новые фото
+        .row
+            each card in cards
+                .col-xs-12.col-sm-6.col-md-3
+                    +card(card)
+        h4 Лучшие фото
         .row
             each card in cards
                 .col-xs-12.col-sm-6.col-md-3

@@ -10,15 +10,15 @@ block content
                 .login-form-container
                     div
                         label.control-label.sr-only(for="email") Email
-                        input#email.form-control.relawey(name="email", type="email", placeholder="Email",required)
-                    p.text-center или использовать свой профиль в соц сетях:
+                        input#email.form-control.relawey(name="email", type="email", placeholder="nickname@email.com",required)
+                    p.text-center.login-help.login-help_full или использовать свой профиль в соц сетях:
                     ul.text-center.menu
                         each social in ['google-plus', 'instagram', 'twitter', 'facebook']
                             li: a.social-login.text-success(href="#")
-                                span.fa.fa-stack.fa-lg
-                                    .fa.fa-circle.fa-stack-2x
+                                span.fa.fa-stack.fa-2x
+                                    .fa.fa-circle.fa-stack-2x.fa-3x
                                     i(class="fa fa-stack-1x fa-inverse fa-"+ social)
-                    p.text-center.text-muted
+                    p.text-center.text-muted.login-reginfo
                         | Нажимая на
                         q Зарегестрироваться
                         | , вы подтверждаете, что ознакомлены и полностью согласны с

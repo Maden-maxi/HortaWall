@@ -95,8 +95,9 @@ gulp.task('dev', () => {
 });
 
 gulp.task('dist', cb => {
-	sequence( 'clean', 'pug', 'styl', 'js' , 'bower', 'assets', 'html', cb);
+	sequence( 'clean', 'pug', 'styl', 'js' , 'bower', 'assets', 'html', 'dist.server', cb);
 });
+gulp.task('dist.server', server);
 
 gulp.task('assets', function () {
 	return gulp.src(['src/assets/**/*', '!src/assets/{js,css}/*'])

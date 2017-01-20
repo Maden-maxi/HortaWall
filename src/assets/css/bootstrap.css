@@ -1,14 +1,11 @@
 @font-face {
-  font-family: "Raleway", sans-serif;
-  font-weight: normal;
-  font-style: normal;
-  src: url(../fonts/Raleway/Raleway-Regular.ttf);
+  font-family: "Raleway";
+  src: url("../fonts/Raleway/Raleway-Regular.ttf");
 }
 @font-face {
-  font-family: "Raleway", sans-serif;
+  font-family: "Raleway";
   font-weight: bold;
-  font-style: normal;
-  src: url(../fonts/Raleway/Raleway-Bold.ttf);
+  src: url("../fonts/Raleway/Raleway-Bold.ttf");
 }
 /*!
  * bootswatch v3.3.7

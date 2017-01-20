@@ -4,16 +4,18 @@ include ../mixins/lang
 header#header
     nav.navbar.navbar-default.navbar-black
         .container
-            .navbar-header
-                button.navbar-toggle.collapsed(type="button", data-toggle="collapse", data-target="navbar")
-                    span.sr-only Toggle nav
-                    - for (var i=0; i < 3; i++)
-                        span.icon-bar
-                .navbar-bran
-                    +selectLang(languages, 'dropdown')
-            form.navbar-form.navbar-left(role="search")
-                .form-group
-                    input#q.form-control(type="search", name="q", placeholder="Поиск")
-                    button#submit(type="submit"): i.fa.fa-lg.fa-search
-            .nav.navbar-right
-                +logBtn('page')
+            .row
+                .col-xs-12
+                    .navbar-header
+                        button.navbar-toggle.collapsed(type="button", data-toggle="collapse", data-target="navbar")
+                            span.sr-only Toggle nav
+                            - for (var i=0; i < 3; i++)
+                                span.icon-bar
+                        .navbar-bran
+                            +selectLang(languages, 'dropdown')
+                    form.navbar-form.navbar-left(role="search")
+                        .form-group
+                            input#q.form-control(type="search", name="q", placeholder="Поиск")
+                            button#submit(type="submit"): i.fa.fa-lg.fa-search
+                    .nav.navbar-right
+                        +logBtn('page')

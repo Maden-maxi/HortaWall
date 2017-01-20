@@ -1,0 +1,11 @@
+mixin likes(like, dislike, liked)
+    - liked = liked ? '' : '-o'
+    .like-block
+        span.text-success.like-block__block
+            i.fa.fa-lg.fa-thumbs-up
+            span=like
+        span.text-warning.like-block__block
+            i.fa.fa-lg.fa-thumbs-down
+            span=dislike
+        span.text-danger.like-block__block
+            i(class="fa fa-lg fa-heart"+liked)

@@ -1,10 +1,14 @@
 .card {
   margin: auto;
   max-width: 310px;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .card_square {
   margin: 5px;
   max-width: 210px;
+}
+.card_square .card__title {
+  margin-top: 15px;
 }
 .card:hover .card__img-info {
   opacity: 1;
@@ -40,6 +44,9 @@
   margin-top: 0;
   font-size: 1.75rem;
 }
+.card__likes {
+  font-size: 18px;
+}
 .card__likes_pb {
   padding-bottom: 25px;
 }
@@ -47,12 +54,17 @@
   padding-right: 5px;
 }
 .card__liked {
+  font-size: 18px;
   margin-top: 10px;
+}
+.card__like-count {
+  font-family: "Georgia", sans-serif;
 }
 .card__date {
   position: absolute;
   bottom: -1px;
   left: 20px;
+  padding: 0 10px;
   background-color: #fff;
   color: #000;
 }
@@ -62,6 +74,9 @@
 }
 .card__members {
   margin-bottom: 50px;
+}
+.card__members .fa {
+  margin-right: 10px;
 }
 .quick-filters li a {
   font-size: 1rem;
@@ -83,17 +98,72 @@
   background-image: url("../img/bg-header.png");
   background-size: cover;
 }
+#header .navbar #q {
+  width: 500px;
+  min-width: 100px;
+}
+@media screen and (max-width: 768px) {
+  #header .navbar #q {
+    width: 100%;
+  }
+}
 #header .help-block {
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #fff;
 }
+#header .site-description {
+  font-family: "Georgia", sans-serif;
+}
 #header .site-description a {
-  font-family: "Raleway", sans-serif;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 #footer {
   background-color: #0c0d0d;
   padding: 25px 0;
 }
+#footer a {
+  margin: 0 6px;
+}
+#footer .social-links {
+  margin-top: 10px;
+}
+#footer .nav li {
+  display: inline-block;
+}
+#project {
+  background: url("../img/bg-section.png");
+  background-size: cover;
+  color: #fff;
+}
+#project h3 {
+  margin: 0;
+  padding: 0;
+}
+#project p {
+  margin: 10px 0 50px 0;
+}
+#history {
+  background: url("../img/bg-light.png");
+  background-color: #92d3e9;
+  background-size: cover;
+}
+#history .jumbotron {
+  background-color: transparent;
+}
+#history .jumbotron h2 {
+  margin-bottom: 40px;
+}
+#history .jumbotron p {
+  font-size: 19px;
+}
+#search .form-group {
+  min-width: 200px;
+}
+#search-results {
+  padding: 40px 0;
+}
 .select-lang {
+  display: inline-block;
   margin-top: 20px;
 }
 .select-lang li {
@@ -103,11 +173,15 @@
 .select-lang li span {
   margin-left: 10px;
   vertical-align: middle;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .select-lang button {
   background-color: transparent;
   border: none;
   padding: 0;
+}
+.select-lang button img {
+  width: 30px;
 }
 .select-lang .dropdown-menu {
   background-color: transparent;
@@ -157,6 +231,7 @@
 }
 .login-container input {
   color: #555;
+  font-weight: 800;
   text-align: center;
   margin: 25px auto;
   max-width: 300px;
@@ -173,6 +248,9 @@
   margin: 20px auto;
   padding: 50px;
 }
+.login-form .login-reginfo {
+  margin: 20px auto;
+}
 .login-form-container {
   max-width: 420px;
   margin: auto;
@@ -183,8 +261,25 @@
 }
 .login-form .login-help {
   text-align: center;
-  margin: auto;
+  margin: 40px auto;
   max-width: 240px;
+}
+.login-form .login-help_full {
+  margin: 20px auto;
+  max-width: none;
+}
+.like-block__block {
+  margin-right: 10px;
+}
+.like-block__block i {
+  margin-right: 5px;
+}
+.slide-stats {
+  max-width: 800px;
+  margin: 50px auto;
+}
+.slide-list {
+  font-family: "Raleway";
 }
 .menu {
   list-style-type: none;
@@ -235,18 +330,6 @@
 #submit i {
   color: #b3b3b3;
 }
-#project {
-  background: url("../img/bg-section.png");
-  background-size: cover;
-  color: #fff;
-}
-#project h3 {
-  margin: 0;
-  padding: 0;
-}
-#project p {
-  margin: 50px 0;
-}
 .text-brand {
   color: #80c785;
 }
@@ -285,14 +368,6 @@
 .lang.active {
   display: block;
 }
-#history {
-  background: url("../img/bg-light.png");
-  background-color: #92d3e9;
-  background-size: cover;
-}
-#history .jumbotron {
-  background-color: transparent;
-}
 #add .jumbotron {
   background-color: #e6e5e6;
 }
@@ -326,16 +401,49 @@
 .relawey {
   font-family: "Raleway", sans-serif;
 }
-.border-brand img {
+.carousel .glyphicon-chevron-left {
+  margin-left: -60px;
+}
+.carousel .glyphicon-chevron-right {
+  margin-right: -60px;
+}
+.border-brand-wrapper {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  position: relative;
+}
+.border-corners {
+  position: relative;
+  display: inline-block;
+  padding: 2px;
+}
+.border-brand {
+  background: url("../img/corner-left-top.png") no-repeat top left, url("../img/corner-right-top.png") no-repeat top right, url("../img/corner-right-bottom.png") no-repeat bottom right, url("../img/corner-left-bottom.png") no-repeat bottom left;
   padding: 20px;
-  background: transparent url("../img/border-brand.png");
-  background-size: 100% 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+.border-brand-wrapper img {
+  padding: 5px;
+  border: 10px solid #82ca87;
+  border-top-left-image: url("../img/corner-left-top.png");
+  border-bottom-right-image: url("../img/corner-right-bottom.png");
+  border-top-right-image: url("../img/corner-right-top.png");
+  border-bottom-left-image: url("../img/corner-left-bottom.png");
 }
 .flex-between {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: justify;
       justify-content: space-between;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
 }
 .member-name,
 .member-pos {
@@ -344,6 +452,29 @@
 }
 .navbar-form .form-group {
   position: relative;
+}
+.dropdown-menu.inner .divider {
+  display: block;
+  padding: 0;
+  height: 1px;
+  pointer-events: none;
+}
+.btn-group.bootstrap-select {
+  width: auto !important;
+}
+.btn-group.bootstrap-select button {
+  box-shadow: 0 10px 10px rgba(10,10,10,0.7);
+  border-radius: 5px;
+  overflow: hidden;
+}
+.input-group.date {
+  box-shadow: 0 10px 10px rgba(10,10,10,0.7);
+  border-radius: 5px;
+  overflow: hidden;
+  width: 200px;
+}
+.image-title img {
+  margin: 0 10px;
 }
 
 /*# sourceMappingURL=style.css.map */

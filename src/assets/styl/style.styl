@@ -4,8 +4,13 @@
 @require "common"
 @require "select-lang"
 @require "actions-block"
-@import "login.styl"
-
+@require "login.styl"
+@require "like-block"
+.slide-stats
+    max-width: 800px
+    margin: 50px auto
+.slide-list
+    font-family: "Raleway";
 .menu
     list-style-type: none
     padding-left: 0
@@ -44,16 +49,7 @@
     background-color: transparent;
     i
         color: #b3b3b3
-#project
-    background: url(../img/bg-section.png)
-    -webkit-background-size: cover
-    background-size: cover
-    color: #fff
-    h3
-        margin: 0
-        padding: 0
-    p
-        margin: 50px 0
+
 .text-brand
     color: #80C785
 .circle-o
@@ -84,12 +80,6 @@
     &.active
         display: block
 
-#history
-    background: url(../img/bg-light.png)
-    background-color: #92D3E9
-    background-size: cover
-    .jumbotron
-        background-color: transparent;
 #add
     .jumbotron
         background-color: #E6E5E6;
@@ -116,17 +106,66 @@
     font-size: 4em
 .relawey
     font-family: "Raleway", sans-serif;
+.carousel
+    .glyphicon-chevron-left
+        margin-left: -60px
+    .glyphicon-chevron-right
+        margin-right: -60px
+.border-brand-wrapper
+    display: flex
+    justify-content: center
+    position: relative
+.border-corners
+    position: relative
+    display: inline-block
+    padding: 2px
 .border-brand
+    background url(../img/corner-left-top.png) no-repeat top left, url(../img/corner-right-top.png) no-repeat top right, url(../img/corner-right-bottom.png) no-repeat bottom right, url(../img/corner-left-bottom.png) no-repeat bottom left
+    padding: 20px
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    pointer-events none
+.border-brand-wrapper
     img
-        padding: 20px
-        background: transparent url(../img/border-brand.png)
-        background-size: 100% 100%;
+        padding: 5px
+        border: 10px solid #82ca87
+        border-top-left-image: url(../img/corner-left-top.png)
+        border-bottom-right-image: url(../img/corner-right-bottom.png)
+        border-top-right-image: url(../img/corner-right-top.png)
+        border-bottom-left-image: url(../img/corner-left-bottom.png)
 .flex-between
     display: flex
     justify-content: space-between;
+    flex-flow: row wrap;
 .member-name,.member-pos
     max-width: 80px
     margin: 5px auto
 .navbar-form
     .form-group
         position: relative
+.dropdown-menu.inner .divider
+    display: block
+    padding: 0
+    height: 1px
+    pointer-events: none
+.btn-group.bootstrap-select
+    width: auto !important
+    button
+        box-shadow: 0 10px 10px rgba(10,10,10, .7)
+        -webkit-border-radius: 5px
+        -moz-border-radius: 5px
+        border-radius: 5px
+        overflow: hidden
+.input-group.date
+    box-shadow: 0 10px 10px rgba(10,10,10, .7)
+    -webkit-border-radius: 5px
+    -moz-border-radius: 5px
+    border-radius: 5px
+    overflow: hidden
+    width: 200px
+.image-title
+    img
+        margin: 0 10px

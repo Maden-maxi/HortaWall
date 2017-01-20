@@ -4,6 +4,7 @@ block title
 block header
     include partials/navb
 block content
+    include mixins/likes
     -
         function Slide(title, flag, nick, likes, dislikes, liked, photo, sheepName, sheepType, year, national, team, frase, desc)
         {
@@ -23,10 +24,11 @@ block content
             this.desc = desc;
         }
         var PATH = {
-            team: 'img/team/'
+            team: 'assets/img/team/',
+            img: 'assets/img/'
         }
         var slides = [
-            new Slide('Leeuwenhare', 'uk_UK', '@levlev', 19, 2, false, 'img/lion.jpg', 'Leeuwenhare', 'Яхта', 'Украина', 2004, [
+            new Slide('Leeuwenhare', 'uk_UK', '@levlev', 19, 2, false, PATH.img + 'lion.jpg', 'Leeuwenhare', 'Яхта', 'Украина', 2004, [
                 {"name": "Андрей Иевлев", "avatar": PATH.team + "capitan.png", "pos": "Капитан"},
                 {"name": "Анна Иевлева", "avatar": PATH.team + "capitan-woman.png", "pos": "Капитан"},
                 {"name": "Муся", "avatar": PATH.team + "cat.png", "pos": "Первий помошник"},
@@ -34,7 +36,7 @@ block content
                 {"name": "Олег Путин", "avatar": PATH.team + "matros.png", "pos": "Матрос"},
                 {"name": "Ольга Путина", "avatar": PATH.team + "matros-woman.png", "pos": "Матрос"}
             ], 'Фраза', 'Описание'),
-            new Slide('Syllogic', 'uk_UK', '@levlev', 20, 2, true, 'img/wave.png', 'Leeuwenhare', 'Украина', 'Яхта', 2004, [
+            new Slide('Syllogic', 'uk_UK', '@levlev', 20, 2, true, PATH.img + 'wave.png', 'Leeuwenhare', 'Украина', 'Яхта', 2004, [
                 {"name": "Андрей Иевлев", "avatar": PATH.team + "capitan.png", "pos": "Капитан"},
                 {"name": "Анна Иевлева", "avatar": PATH.team + "capitan-woman.png", "pos": "Капитан"},
                 {"name": "Муся", "avatar": PATH.team + "cat.png", "pos": "Первий помошник"},
@@ -42,7 +44,7 @@ block content
                 {"name": "Олег Путин", "avatar": PATH.team + "matros.png", "pos": "Матрос"},
                 {"name": "Ольга Путина", "avatar": PATH.team + "matros-woman.png", "pos": "Матрос"}
             ], 'Фраза', 'Описание'),
-            new Slide('Leeuwenhare', 'uk_UK', '@levlev', 19, 2, false, 'img/lion.jpg', 'Leeuwenhare', 'Украина', 'Яхта', 2004, [
+            new Slide('Leeuwenhare', 'uk_UK', '@levlev', 19, 2, false, PATH.img + 'lion.jpg', 'Leeuwenhare', 'Украина', 'Яхта', 2004, [
                 {"name": "Андрей Иевлев", "avatar": PATH.team + "capitan.png", "pos": "Капитан"},
                 {"name": "Анна Иевлева", "avatar": PATH.team + "capitan-woman.png", "pos": "Капитан"},
                 {"name": "Муся", "avatar": PATH.team + "cat.png", "pos": "Первий помошник"},
@@ -50,7 +52,7 @@ block content
                 {"name": "Олег Путин", "avatar": PATH.team + "matros.png", "pos": "Матрос"},
                 {"name": "Ольга Путина", "avatar": PATH.team + "matros-woman.png", "pos": "Матрос"}
             ], 'Фраза', 'Описание'),
-            new Slide('Leeuwenhare', 'uk_UK', '@levlev', 19, 2, true, 'img/lion.jpg', 'Leeuwenhare', 'Украина', 'Яхта', 2004, [
+            new Slide('Leeuwenhare', 'uk_UK', '@levlev', 19, 2, true, PATH.img + 'lion.jpg', 'Leeuwenhare', 'Украина', 'Яхта', 2004, [
                 {"name": "Андрей Иевлев", "avatar": PATH.team + "capitan.png", "pos": "Капитан"},
                 {"name": "Анна Иевлева", "avatar": PATH.team + "capitan-woman.png", "pos": "Капитан"},
                 {"name": "Муся", "avatar": PATH.team + "cat.png", "pos": "Первий помошник"},
@@ -60,11 +62,11 @@ block content
             ], 'Фраза', 'Описание')
         ];
         var items = [
-        {"img": "../img/lion.jpg" ,"Название лодки": "Leeuwenhare", "Тип лодки": "Яхта", "Год прибытия": 2004, "Экипаж": {
+        {"img": PATH.img + "lion.jpg" ,"Название лодки": "Leeuwenhare", "Тип лодки": "Яхта", "Год прибытия": 2004, "Экипаж": {
             "Андрей Иевлев": "Капитан", "Владимир Федоров": "Матрос", "Муся": "Первый помошник"
             }
         },
-        {"img": "../img/lion.jpg" ,"Название лодки": "Leeuwenhare", "Тип лодки": "Яхта", "Год прибытия": 2004, "Экипаж": {
+        {"img": PATH.img + "lion.jpg" ,"Название лодки": "Leeuwenhare", "Тип лодки": "Яхта", "Год прибытия": 2004, "Экипаж": {
             "Андрей Иевлев": "Капитан 1", "Владимир Федоров": "Матрос 1", "Муся": "Первый помошник 1"
             }
         }
@@ -72,68 +74,56 @@ block content
     .container-fluid
         .container
             a(href="#") « Назад
-        .carousel.slide#carousel-imgs(data-ride="carousel")
-            .carousel-inner(role="listbox")
-                each slide, index in slides
-                        div(class=!index ? 'container item active' : 'container item')
+        .container.image-profile
+            .row
+                .col-xs-12
+                    .row
+                        .col-xs-6
+                            .pull-left
+                                h3.image-title
+                                    span Leeuwenahre
+                                    img(src="assets/img/langs/"+ slides[0].flag +".png", alt=slides[0].flag)
+                                a.nickname.text-warning(href=slides[0].nick)=slides[0].nick
+                        .col-xs-6
+                            .pull-right.slide-likes
+                                +likes(slides[0].likes, slides[0].dislikes, true)
+                    .row
+                        .col-xs-12
+                            .border-brand-wrapper
+                                .border-corners
+                                    .border-brand
+                                    img.center-block(src=slides[0].photo)
+                    .row.slide-text
+                        .col-xs-12
+                            .row.slide-stats
+                                .col-sm-12.col-md-6
+                                    .pull-left.slide-list
+                                        div
+                                            b Название лодки:
+                                            b= slides[0].sheepName
+                                        div
+                                            b Тип лодки:
+                                            b: a(href="#")= slides[0].sheepType
+                                        div
+                                            b Год прибытия:
+                                            b: a(href="#")= slides[0].year
+                                        div
+                                            b Национальность:
+                                            b: a(href="#")= slides[0].national
+                                .col-sm-12.col-md-6
+                                    .pull-right
+                                        p= slides[0].frase
+                            p.text-center= slides[0].desc
                             .row
-                                .col-xs-6
-                                    .pull-left
-                                        h3
-                                            span Leeuwenahre
-                                            img(src="img/langs/"+ slide.flag +".png", alt=slide.flag)
-                                        a.nickname.text-warning(href=slide.nick)=slide.nick
-                                .col-xs-6
-                                    .pull-right.slide-likes
-                                        span.text-success
-                                            i.fa.fa-lg.fa-thumbs-up
-                                            span=slide.likes
-                                        span.text-warning
-                                            i.fa.fa-lg.fa-thumbs-down
-                                            span=slide.dislikes
-                                        span.text-danger
-                                            .fa.fa-lg.fa-heart
-                            .row
-                                .col-xs-12
-                                    .center-block.border-brand
-                                        img.center-block(src=slide.photo alt=index)
-                            .row.slide-text
-                                .col-xs-12
-                                    .row
-                                        .col-sm-12.col-md-6
-                                            .pull-left
-                                                div
-                                                    b Название лодки:
-                                                    span= slide.sheepName
-                                                div
-                                                    b Тип лодки:
-                                                    span: a(href="#")= slide.sheepType
-                                                div
-                                                    b Год прибытия:
-                                                    span: a(href="#")= slide.year
-                                                div
-                                                    b Национальность:
-                                                    span: a(href="#")= slide.national
-                                        .col-sm-12.col-md-6
-                                            .pull-right
-                                                p= slide.frase
-                                    p.text-center= slide.desc
-                                    .row
-                                        .col-xs-2
-                                            h3 Экипаж:
-                                        .col-xs-10
-                                            div.flex-between
-                                                each member in slide.team
-                                                    div.text-center
-                                                        img(src=member.avatar)
-                                                        div.member-name=member.name
-                                                        div.member-pos.text-muted= member.pos
-            .left.carousel-control(href="#carousel-imgs", role="button", data-slide="prev")
-                span.glyphicon.glyphicon-chevron-left(aria-hidden="true")
-                span.sr-only Previous
-            .right.carousel-control(href="#carousel-imgs", role="button", data-slide="next")
-                span.glyphicon.glyphicon-chevron-right
-                span.sr-only Next
+                                .col-xs-2
+                                    h3 Экипаж:
+                                .col-xs-10
+                                    div.flex-between
+                                        each member in slides[0].team
+                                            div.text-center
+                                                img(src=member.avatar)
+                                                div.member-name=member.name
+                                                div.member-pos.text-muted= member.pos
     .container
         h2 Другие прибытия автора
     include partials/more-cards

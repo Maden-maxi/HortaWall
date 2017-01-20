@@ -3,5 +3,5 @@ src/bower_components
 .bowerr
 dist
 src/assets/css
-src/index.html
+src/*.html
 .idea

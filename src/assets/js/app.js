@@ -1,26 +1,14 @@
 "use strict";
 
-$(function () {
-    $("#year").slider({
-        formatter: function formatter(value) {
-            $("label .year").text(value);
-            return "Current value: " + value;
-        }
-    });
-
-    $("#date").datepicker();
+jQuery(document).ready(function ($) {
     console.log('Scripts app.js');
-    $("#carousel-imgs").on('slide.bs.carousel', function (e) {
-        /* console.log($('#carousel-imgs .item.active').index());*/
-        var infoCarousel = $("#info-carousel");
-        if (e.direction == 'left') infoCarousel.carousel('next');else infoCarousel.carousel('prev');
-    });
-
-    $(".grid-results").masonry({
-        itemSelector: ".card"
-    });
-
-    var activeLangIndex;
+    console.time("app");
+    setInterval(function () {
+        var $grid = $(".grid-results").masonry({
+            itemSelector: ".card"
+        });
+    }, 100);
+    $("#date").datepicker();
 
     $(document).on('click', '.language', function (e) {
         var self = $(this),
@@ -30,4 +18,5 @@ $(function () {
         btn.prepend(self);
         ul.prepend(btnImg);
     });
+    console.timeEnd("app");
 });
