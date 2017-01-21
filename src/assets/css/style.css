@@ -161,8 +161,14 @@
 .fz6 {
   font-size: 14px;
 }
+.relawey {
+  font-family: "Relawey", sans-serif;
+}
 .site-title {
   font-size: 4em;
+}
+.text-underline {
+  text-decoration: underline;
 }
 .title-border {
   padding: 10px;
@@ -174,6 +180,9 @@
 .site-description {
   margin-bottom: 100px;
   font-family: "Georgia", sans-serif;
+}
+.site-description .lead {
+  margin-bottom: 0;
 }
 .site-description a {
   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -247,6 +256,17 @@
 }
 .logged-in * {
   color: #000;
+}
+#more {
+  margin: 20px auto;
+}
+.flex-container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: center;
+      justify-content: center;
 }
 .select-lang {
   display: inline-block;

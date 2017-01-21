@@ -9,19 +9,28 @@ include ../mixins/card
         this.dislikes = dislikes;
         this.isLiked = isLiked;
     }
-    var PATH = "assets/img/"
+    var PATH = {
+        img: "assets/img/",
+        cards: "assets/img/cards/"
+    }
     var cards=[
-        new CardMore('Title', PATH + "lion.jpg", PATH + "langs/uk.png", "21.22.20", 50, 4, true),
-        new CardMore('Title', PATH + "lion.jpg", PATH + "langs/uk.png", "21.22.11", 45, 14, false),
-        new CardMore('Title', PATH + "lion.jpg", PATH + "langs/uk.png", "21.22.15", 75, 8, true),
-        new CardMore('Title', PATH + "lion.jpg", PATH + "langs/uk.png", "21.22.16", 155, 20, false),
-        new CardMore('Title', PATH + "lion.jpg", PATH + "langs/uk.png", "21.22.14", 55, 24, true),
-        new CardMore('Title', PATH + "lion.jpg", PATH + "langs/uk.png", "21.22.14", 55, 24, true),
-        new CardMore('Title', PATH + "lion.jpg", PATH + "langs/uk.png", "21.22.14", 55, 24, true),
-        new CardMore('Title', PATH + "lion.jpg", PATH + "langs/uk.png", "21.22.14", 55, 24, true),
-        new CardMore('Title', PATH + "lion.jpg", PATH + "langs/uk.png", "21.22.14", 55, 24, true)
+        new CardMore('Title', PATH.cards + "card2.png", PATH.img + "langs/uk.png", "21.22.20", 50, 4, true),
+        new CardMore('Title', PATH.cards + "card3.png", PATH.img + "langs/uk.png", "21.22.11", 45, 14, false),
+        new CardMore('Title', PATH.cards + "card4.png", PATH.img + "langs/uk.png", "21.22.15", 75, 8, true),
+        new CardMore('Title', PATH.cards + "card5.png", PATH.img + "langs/uk.png", "21.22.16", 155, 20, false),
+        new CardMore('Title', PATH.cards + "card6.png", PATH.img + "langs/uk.png", "21.22.14", 55, 24, true),
+        new CardMore('Title', PATH.cards + "card7.png", PATH.img + "langs/uk.png", "21.22.14", 55, 24, true),
+        new CardMore('Title', PATH.cards + "lion.jpg", PATH.img + "langs/uk.png", "21.22.14", 55, 24, true),
+        new CardMore('Title', PATH.cards + "card2.png", PATH.img + "langs/uk.png", "21.22.14", 55, 24, true),
+        new CardMore('Title', PATH.cards + "lion.jpg", PATH.img + "langs/uk.png", "21.22.14", 55, 24, true)
     ];
 section#more
     .grid-results
+        each card in cards
+            +card(card, true)
+.container
+    h2 More Photos
+section#more2
+    .flex-container
         each card in cards
             +card(card, true)

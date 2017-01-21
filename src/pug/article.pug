@@ -100,13 +100,13 @@ block content
                                             b= slides[0].sheepName
                                         .fz4
                                             b Тип лодки:
-                                            b: a(href="#")= slides[0].sheepType
+                                            b: a.text-underline(href="#")= slides[0].sheepType
                                         .fz4
                                             b Год прибытия:
-                                            b: a(href="#")= slides[0].year
+                                            b: a.text-underline(href="#")= slides[0].year
                                         .fz4
                                             b Национальность:
-                                            b: a(href="#")= slides[0].national
+                                            b: a.text-underline(href="#")= slides[0].national
                                 .col-sm-12.col-md-6
                                     .pull-right
                                         p.lead.text-right= slides[0].frase
@@ -121,7 +121,7 @@ block content
                                     div.pull-left.text-center.member
                                         img(src=member.avatar)
                                         .lead=member.name
-                                        .fz4.text-uppercase.text-muted= member.pos
+                                        .relawey.text-uppercase.text-muted= member.pos
     .container
         h2 Другие прибытия автора
     include partials/more-cards

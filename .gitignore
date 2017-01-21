@@ -1,8 +1,9 @@
-node_modules
-src/bower_components
-.bowerr
-dist
-src/assets/css
-src/assets/js
-src/*.html
+/node_modules/
+.bowerrc
 .idea
+/src/assets/css/
+/src/assets/es6/
+/src/assets/styl/
+/src/bower_components/
+/src/*.html
+/dist/

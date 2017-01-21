@@ -1,0 +1,1 @@
+"use strict";jQuery(document).ready(function(e){console.log("Scripts app.js"),console.time("app"),setInterval(function(){e(".grid-results").masonry({itemSelector:".card"})},100),e("#date").datepicker(),e(document).on("click",".language",function(n){var t=e(this),r=t.parent(),c=r.prev(),o=c.find("li");c.prepend(t),r.prepend(o)}),console.timeEnd("app")});
