@@ -431,17 +431,8 @@
   background-color: rgba(10,10,10,0.5);
   padding: 10px;
 }
-.page-title h1 {
-  font-size: 4em;
-}
 .relawey {
   font-family: "Raleway", sans-serif;
-}
-.carousel .glyphicon-chevron-left {
-  margin-left: -60px;
-}
-.carousel .glyphicon-chevron-right {
-  margin-right: -60px;
 }
 .border-brand-wrapper {
   display: -ms-flexbox;
@@ -468,18 +459,6 @@
 .border-brand-wrapper img {
   padding: 5px;
   border: 10px solid #82ca87;
-  border-top-left-image: url("../img/corner-left-top.png");
-  border-bottom-right-image: url("../img/corner-right-bottom.png");
-  border-top-right-image: url("../img/corner-right-top.png");
-  border-bottom-left-image: url("../img/corner-left-bottom.png");
-}
-.flex-between {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: justify;
-      justify-content: space-between;
-  -ms-flex-flow: row wrap;
-      flex-flow: row wrap;
 }
 .member-name,
 .member-pos {
@@ -522,11 +501,26 @@
 }
 .image-container {
   max-width: 931px;
-  margin: 20px auto;
+  margin: 20px auto 0;
+}
+.image-desc {
+  margin: 40px auto 20px;
 }
 .member {
   max-width: 120px;
   margin: 15px;
+}
+.member img {
+  margin-bottom: 20px;
+}
+.member .lead {
+  margin-bottom: 0;
+}
+.logged-in {
+  margin: 8px;
+}
+.logged-in * {
+  color: #000;
 }
 
 /*# sourceMappingURL=style.css.map */
