@@ -4,5 +4,5 @@ src/bower_components
 dist
 src/assets/css
 src/assets/js
-src/**/*.html
+src/*.html
 .idea

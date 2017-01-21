@@ -164,6 +164,13 @@
 .site-title {
   font-size: 4em;
 }
+.title-border {
+  padding: 10px;
+  display: inline-block;
+  border-radius: 5px;
+  border: 1px solid #80c785;
+  background-color: rgba(10,10,10,0.7);
+}
 .site-description {
   margin-bottom: 100px;
   font-family: "Georgia", sans-serif;
@@ -173,6 +180,26 @@
 }
 .text-white {
   color: #fff;
+}
+.text-brand {
+  color: #80c785;
+}
+.menu {
+  list-style-type: none;
+  padding-left: 0;
+}
+.menu li {
+  display: inline-block;
+}
+.circle-o {
+  text-align: center;
+  width: 45px;
+  height: 45px;
+  line-height: 25px !important;
+  border-radius: 100% !important;
+  background-color: #000 !important;
+  border: 1px solid #80c785 !important;
+  color: #80c785;
 }
 .section {
   position: relative;
@@ -191,6 +218,35 @@
   margin: 0 0 0 -5px;
   font-size: 2rem;
   height: calc(100% - 22px);
+}
+.navbar-black {
+  background-color: #000;
+}
+.menu {
+  list-style-type: none;
+  padding-left: 0;
+}
+.menu li {
+  display: inline-block;
+}
+.circle-o {
+  text-align: center;
+  width: 45px;
+  height: 45px;
+  line-height: 25px !important;
+  border-radius: 100% !important;
+  background-color: #000 !important;
+  border: 1px solid #80c785 !important;
+  color: #80c785;
+}
+.navbar-form .form-group {
+  position: relative;
+}
+.logged-in {
+  margin: 8px;
+}
+.logged-in * {
+  color: #000;
 }
 .select-lang {
   display: inline-block;
@@ -342,97 +398,11 @@
     max-width: none;
   }
 }
-.slide-stats {
-  max-width: 970px;
-  margin: 50px auto;
-}
-.slide-desc {
-  margin-top: 40px;
-  font-size: 18px;
-}
 .slide-img {
   margin-top: 40px;
 }
 .slide-likes {
   margin: 30px 0;
-}
-.slide-list {
-  font-family: "Raleway";
-}
-.menu {
-  list-style-type: none;
-  padding-left: 0;
-}
-.menu li {
-  display: inline-block;
-}
-.mirror {
-  transform: scale(-1, 1);
-}
-.text-brand {
-  color: #80c785;
-}
-.circle-o {
-  text-align: center;
-  width: 45px;
-  height: 45px;
-  line-height: 25px !important;
-  border-radius: 100% !important;
-  background-color: #000 !important;
-  border: 1px solid #80c785 !important;
-  color: #80c785;
-}
-.lang-switcher-wrapper {
-  position: relative;
-}
-.lang-switcher {
-  cursor: pointer;
-  position: relative;
-  list-style-type: none;
-  margin-top: 10px;
-}
-.lang-switcher:hover .lang {
-  display: block;
-}
-.lang {
-  color: #fff;
-  display: none;
-}
-.lang img {
-  width: 40px;
-}
-.lang span {
-  margin-left: 10px;
-}
-.lang.active {
-  display: block;
-}
-#carousel-imgs .carousel-control.left,
-#carousel-imgs .carousel-control.right {
-  background-image: none;
-  color: #0c0e0d;
-}
-#carousel-imgs .slide-text {
-  margin: 25px auto;
-}
-#carousel-imgs .slide-likes {
-  margin: 25px 0;
-}
-#carousel-imgs .slide-likes > span {
-  margin-left: 10px;
-}
-.navbar-black {
-  background-color: #000;
-}
-.title-border {
-  display: inline-block;
-  border: 2px solid #3fad46;
-  border-radius: 5px;
-  background-color: rgba(10,10,10,0.5);
-  padding: 10px;
-}
-.relawey {
-  font-family: "Raleway", sans-serif;
 }
 .border-brand-wrapper {
   display: -ms-flexbox;
@@ -440,6 +410,7 @@
   -ms-flex-pack: center;
       justify-content: center;
   position: relative;
+  margin-bottom: 40px;
 }
 .border-corners {
   position: relative;
@@ -460,13 +431,25 @@
   padding: 5px;
   border: 10px solid #82ca87;
 }
-.member-name,
-.member-pos {
-  max-width: 80px;
-  margin: 5px auto;
+.image-title img {
+  margin: 0 10px;
 }
-.navbar-form .form-group {
-  position: relative;
+.image-container {
+  max-width: 931px;
+  margin: 20px auto 0;
+}
+.image-desc {
+  margin: 40px auto 20px;
+}
+.member {
+  max-width: 120px;
+  margin: 15px;
+}
+.member img {
+  margin-bottom: 20px;
+}
+.member .lead {
+  margin-bottom: 0;
 }
 .dropdown-menu.inner .divider {
   display: block;
@@ -495,32 +478,6 @@
 .input-group.date .form-control,
 .input-group.date input-group-addon {
   border: none;
-}
-.image-title img {
-  margin: 0 10px;
-}
-.image-container {
-  max-width: 931px;
-  margin: 20px auto 0;
-}
-.image-desc {
-  margin: 40px auto 20px;
-}
-.member {
-  max-width: 120px;
-  margin: 15px;
-}
-.member img {
-  margin-bottom: 20px;
-}
-.member .lead {
-  margin-bottom: 0;
-}
-.logged-in {
-  margin: 8px;
-}
-.logged-in * {
-  color: #000;
 }
 
 /*# sourceMappingURL=style.css.map */
