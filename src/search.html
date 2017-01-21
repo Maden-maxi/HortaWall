@@ -6,10 +6,10 @@
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
 		<!--build:css assets/css/vendor.css-->
 		<!--bower:css-->
-		<link rel="stylesheet" href="../bower_components/bootstrap-select/dist/css/bootstrap-select.css" />
-		<link rel="stylesheet" href="../bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.css" />
-		<link rel="stylesheet" href="../bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css" />
-		<link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css" />
+		<link rel="stylesheet" href="bower_components/bootstrap-select/dist/css/bootstrap-select.css" />
+		<link rel="stylesheet" href="bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.css" />
+		<link rel="stylesheet" href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css" />
+		<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
 		<!--endbower-->
 		<!--endbuild-->
 		<!--build:css assets/css/style.css-->
@@ -31,10 +31,10 @@
 								</button>
 								<div class="navbar-bran">
 											<div class="dropdown select-lang">
-												<button id="selectedLang" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+												<button class="fz5" id="selectedLang" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 													<li class="language"><img class="img-circle" src="assets/img/langs/ru.png" alt="RU"><span>RU</span></li>
 												</button>
-												<ul class="dropdown-menu" aria-labelledby="selectedLang">
+												<ul class="fz6 dropdown-menu" aria-labelledby="selectedLang">
 													<li class="language"><img class="img-circle" src="assets/img/langs/ua.png" alt="UA"><span>UA</span></li>
 													<li class="language"><img class="img-circle" src="assets/img/langs/uk.png" alt="UK"><span>UK</span></li>
 												</ul>
@@ -43,15 +43,19 @@
 							</div>
 							<form class="navbar-form navbar-left" role="search">
 								<div class="form-group">
-									<input class="form-control" id="q" type="search" name="q" placeholder="Поиск">
-									<button id="submit" type="submit"><i class="fa fa-lg fa-search"></i></button>
+									<div class="search">
+										<div class="input-group input-group-lg">
+											<input class="form-control" id="q" type="text" placeholder="Искать фото..."><span class="input-group-btn">
+												<button class="btn btn-default" id="submit" type="submit"><i class="fa fa-2x fa-search"></i></button></span>
+										</div>
+									</div>
 								</div>
 							</form>
 							<div class="nav navbar-right">
 										<div class="actions">
-											<div class="pull-left"><a class="btn btn-primary" id="add-arrive" href="#">Добавить прибытие</a></div>
-											<div class="pull-left"><a class="btn btn-transparent" id="login" href="login.html">Войти</a></div>
-											<div class="pull-left"><a class="btn btn-transparent" id="registration" href="login.html">Регистрация</a></div>
+											<div class="pull-left"><a class="btn btn-lg btn-primary" href="#">Добавить прибытие</a></div>
+											<div class="pull-left"><a class="btn btn-lg btn-transparent" id="login" href="login.html">Войти</a></div>
+											<div class="pull-left"><a class="btn btn-lg btn-transparent" id="registration" href="login.html">Регистрация</a></div>
 										</div>
 							</div>
 						</div>
@@ -68,7 +72,7 @@
 						</div>
 						<div class="form-inline">
 							<div class="form-group">
-								<label for="date">Сортировка по дате</label>
+								<label class="h4" for="date">Сортировка по дате</label>
 								<div class="divider"></div>
 								<div class="input-group date" id="date" data-provide="datepicker" name="date">
 									<input class="form-control" type="text">
@@ -76,7 +80,7 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="year">Год прибытия</label>
+								<label class="h4" for="year">Год прибытия</label>
 								<div class="divider"></div>
 								<select class="selectpicker" id="year" name="year">
 									<option value="2012">2012</option>
@@ -88,7 +92,7 @@
 								</select>
 							</div>
 							<div class="form-group">
-								<label for="country">Страна</label>
+								<label class="h4" for="country">Страна</label>
 								<div class="divider"></div>
 								<select class="selectpicker" id="country" name="county">
 									<option value=""></option>
@@ -98,7 +102,7 @@
 								</select>
 							</div>
 							<div class="form-group">
-								<label for="type-of-people">Тип лодки</label>
+								<label class="h4" for="type-of-people">Тип лодки</label>
 								<div class="divider"></div>
 								<select class="selectpicker" id="type-of-people" name="typeOfPeople">
 									<option value=""></option>
@@ -119,10 +123,10 @@
 											<div class="divider"></div>
 											<div class="card__meta">
 												<div class="card__flag"><img class="center-block" src="assets/img/langs/ru.png" alt="flag"></div>
-												<h3 class="card__title text-center"><a href="#">Lion</a></h3>
+												<h3 class="text-center"><a class="text-white" href="#">Lion</a></h3>
 											</div>
-											<div class="card__likes card__likes_pb text-center"><span class="card__like text-success"><span class="glyphicon glyphicon-thumbs-up"></span><span class="card__like-count">66</span></span><span class="card__dislikes text-warning"><span class="glyphicon glyphicon-thumbs-down"></span><span class="card__dislike-count">5</span></span><span class="card__liked text-danger"><span class="glyphicon glyphicon-heart"></span></span></div>
-											<div class="text-muted card__date card__date_center"></div>
+											<div class="like-block card__likes_pb text-center lead"><span class="like-block__block"><a class="text-success" href="#"><i class="fa fa-thumbs-up"></i></a><span class="card__like-count text-success">66</span></span><span class="like-block__block"><a class="text-warning" href="#"><i class="fa fa-thumbs-down"></i></a><span class="card__dislike-count text-warning">5</span></span><span class="like-block__block"><a class="text-danger" href="#"><i class="fa fa-heart"></i></a></span></div>
+											<div class="text-muted card__date card__date_center fz6"></div>
 										</div>
 									</div>
 								</div>
@@ -132,10 +136,10 @@
 											<div class="divider"></div>
 											<div class="card__meta">
 												<div class="card__flag"><img class="center-block" src="assets/img/langs/uk.png" alt="flag"></div>
-												<h3 class="card__title text-center"><a href="#">Keen</a></h3>
+												<h3 class="text-center"><a class="text-white" href="#">Keen</a></h3>
 											</div>
-											<div class="card__likes card__likes_pb text-center"><span class="card__like text-success"><span class="glyphicon glyphicon-thumbs-up"></span><span class="card__like-count">65</span></span><span class="card__dislikes text-warning"><span class="glyphicon glyphicon-thumbs-down"></span><span class="card__dislike-count">4</span></span><span class="card__liked text-danger"><span class="glyphicon glyphicon-heart"></span></span></div>
-											<div class="text-muted card__date card__date_center"></div>
+											<div class="like-block card__likes_pb text-center lead"><span class="like-block__block"><a class="text-success" href="#"><i class="fa fa-thumbs-up"></i></a><span class="card__like-count text-success">65</span></span><span class="like-block__block"><a class="text-warning" href="#"><i class="fa fa-thumbs-down"></i></a><span class="card__dislike-count text-warning">4</span></span><span class="like-block__block"><a class="text-danger" href="#"><i class="fa fa-heart"></i></a></span></div>
+											<div class="text-muted card__date card__date_center fz6"></div>
 										</div>
 									</div>
 								</div>
@@ -145,10 +149,10 @@
 											<div class="divider"></div>
 											<div class="card__meta">
 												<div class="card__flag"><img class="center-block" src="assets/img/langs/ru.png" alt="flag"></div>
-												<h3 class="card__title text-center"><a href="#">Kong</a></h3>
+												<h3 class="text-center"><a class="text-white" href="#">Kong</a></h3>
 											</div>
-											<div class="card__likes card__likes_pb text-center"><span class="card__like text-success"><span class="glyphicon glyphicon-thumbs-up"></span><span class="card__like-count">63</span></span><span class="card__dislikes text-warning"><span class="glyphicon glyphicon-thumbs-down"></span><span class="card__dislike-count">2</span></span><span class="card__liked text-danger"><span class="glyphicon glyphicon-heart-empty"></span></span></div>
-											<div class="text-muted card__date card__date_center"></div>
+											<div class="like-block card__likes_pb text-center lead"><span class="like-block__block"><a class="text-success" href="#"><i class="fa fa-thumbs-up"></i></a><span class="card__like-count text-success">63</span></span><span class="like-block__block"><a class="text-warning" href="#"><i class="fa fa-thumbs-down"></i></a><span class="card__dislike-count text-warning">2</span></span><span class="like-block__block"><a class="text-danger" href="#"><i class="fa fa-heart-o"></i></a></span></div>
+											<div class="text-muted card__date card__date_center fz6"></div>
 										</div>
 									</div>
 								</div>
@@ -158,10 +162,10 @@
 											<div class="divider"></div>
 											<div class="card__meta">
 												<div class="card__flag"><img class="center-block" src="assets/img/langs/uk.png" alt="flag"></div>
-												<h3 class="card__title text-center"><a href="#">John</a></h3>
+												<h3 class="text-center"><a class="text-white" href="#">John</a></h3>
 											</div>
-											<div class="card__likes card__likes_pb text-center"><span class="card__like text-success"><span class="glyphicon glyphicon-thumbs-up"></span><span class="card__like-count">61</span></span><span class="card__dislikes text-warning"><span class="glyphicon glyphicon-thumbs-down"></span><span class="card__dislike-count">0</span></span><span class="card__liked text-danger"><span class="glyphicon glyphicon-heart"></span></span></div>
-											<div class="text-muted card__date card__date_center"></div>
+											<div class="like-block card__likes_pb text-center lead"><span class="like-block__block"><a class="text-success" href="#"><i class="fa fa-thumbs-up"></i></a><span class="card__like-count text-success">61</span></span><span class="like-block__block"><a class="text-warning" href="#"><i class="fa fa-thumbs-down"></i></a><span class="card__dislike-count text-warning">0</span></span><span class="like-block__block"><a class="text-danger" href="#"><i class="fa fa-heart"></i></a></span></div>
+											<div class="text-muted card__date card__date_center fz6"></div>
 										</div>
 									</div>
 								</div>
@@ -171,10 +175,10 @@
 											<div class="divider"></div>
 											<div class="card__meta">
 												<div class="card__flag"><img class="center-block" src="assets/img/langs/ru.png" alt="flag"></div>
-												<h3 class="card__title text-center"><a href="#">Mike</a></h3>
+												<h3 class="text-center"><a class="text-white" href="#">Mike</a></h3>
 											</div>
-											<div class="card__likes card__likes_pb text-center"><span class="card__like text-success"><span class="glyphicon glyphicon-thumbs-up"></span><span class="card__like-count">59</span></span><span class="card__dislikes text-warning"><span class="glyphicon glyphicon-thumbs-down"></span><span class="card__dislike-count">1</span></span><span class="card__liked text-danger"><span class="glyphicon glyphicon-heart"></span></span></div>
-											<div class="text-muted card__date card__date_center"></div>
+											<div class="like-block card__likes_pb text-center lead"><span class="like-block__block"><a class="text-success" href="#"><i class="fa fa-thumbs-up"></i></a><span class="card__like-count text-success">59</span></span><span class="like-block__block"><a class="text-warning" href="#"><i class="fa fa-thumbs-down"></i></a><span class="card__dislike-count text-warning">1</span></span><span class="like-block__block"><a class="text-danger" href="#"><i class="fa fa-heart"></i></a></span></div>
+											<div class="text-muted card__date card__date_center fz6"></div>
 										</div>
 									</div>
 								</div>
@@ -184,10 +188,10 @@
 											<div class="divider"></div>
 											<div class="card__meta">
 												<div class="card__flag"><img class="center-block" src="assets/img/langs/ru.png" alt="flag"></div>
-												<h3 class="card__title text-center"><a href="#">Sandy</a></h3>
+												<h3 class="text-center"><a class="text-white" href="#">Sandy</a></h3>
 											</div>
-											<div class="card__likes card__likes_pb text-center"><span class="card__like text-success"><span class="glyphicon glyphicon-thumbs-up"></span><span class="card__like-count">58</span></span><span class="card__dislikes text-warning"><span class="glyphicon glyphicon-thumbs-down"></span><span class="card__dislike-count">2</span></span><span class="card__liked text-danger"><span class="glyphicon glyphicon-heart-empty"></span></span></div>
-											<div class="text-muted card__date card__date_center"></div>
+											<div class="like-block card__likes_pb text-center lead"><span class="like-block__block"><a class="text-success" href="#"><i class="fa fa-thumbs-up"></i></a><span class="card__like-count text-success">58</span></span><span class="like-block__block"><a class="text-warning" href="#"><i class="fa fa-thumbs-down"></i></a><span class="card__dislike-count text-warning">2</span></span><span class="like-block__block"><a class="text-danger" href="#"><i class="fa fa-heart-o"></i></a></span></div>
+											<div class="text-muted card__date card__date_center fz6"></div>
 										</div>
 									</div>
 								</div>
@@ -197,10 +201,10 @@
 											<div class="divider"></div>
 											<div class="card__meta">
 												<div class="card__flag"><img class="center-block" src="assets/img/langs/uk.png" alt="flag"></div>
-												<h3 class="card__title text-center"><a href="#">Elise</a></h3>
+												<h3 class="text-center"><a class="text-white" href="#">Elise</a></h3>
 											</div>
-											<div class="card__likes card__likes_pb text-center"><span class="card__like text-success"><span class="glyphicon glyphicon-thumbs-up"></span><span class="card__like-count">57</span></span><span class="card__dislikes text-warning"><span class="glyphicon glyphicon-thumbs-down"></span><span class="card__dislike-count">3</span></span><span class="card__liked text-danger"><span class="glyphicon glyphicon-heart-empty"></span></span></div>
-											<div class="text-muted card__date card__date_center"></div>
+											<div class="like-block card__likes_pb text-center lead"><span class="like-block__block"><a class="text-success" href="#"><i class="fa fa-thumbs-up"></i></a><span class="card__like-count text-success">57</span></span><span class="like-block__block"><a class="text-warning" href="#"><i class="fa fa-thumbs-down"></i></a><span class="card__dislike-count text-warning">3</span></span><span class="like-block__block"><a class="text-danger" href="#"><i class="fa fa-heart-o"></i></a></span></div>
+											<div class="text-muted card__date card__date_center fz6"></div>
 										</div>
 									</div>
 								</div>
@@ -210,10 +214,10 @@
 											<div class="divider"></div>
 											<div class="card__meta">
 												<div class="card__flag"><img class="center-block" src="assets/img/langs/uk.png" alt="flag"></div>
-												<h3 class="card__title text-center"><a href="#">Keen</a></h3>
+												<h3 class="text-center"><a class="text-white" href="#">Keen</a></h3>
 											</div>
-											<div class="card__likes card__likes_pb text-center"><span class="card__like text-success"><span class="glyphicon glyphicon-thumbs-up"></span><span class="card__like-count">65</span></span><span class="card__dislikes text-warning"><span class="glyphicon glyphicon-thumbs-down"></span><span class="card__dislike-count">4</span></span><span class="card__liked text-danger"><span class="glyphicon glyphicon-heart"></span></span></div>
-											<div class="text-muted card__date card__date_center"></div>
+											<div class="like-block card__likes_pb text-center lead"><span class="like-block__block"><a class="text-success" href="#"><i class="fa fa-thumbs-up"></i></a><span class="card__like-count text-success">65</span></span><span class="like-block__block"><a class="text-warning" href="#"><i class="fa fa-thumbs-down"></i></a><span class="card__dislike-count text-warning">4</span></span><span class="like-block__block"><a class="text-danger" href="#"><i class="fa fa-heart"></i></a></span></div>
+											<div class="text-muted card__date card__date_center fz6"></div>
 										</div>
 									</div>
 								</div>
@@ -223,10 +227,10 @@
 											<div class="divider"></div>
 											<div class="card__meta">
 												<div class="card__flag"><img class="center-block" src="assets/img/langs/ru.png" alt="flag"></div>
-												<h3 class="card__title text-center"><a href="#">Mikek</a></h3>
+												<h3 class="text-center"><a class="text-white" href="#">Mikek</a></h3>
 											</div>
-											<div class="card__likes card__likes_pb text-center"><span class="card__like text-success"><span class="glyphicon glyphicon-thumbs-up"></span><span class="card__like-count">58</span></span><span class="card__dislikes text-warning"><span class="glyphicon glyphicon-thumbs-down"></span><span class="card__dislike-count">4</span></span><span class="card__liked text-danger"><span class="glyphicon glyphicon-heart"></span></span></div>
-											<div class="text-muted card__date card__date_center"></div>
+											<div class="like-block card__likes_pb text-center lead"><span class="like-block__block"><a class="text-success" href="#"><i class="fa fa-thumbs-up"></i></a><span class="card__like-count text-success">58</span></span><span class="like-block__block"><a class="text-warning" href="#"><i class="fa fa-thumbs-down"></i></a><span class="card__dislike-count text-warning">4</span></span><span class="like-block__block"><a class="text-danger" href="#"><i class="fa fa-heart"></i></a></span></div>
+											<div class="text-muted card__date card__date_center fz6"></div>
 										</div>
 									</div>
 								</div>
@@ -236,10 +240,10 @@
 											<div class="divider"></div>
 											<div class="card__meta">
 												<div class="card__flag"><img class="center-block" src="assets/img/langs/ru.png" alt="flag"></div>
-												<h3 class="card__title text-center"><a href="#">Mike</a></h3>
+												<h3 class="text-center"><a class="text-white" href="#">Mike</a></h3>
 											</div>
-											<div class="card__likes card__likes_pb text-center"><span class="card__like text-success"><span class="glyphicon glyphicon-thumbs-up"></span><span class="card__like-count">59</span></span><span class="card__dislikes text-warning"><span class="glyphicon glyphicon-thumbs-down"></span><span class="card__dislike-count">1</span></span><span class="card__liked text-danger"><span class="glyphicon glyphicon-heart"></span></span></div>
-											<div class="text-muted card__date card__date_center"></div>
+											<div class="like-block card__likes_pb text-center lead"><span class="like-block__block"><a class="text-success" href="#"><i class="fa fa-thumbs-up"></i></a><span class="card__like-count text-success">59</span></span><span class="like-block__block"><a class="text-warning" href="#"><i class="fa fa-thumbs-down"></i></a><span class="card__dislike-count text-warning">1</span></span><span class="like-block__block"><a class="text-danger" href="#"><i class="fa fa-heart"></i></a></span></div>
+											<div class="text-muted card__date card__date_center fz6"></div>
 										</div>
 									</div>
 								</div>
@@ -249,10 +253,10 @@
 											<div class="divider"></div>
 											<div class="card__meta">
 												<div class="card__flag"><img class="center-block" src="assets/img/langs/ru.png" alt="flag"></div>
-												<h3 class="card__title text-center"><a href="#">Mikek</a></h3>
+												<h3 class="text-center"><a class="text-white" href="#">Mikek</a></h3>
 											</div>
-											<div class="card__likes card__likes_pb text-center"><span class="card__like text-success"><span class="glyphicon glyphicon-thumbs-up"></span><span class="card__like-count">58</span></span><span class="card__dislikes text-warning"><span class="glyphicon glyphicon-thumbs-down"></span><span class="card__dislike-count">4</span></span><span class="card__liked text-danger"><span class="glyphicon glyphicon-heart"></span></span></div>
-											<div class="text-muted card__date card__date_center"></div>
+											<div class="like-block card__likes_pb text-center lead"><span class="like-block__block"><a class="text-success" href="#"><i class="fa fa-thumbs-up"></i></a><span class="card__like-count text-success">58</span></span><span class="like-block__block"><a class="text-warning" href="#"><i class="fa fa-thumbs-down"></i></a><span class="card__dislike-count text-warning">4</span></span><span class="like-block__block"><a class="text-danger" href="#"><i class="fa fa-heart"></i></a></span></div>
+											<div class="text-muted card__date card__date_center fz6"></div>
 										</div>
 									</div>
 								</div>
@@ -262,10 +266,10 @@
 											<div class="divider"></div>
 											<div class="card__meta">
 												<div class="card__flag"><img class="center-block" src="assets/img/langs/uk.png" alt="flag"></div>
-												<h3 class="card__title text-center"><a href="#">John</a></h3>
+												<h3 class="text-center"><a class="text-white" href="#">John</a></h3>
 											</div>
-											<div class="card__likes card__likes_pb text-center"><span class="card__like text-success"><span class="glyphicon glyphicon-thumbs-up"></span><span class="card__like-count">61</span></span><span class="card__dislikes text-warning"><span class="glyphicon glyphicon-thumbs-down"></span><span class="card__dislike-count">0</span></span><span class="card__liked text-danger"><span class="glyphicon glyphicon-heart"></span></span></div>
-											<div class="text-muted card__date card__date_center"></div>
+											<div class="like-block card__likes_pb text-center lead"><span class="like-block__block"><a class="text-success" href="#"><i class="fa fa-thumbs-up"></i></a><span class="card__like-count text-success">61</span></span><span class="like-block__block"><a class="text-warning" href="#"><i class="fa fa-thumbs-down"></i></a><span class="card__dislike-count text-warning">0</span></span><span class="like-block__block"><a class="text-danger" href="#"><i class="fa fa-heart"></i></a></span></div>
+											<div class="text-muted card__date card__date_center fz6"></div>
 										</div>
 									</div>
 								</div>
@@ -275,17 +279,17 @@
 											<div class="divider"></div>
 											<div class="card__meta">
 												<div class="card__flag"><img class="center-block" src="assets/img/langs/ru.png" alt="flag"></div>
-												<h3 class="card__title text-center"><a href="#">Mikek</a></h3>
+												<h3 class="text-center"><a class="text-white" href="#">Mikek</a></h3>
 											</div>
-											<div class="card__likes card__likes_pb text-center"><span class="card__like text-success"><span class="glyphicon glyphicon-thumbs-up"></span><span class="card__like-count">58</span></span><span class="card__dislikes text-warning"><span class="glyphicon glyphicon-thumbs-down"></span><span class="card__dislike-count">4</span></span><span class="card__liked text-danger"><span class="glyphicon glyphicon-heart"></span></span></div>
-											<div class="text-muted card__date card__date_center"></div>
+											<div class="like-block card__likes_pb text-center lead"><span class="like-block__block"><a class="text-success" href="#"><i class="fa fa-thumbs-up"></i></a><span class="card__like-count text-success">58</span></span><span class="like-block__block"><a class="text-warning" href="#"><i class="fa fa-thumbs-down"></i></a><span class="card__dislike-count text-warning">4</span></span><span class="like-block__block"><a class="text-danger" href="#"><i class="fa fa-heart"></i></a></span></div>
+											<div class="text-muted card__date card__date_center fz6"></div>
 										</div>
 									</div>
 								</div>
 				</div>
 			</section>
 			<div class="container">
-				<h4>Новые фото</h4>
+				<h2>Новые фото</h2>
 				<div class="row">
 					<div class="col-xs-12 col-sm-6 col-md-3">
 									<div class="card">
@@ -294,31 +298,30 @@
 												<div class="card__img-info">
 													<div class="card__routes"></div>
 													<div class="card__members">
-														<div class="card__from-to">
-															<p class="text-warning">Откуда</p>
+														<div>
+															<p class="fz4 text-warning">Откуда</p>
 															<p><span class="fa fa-arrow-right text-warning"></span><b>Portugal</b></p>
 														</div>
 														<div>
-															<p class="text-warning">Куда</p>
+															<p class="fz4s text-warning">Куда</p>
 															<p><span class="fa fa-arrow-right text-warning"></span><b>Ukraine</b></p>
 														</div>
 													</div>
 												</div>
-												<div class="text-muted card__date">20.20.12</div>
+												<div class="text-muted card__date fz6">20.20.12</div>
 											</div>
 											<div class="panel-body">
 												<div class="card__meta">
 													<div class="pull-left">
-														<h3 class="card__title"><a href="#">Leeuwenhare</a></h3>
-														<div class="card__likes">
-															<div class="card__like pull-left text-success"><span class="fa fa-thumbs-up"></span><span class="card__like-count">56</span></div>
-															<div class="card__dislike pull-left text-warning"><span class="fa fa-thumbs-down"></span><span class="card__dislike-count">2</span></div>
+														<h4 class="card__title"><a href="#">Leeuwenhare</a></h4>
+														<div class="like-block lead">
+															<div class="like-block__block pull-left"><a class="text-success text-success_hover" href="#"><i class="fa fa-thumbs-up"></i></a><span class="card__like-count text-success">56</span></div>
+															<div class="like-block__block pull-left"><a class="text-warning text-warning_hover" href="#"><i class="fa fa-thumbs-down"></i></a><span class="card__dislike-count text-warning">2</span></div>
 														</div>
 													</div>
 													<div class="pull-right">
 														<div class="card__flag"><img src="assets/img/langs/uk.png" alt="flag"></div>
-														<div class="card__liked text-danger text-center"><span class="fa fa-heart"></span>
-														</div>
+														<div class="card__liked text-center"><a class="lead text-danger" href="#"><i class="fa fa-heart"></i></a></div>
 													</div>
 												</div>
 											</div>
@@ -332,31 +335,30 @@
 												<div class="card__img-info">
 													<div class="card__routes"></div>
 													<div class="card__members">
-														<div class="card__from-to">
-															<p class="text-warning">Откуда</p>
+														<div>
+															<p class="fz4 text-warning">Откуда</p>
 															<p><span class="fa fa-arrow-right text-warning"></span><b>USA</b></p>
 														</div>
 														<div>
-															<p class="text-warning">Куда</p>
+															<p class="fz4s text-warning">Куда</p>
 															<p><span class="fa fa-arrow-right text-warning"></span><b>Russia</b></p>
 														</div>
 													</div>
 												</div>
-												<div class="text-muted card__date">21.12.16</div>
+												<div class="text-muted card__date fz6">21.12.16</div>
 											</div>
 											<div class="panel-body">
 												<div class="card__meta">
 													<div class="pull-left">
-														<h3 class="card__title"><a href="#">Wenhar</a></h3>
-														<div class="card__likes">
-															<div class="card__like pull-left text-success"><span class="fa fa-thumbs-up"></span><span class="card__like-count">44</span></div>
-															<div class="card__dislike pull-left text-warning"><span class="fa fa-thumbs-down"></span><span class="card__dislike-count">0</span></div>
+														<h4 class="card__title"><a href="#">Wenhar</a></h4>
+														<div class="like-block lead">
+															<div class="like-block__block pull-left"><a class="text-success text-success_hover" href="#"><i class="fa fa-thumbs-up"></i></a><span class="card__like-count text-success">44</span></div>
+															<div class="like-block__block pull-left"><a class="text-warning text-warning_hover" href="#"><i class="fa fa-thumbs-down"></i></a><span class="card__dislike-count text-warning">0</span></div>
 														</div>
 													</div>
 													<div class="pull-right">
 														<div class="card__flag"><img src="assets/img/langs/ru.png" alt="flag"></div>
-														<div class="card__liked text-danger text-center"><span class="fa fa-heart"></span>
-														</div>
+														<div class="card__liked text-center"><a class="lead text-danger" href="#"><i class="fa fa-heart"></i></a></div>
 													</div>
 												</div>
 											</div>
@@ -370,31 +372,30 @@
 												<div class="card__img-info">
 													<div class="card__routes"></div>
 													<div class="card__members">
-														<div class="card__from-to">
-															<p class="text-warning">Откуда</p>
+														<div>
+															<p class="fz4 text-warning">Откуда</p>
 															<p><span class="fa fa-arrow-right text-warning"></span><b>Spain</b></p>
 														</div>
 														<div>
-															<p class="text-warning">Куда</p>
+															<p class="fz4s text-warning">Куда</p>
 															<p><span class="fa fa-arrow-right text-warning"></span><b>UK</b></p>
 														</div>
 													</div>
 												</div>
-												<div class="text-muted card__date">20.20.12</div>
+												<div class="text-muted card__date fz6">20.20.12</div>
 											</div>
 											<div class="panel-body">
 												<div class="card__meta">
 													<div class="pull-left">
-														<h3 class="card__title"><a href="#">Wenhar</a></h3>
-														<div class="card__likes">
-															<div class="card__like pull-left text-success"><span class="fa fa-thumbs-up"></span><span class="card__like-count">16</span></div>
-															<div class="card__dislike pull-left text-warning"><span class="fa fa-thumbs-down"></span><span class="card__dislike-count">20</span></div>
+														<h4 class="card__title"><a href="#">Wenhar</a></h4>
+														<div class="like-block lead">
+															<div class="like-block__block pull-left"><a class="text-success text-success_hover" href="#"><i class="fa fa-thumbs-up"></i></a><span class="card__like-count text-success">16</span></div>
+															<div class="like-block__block pull-left"><a class="text-warning text-warning_hover" href="#"><i class="fa fa-thumbs-down"></i></a><span class="card__dislike-count text-warning">20</span></div>
 														</div>
 													</div>
 													<div class="pull-right">
 														<div class="card__flag"><img src="assets/img/langs/uk.png" alt="flag"></div>
-														<div class="card__liked text-danger text-center"><span class="fa fa-heart-o"></span>
-														</div>
+														<div class="card__liked text-center"><a class="lead text-danger" href="#"><i class="fa fa-heart-o"></i></a></div>
 													</div>
 												</div>
 											</div>
@@ -408,31 +409,30 @@
 												<div class="card__img-info">
 													<div class="card__routes"></div>
 													<div class="card__members">
-														<div class="card__from-to">
-															<p class="text-warning">Откуда</p>
+														<div>
+															<p class="fz4 text-warning">Откуда</p>
 															<p><span class="fa fa-arrow-right text-warning"></span><b>Italy</b></p>
 														</div>
 														<div>
-															<p class="text-warning">Куда</p>
+															<p class="fz4s text-warning">Куда</p>
 															<p><span class="fa fa-arrow-right text-warning"></span><b>Ukraine</b></p>
 														</div>
 													</div>
 												</div>
-												<div class="text-muted card__date">20.20.12</div>
+												<div class="text-muted card__date fz6">20.20.12</div>
 											</div>
 											<div class="panel-body">
 												<div class="card__meta">
 													<div class="pull-left">
-														<h3 class="card__title"><a href="#">Leeuwenhare</a></h3>
-														<div class="card__likes">
-															<div class="card__like pull-left text-success"><span class="fa fa-thumbs-up"></span><span class="card__like-count">16</span></div>
-															<div class="card__dislike pull-left text-warning"><span class="fa fa-thumbs-down"></span><span class="card__dislike-count">2</span></div>
+														<h4 class="card__title"><a href="#">Leeuwenhare</a></h4>
+														<div class="like-block lead">
+															<div class="like-block__block pull-left"><a class="text-success text-success_hover" href="#"><i class="fa fa-thumbs-up"></i></a><span class="card__like-count text-success">16</span></div>
+															<div class="like-block__block pull-left"><a class="text-warning text-warning_hover" href="#"><i class="fa fa-thumbs-down"></i></a><span class="card__dislike-count text-warning">2</span></div>
 														</div>
 													</div>
 													<div class="pull-right">
 														<div class="card__flag"><img src="assets/img/langs/ru.png" alt="flag"></div>
-														<div class="card__liked text-danger text-center"><span class="fa fa-heart"></span>
-														</div>
+														<div class="card__liked text-center"><a class="lead text-danger" href="#"><i class="fa fa-heart"></i></a></div>
 													</div>
 												</div>
 											</div>
@@ -440,7 +440,7 @@
 									</div>
 					</div>
 				</div>
-				<h4>Лучшие фото</h4>
+				<h2>Лучшие фото</h2>
 				<div class="row">
 					<div class="col-xs-12 col-sm-6 col-md-3">
 									<div class="card">
@@ -449,31 +449,30 @@
 												<div class="card__img-info">
 													<div class="card__routes"></div>
 													<div class="card__members">
-														<div class="card__from-to">
-															<p class="text-warning">Откуда</p>
+														<div>
+															<p class="fz4 text-warning">Откуда</p>
 															<p><span class="fa fa-arrow-right text-warning"></span><b>Portugal</b></p>
 														</div>
 														<div>
-															<p class="text-warning">Куда</p>
+															<p class="fz4s text-warning">Куда</p>
 															<p><span class="fa fa-arrow-right text-warning"></span><b>Ukraine</b></p>
 														</div>
 													</div>
 												</div>
-												<div class="text-muted card__date">20.20.12</div>
+												<div class="text-muted card__date fz6">20.20.12</div>
 											</div>
 											<div class="panel-body">
 												<div class="card__meta">
 													<div class="pull-left">
-														<h3 class="card__title"><a href="#">Leeuwenhare</a></h3>
-														<div class="card__likes">
-															<div class="card__like pull-left text-success"><span class="fa fa-thumbs-up"></span><span class="card__like-count">56</span></div>
-															<div class="card__dislike pull-left text-warning"><span class="fa fa-thumbs-down"></span><span class="card__dislike-count">2</span></div>
+														<h4 class="card__title"><a href="#">Leeuwenhare</a></h4>
+														<div class="like-block lead">
+															<div class="like-block__block pull-left"><a class="text-success text-success_hover" href="#"><i class="fa fa-thumbs-up"></i></a><span class="card__like-count text-success">56</span></div>
+															<div class="like-block__block pull-left"><a class="text-warning text-warning_hover" href="#"><i class="fa fa-thumbs-down"></i></a><span class="card__dislike-count text-warning">2</span></div>
 														</div>
 													</div>
 													<div class="pull-right">
 														<div class="card__flag"><img src="assets/img/langs/uk.png" alt="flag"></div>
-														<div class="card__liked text-danger text-center"><span class="fa fa-heart"></span>
-														</div>
+														<div class="card__liked text-center"><a class="lead text-danger" href="#"><i class="fa fa-heart"></i></a></div>
 													</div>
 												</div>
 											</div>
@@ -487,31 +486,30 @@
 												<div class="card__img-info">
 													<div class="card__routes"></div>
 													<div class="card__members">
-														<div class="card__from-to">
-															<p class="text-warning">Откуда</p>
+														<div>
+															<p class="fz4 text-warning">Откуда</p>
 															<p><span class="fa fa-arrow-right text-warning"></span><b>USA</b></p>
 														</div>
 														<div>
-															<p class="text-warning">Куда</p>
+															<p class="fz4s text-warning">Куда</p>
 															<p><span class="fa fa-arrow-right text-warning"></span><b>Russia</b></p>
 														</div>
 													</div>
 												</div>
-												<div class="text-muted card__date">21.12.16</div>
+												<div class="text-muted card__date fz6">21.12.16</div>
 											</div>
 											<div class="panel-body">
 												<div class="card__meta">
 													<div class="pull-left">
-														<h3 class="card__title"><a href="#">Wenhar</a></h3>
-														<div class="card__likes">
-															<div class="card__like pull-left text-success"><span class="fa fa-thumbs-up"></span><span class="card__like-count">44</span></div>
-															<div class="card__dislike pull-left text-warning"><span class="fa fa-thumbs-down"></span><span class="card__dislike-count">0</span></div>
+														<h4 class="card__title"><a href="#">Wenhar</a></h4>
+														<div class="like-block lead">
+															<div class="like-block__block pull-left"><a class="text-success text-success_hover" href="#"><i class="fa fa-thumbs-up"></i></a><span class="card__like-count text-success">44</span></div>
+															<div class="like-block__block pull-left"><a class="text-warning text-warning_hover" href="#"><i class="fa fa-thumbs-down"></i></a><span class="card__dislike-count text-warning">0</span></div>
 														</div>
 													</div>
 													<div class="pull-right">
 														<div class="card__flag"><img src="assets/img/langs/ru.png" alt="flag"></div>
-														<div class="card__liked text-danger text-center"><span class="fa fa-heart"></span>
-														</div>
+														<div class="card__liked text-center"><a class="lead text-danger" href="#"><i class="fa fa-heart"></i></a></div>
 													</div>
 												</div>
 											</div>
@@ -525,31 +523,30 @@
 												<div class="card__img-info">
 													<div class="card__routes"></div>
 													<div class="card__members">
-														<div class="card__from-to">
-															<p class="text-warning">Откуда</p>
+														<div>
+															<p class="fz4 text-warning">Откуда</p>
 															<p><span class="fa fa-arrow-right text-warning"></span><b>Spain</b></p>
 														</div>
 														<div>
-															<p class="text-warning">Куда</p>
+															<p class="fz4s text-warning">Куда</p>
 															<p><span class="fa fa-arrow-right text-warning"></span><b>UK</b></p>
 														</div>
 													</div>
 												</div>
-												<div class="text-muted card__date">20.20.12</div>
+												<div class="text-muted card__date fz6">20.20.12</div>
 											</div>
 											<div class="panel-body">
 												<div class="card__meta">
 													<div class="pull-left">
-														<h3 class="card__title"><a href="#">Wenhar</a></h3>
-														<div class="card__likes">
-															<div class="card__like pull-left text-success"><span class="fa fa-thumbs-up"></span><span class="card__like-count">16</span></div>
-															<div class="card__dislike pull-left text-warning"><span class="fa fa-thumbs-down"></span><span class="card__dislike-count">20</span></div>
+														<h4 class="card__title"><a href="#">Wenhar</a></h4>
+														<div class="like-block lead">
+															<div class="like-block__block pull-left"><a class="text-success text-success_hover" href="#"><i class="fa fa-thumbs-up"></i></a><span class="card__like-count text-success">16</span></div>
+															<div class="like-block__block pull-left"><a class="text-warning text-warning_hover" href="#"><i class="fa fa-thumbs-down"></i></a><span class="card__dislike-count text-warning">20</span></div>
 														</div>
 													</div>
 													<div class="pull-right">
 														<div class="card__flag"><img src="assets/img/langs/uk.png" alt="flag"></div>
-														<div class="card__liked text-danger text-center"><span class="fa fa-heart-o"></span>
-														</div>
+														<div class="card__liked text-center"><a class="lead text-danger" href="#"><i class="fa fa-heart-o"></i></a></div>
 													</div>
 												</div>
 											</div>
@@ -563,31 +560,30 @@
 												<div class="card__img-info">
 													<div class="card__routes"></div>
 													<div class="card__members">
-														<div class="card__from-to">
-															<p class="text-warning">Откуда</p>
+														<div>
+															<p class="fz4 text-warning">Откуда</p>
 															<p><span class="fa fa-arrow-right text-warning"></span><b>Italy</b></p>
 														</div>
 														<div>
-															<p class="text-warning">Куда</p>
+															<p class="fz4s text-warning">Куда</p>
 															<p><span class="fa fa-arrow-right text-warning"></span><b>Ukraine</b></p>
 														</div>
 													</div>
 												</div>
-												<div class="text-muted card__date">20.20.12</div>
+												<div class="text-muted card__date fz6">20.20.12</div>
 											</div>
 											<div class="panel-body">
 												<div class="card__meta">
 													<div class="pull-left">
-														<h3 class="card__title"><a href="#">Leeuwenhare</a></h3>
-														<div class="card__likes">
-															<div class="card__like pull-left text-success"><span class="fa fa-thumbs-up"></span><span class="card__like-count">16</span></div>
-															<div class="card__dislike pull-left text-warning"><span class="fa fa-thumbs-down"></span><span class="card__dislike-count">2</span></div>
+														<h4 class="card__title"><a href="#">Leeuwenhare</a></h4>
+														<div class="like-block lead">
+															<div class="like-block__block pull-left"><a class="text-success text-success_hover" href="#"><i class="fa fa-thumbs-up"></i></a><span class="card__like-count text-success">16</span></div>
+															<div class="like-block__block pull-left"><a class="text-warning text-warning_hover" href="#"><i class="fa fa-thumbs-down"></i></a><span class="card__dislike-count text-warning">2</span></div>
 														</div>
 													</div>
 													<div class="pull-right">
 														<div class="card__flag"><img src="assets/img/langs/ru.png" alt="flag"></div>
-														<div class="card__liked text-danger text-center"><span class="fa fa-heart"></span>
-														</div>
+														<div class="card__liked text-center"><a class="lead text-danger" href="#"><i class="fa fa-heart"></i></a></div>
 													</div>
 												</div>
 											</div>
@@ -611,10 +607,10 @@
 					<div class="col-xs-12 col-sm-2 col-md-3 col-lg-2">
 						<div class="center-block">
 									<div class="dropup select-lang">
-										<button id="selectedLang" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										<button class="fz5" id="selectedLang" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 											<li class="language"><img class="img-circle" src="assets/img/langs/ru.png" alt="RU"><span>RU</span></li>
 										</button>
-										<ul class="dropdown-menu" aria-labelledby="selectedLang">
+										<ul class="fz6 dropdown-menu" aria-labelledby="selectedLang">
 											<li class="language"><img class="img-circle" src="assets/img/langs/ua.png" alt="UA"><span>UA</span></li>
 											<li class="language"><img class="img-circle" src="assets/img/langs/uk.png" alt="UK"><span>UK</span></li>
 										</ul>
@@ -647,12 +643,12 @@
 		</footer>
 		<!--build:js assets/js/vendor.js-->
 		<!--bower:js-->
-		<script src="../bower_components/jquery/dist/jquery.js"></script>
-		<script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
-		<script src="../bower_components/bootstrap-select/dist/js/bootstrap-select.js"></script>
-		<script src="../bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.js"></script>
-		<script src="../bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-		<script src="../bower_components/masonry/dist/masonry.pkgd.js"></script>
+		<script src="bower_components/jquery/dist/jquery.js"></script>
+		<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+		<script src="bower_components/bootstrap-select/dist/js/bootstrap-select.js"></script>
+		<script src="bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.js"></script>
+		<script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+		<script src="bower_components/masonry/dist/masonry.pkgd.js"></script>
 		<!--endbower-->
 		<!--endbuild-->
 		<!--build:js assets/js/app.js-->

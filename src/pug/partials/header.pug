@@ -1,6 +1,6 @@
 include ../mixins/lang.pug
 include ../mixins/log-btn.pug
-header.section#header.row
+header#header.row.section.intro
     .container
         .pull-left
             +selectLang(languages, 'dropdown')
@@ -10,12 +10,9 @@ header.section#header.row
         header
             h1.site-title HortalWall
             span.site-description.title-border
-                span Все фото с Hortawall собраны здесь!
-                br
-                a(href="#") Подробнее о проєкте.
+                div.lead Все фото с Hortawall собраны здесь!
+                .fz4
+                    a(href="#") Подробнее о проєкте.
         form.form-horizontal.center-block.search
-            div
-                label.control-label.sr-only(for="q") Искать фото
-                input#q.form-control(type="search", name="q", placeholder="Искать фото...")
-                button#submit(type="submit"): i.fa.fa-lg.fa-search
-                span.help-block Например: имя лодки, член команды, национальность, год прибытия
+            include input-search
+            span.help-block Например: имя лодки, член команды, национальность, год прибытия

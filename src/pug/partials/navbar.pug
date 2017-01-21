@@ -15,7 +15,6 @@ header#header
                             +selectLang(languages, 'dropdown')
                     form.navbar-form.navbar-left(role="search")
                         .form-group
-                            input#q.form-control(type="search", name="q", placeholder="Поиск")
-                            button#submit(type="submit"): i.fa.fa-lg.fa-search
+                            include input-search
                     .nav.navbar-right
                         +logBtn('page')

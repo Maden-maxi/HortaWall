@@ -73,58 +73,74 @@ block content
         ];
     .container-fluid
         .container
-            a(href="#") « Назад
+            a(href="index.html") « Назад
         .container.image-profile
             .row
                 .col-xs-12
                     .row
                         .pull-left
-                            h3.image-title
+                            h1.image-title
                                 span Leeuwenahre
                                 img(src="assets/img/langs/"+ slides[0].flag +".png", alt=slides[0].flag)
-                            a.nickname.text-warning(href=slides[0].nick)=slides[0].nick
+                            a.lead.text-warning(href=slides[0].nick)=slides[0].nick
                         .pull-right.slide-likes
                             +likes(slides[0].likes, slides[0].dislikes, true)
-                    .row.slide-img
+                    .row.image-container
                         .col-xs-12
                             .border-brand-wrapper
                                 .border-corners
                                     .border-brand
                                     img.center-block.img-responsive(src=slides[0].photo)
-                    .row.slide-text
                         .col-xs-12
                             .row.slide-stats
                                 .col-sm-12.col-md-6
                                     .pull-left.slide-list
-                                        div
+                                        .fz4
                                             b Название лодки:
                                             b= slides[0].sheepName
-                                        div
+                                        .fz4
                                             b Тип лодки:
                                             b: a(href="#")= slides[0].sheepType
-                                        div
+                                        .fz4
                                             b Год прибытия:
                                             b: a(href="#")= slides[0].year
-                                        div
+                                        .fz4
                                             b Национальность:
                                             b: a(href="#")= slides[0].national
                                 .col-sm-12.col-md-6
                                     .pull-right
-                                        p.text-right= slides[0].frase
+                                        p.lead.text-right= slides[0].frase
                                 .col-sm-12
-                                    p.slide-desc.text-center= slides[0].desc
-                            .row
-                                .col-xs-12.col-md-2
-                                    h3 Экипаж:
-                                .col-xs-12.col-md-10
-                                    div.flex-between
-                                        each member in slides[0].team
-                                            div.text-center
-                                                img(src=member.avatar)
-                                                div.member-name=member.name
-                                                div.member-pos.text-muted= member.pos
+                                    p.lead.text-center= slides[0].desc
+                    .row
+                        .col-xs-12.col-md-2
+                            h2 Экипаж:
+                        .col-xs-12.col-md-10
+                            div
+                                each member in slides[0].team
+                                    div.pull-left.text-center.member
+                                        img(src=member.avatar)
+                                        .lead=member.name
+                                        .fz4.text-uppercase.text-muted= member.pos
     .container
         h2 Другие прибытия автора
     include partials/more-cards
+    include mixins/card
+    -
+        var PATH = {
+        cards: 'assets/img/cards/',
+        flags: 'assets/img/langs/'
+        };
+        var cards = [
+            new Card(PATH.cards + 'card2.png', 'Portugal', 'Ukraine', 'Name1, Name2, Name3', '20.20.12', 'Leeuwenhare', '56', '2', PATH.flags + 'uk.png', true),
+            new Card(PATH.cards + 'card3.png', 'USA', 'Russia', 'Name1, Name2, Name3', '21.12.16', 'Wenhar', '44', '0', PATH.flags + 'ru.png', true),
+            new Card(PATH.cards + 'card4.png', 'Spain', 'UK', 'Name1, Name2, Name3', '20.20.12', 'Wenhar', '16', '20', PATH.flags + 'uk.png', false),
+            new Card(PATH.cards + 'card7.png', 'Italy', 'Ukraine', 'Name1, Name2, Name3', '20.20.12', 'Leeuwenhare', '16', '2', PATH.flags + 'ru.png', true)
+        ];
     .container-fluid
-        include partials/card-section
+        .container
+            h2 Лучшие фото
+            .row
+                each card in cards
+                    .col-xs-12.col-sm-6.col-md-3
+                        +card(card)

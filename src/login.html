@@ -6,10 +6,10 @@
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
 		<!--build:css assets/css/vendor.css-->
 		<!--bower:css-->
-		<link rel="stylesheet" href="../bower_components/bootstrap-select/dist/css/bootstrap-select.css" />
-		<link rel="stylesheet" href="../bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.css" />
-		<link rel="stylesheet" href="../bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css" />
-		<link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css" />
+		<link rel="stylesheet" href="bower_components/bootstrap-select/dist/css/bootstrap-select.css" />
+		<link rel="stylesheet" href="bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.css" />
+		<link rel="stylesheet" href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css" />
+		<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
 		<!--endbower-->
 		<!--endbuild-->
 		<!--build:css assets/css/style.css-->
@@ -27,10 +27,10 @@
 					<div class="container">
 						<div class="pull-left">
 											<div class="dropdown select-lang">
-												<button id="selectedLang" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+												<button class="fz5" id="selectedLang" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 													<li class="language"><img class="img-circle" src="assets/img/langs/ru.png" alt="RU"><span>RU</span></li>
 												</button>
-												<ul class="dropdown-menu" aria-labelledby="selectedLang">
+												<ul class="fz6 dropdown-menu" aria-labelledby="selectedLang">
 													<li class="language"><img class="img-circle" src="assets/img/langs/ua.png" alt="UA"><span>UA</span></li>
 													<li class="language"><img class="img-circle" src="assets/img/langs/uk.png" alt="UK"><span>UK</span></li>
 												</ul>
@@ -38,9 +38,9 @@
 						</div>
 						<div class="pull-right">
 											<div class="actions text-center">
-												<div class="pull-right"><a class="btn btn-transparent" id="registration" href="login.html">Регистрация</a></div>
-												<div class="pull-right"><a class="btn btn-transparent" id="login" href="login.html">Войти</a></div>
-												<div class="center-block"><a class="btn btn-primary" id="add-arrive" href="#">Добавить прибытие</a></div>
+												<div class="pull-right"><a class="btn btn-lg btn-transparent" id="registration" href="login.html">Регистрация</a></div>
+												<div class="pull-right"><a class="btn btn-lg btn-transparent" id="login" href="login.html">Войти</a></div>
+												<div class="center-block"><a class="btn btn-lg btn-primary" id="add-arrive" href="#">Добавить прибытие</a></div>
 											</div>
 						</div>
 					</div>
@@ -48,16 +48,15 @@
 			</section>
 			<div class="container-fluid" id="wrapper">
 				<section id="registration-section">
-					<div class="form-horizontal login-form center-block" style="max-width:600px">
+					<form class="form-horizontal login-form center-block">
 						<fieldset>
 							<h2 class="text-center">Регистарция</h2>
-							<p class="login-help">Вы можете зарегестрироваться с помощью своего емаил адреса</p>
+							<p class="lead login-help">Вы можете зарегестрироваться с помощью своего емаил адреса</p>
 							<div class="login-form-container">
-								<div>
-									<label class="control-label sr-only" for="email">Email</label>
-									<input class="form-control relawey" id="email" name="email" type="email" placeholder="nickname@email.com" required>
+								<div class="input-group input-group-lg">
+									<input class="form-control relawey" id="email" name="email" type="email" placeholder="your@email.com" required>
 								</div>
-								<p class="text-center login-help login-help_full">или использовать свой профиль в соц сетях:</p>
+								<p class="text-center lead">или использовать свой профиль в соц сетях:</p>
 								<ul class="text-center menu">
 									<li><a class="social-login text-success" href="#"><span class="fa fa-stack fa-2x">
 												<div class="fa fa-circle fa-stack-2x fa-3x"></div><i class="fa fa-stack-1x fa-inverse fa-google-plus"></i></span></a></li>
@@ -68,14 +67,14 @@
 									<li><a class="social-login text-success" href="#"><span class="fa fa-stack fa-2x">
 												<div class="fa fa-circle fa-stack-2x fa-3x"></div><i class="fa fa-stack-1x fa-inverse fa-facebook"></i></span></a></li>
 								</ul>
-								<p class="text-center text-muted login-reginfo">Нажимая на
+								<p class="text-center text-muted lead">Нажимая на
 									<q>Зарегестрироваться</q>, вы подтверждаете, что ознакомлены и полностью согласны с<a href="#" target="_blank"> условиями использования сайта.</a>
 								</p>
 							</div>
 							<div class="divider"></div>
-							<div class="text-center"><a class="btn btn-primary" href="#">Зарегестрироваться</a></div>
+							<div class="text-center"><a class="btn btn-primary btn-lg" href="#">Зарегестрироваться</a></div>
 						</fieldset>
-					</div>
+					</form>
 				</section>
 			</div>
 		</div>
@@ -85,10 +84,10 @@
 					<div class="col-xs-12 col-sm-2 col-md-3 col-lg-2">
 						<div class="center-block">
 									<div class="dropup select-lang">
-										<button id="selectedLang" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										<button class="fz5" id="selectedLang" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 											<li class="language"><img class="img-circle" src="assets/img/langs/ru.png" alt="RU"><span>RU</span></li>
 										</button>
-										<ul class="dropdown-menu" aria-labelledby="selectedLang">
+										<ul class="fz6 dropdown-menu" aria-labelledby="selectedLang">
 											<li class="language"><img class="img-circle" src="assets/img/langs/ua.png" alt="UA"><span>UA</span></li>
 											<li class="language"><img class="img-circle" src="assets/img/langs/uk.png" alt="UK"><span>UK</span></li>
 										</ul>
@@ -121,12 +120,12 @@
 		</footer>
 		<!--build:js assets/js/vendor.js-->
 		<!--bower:js-->
-		<script src="../bower_components/jquery/dist/jquery.js"></script>
-		<script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
-		<script src="../bower_components/bootstrap-select/dist/js/bootstrap-select.js"></script>
-		<script src="../bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.js"></script>
-		<script src="../bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-		<script src="../bower_components/masonry/dist/masonry.pkgd.js"></script>
+		<script src="bower_components/jquery/dist/jquery.js"></script>
+		<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+		<script src="bower_components/bootstrap-select/dist/js/bootstrap-select.js"></script>
+		<script src="bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.js"></script>
+		<script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+		<script src="bower_components/masonry/dist/masonry.pkgd.js"></script>
 		<!--endbower-->
 		<!--endbuild-->
 		<!--build:js assets/js/app.js-->

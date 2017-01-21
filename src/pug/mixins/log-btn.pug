@@ -3,43 +3,51 @@ mixin logBtn(page)
 		when 'home'
 			.actions.text-center
 				.pull-right
-					a#registration.btn.btn-transparent(href="login.html") Регистрация
+					a#registration.btn.btn-lg.btn-transparent(href="login.html") Регистрация
 				.pull-right
-					a#login.btn.btn-transparent(href="login.html") Войти
+					a#login.btn.btn-lg.btn-transparent(href="login.html") Войти
 				.center-block
-					a#add-arrive.btn.btn-primary(href="#") Добавить прибытие
+					a#add-arrive.btn.btn-lg.btn-primary(href="#") Добавить прибытие
 			- break;
 		when 'page'
 			.actions
 				.pull-left
-					a#add-arrive.btn.btn-primary(href="#") Добавить прибытие
+					a.btn.btn-lg.btn-primary(href="#") Добавить прибытие
 				.pull-left
-					a#login.btn.btn-transparent(href="login.html") Войти
+					a#login.btn.btn-lg.btn-transparent(href="login.html") Войти
 				.pull-left
-					a#registration.btn.btn-transparent(href="login.html") Регистрация
+					a#registration.btn.btn-lg.btn-transparent(href="login.html") Регистрация
 			- break;
 		when 'login-page'
 			.row.actions
 				.col-xs-12
-					a(href="login.html").btn.btn-default Войти в свой аккаунт
+					a(href="login.html").btn.btn-lg.btn-default Войти в свой аккаунт
 				.col-xs-12
-					a(href="#").btn.btn-primary Добавить прибытие
+					a(href="#").btn.btn-lg.btn-primary Добавить прибытие
 			- break;
 		when 'login'
 			.actions
 				.pull-left
-					a(href="#").btn.btn-primary Добавить прибытие
+					a(href="#").btn.btn-lg.btn-primary Добавить прибытие
 				.pull-left
-					select#user.selectpicker(name="user")
-						option(value="name") levlev
+					.btn-group.btn-group-lg
+						button.btn.btn-warning Nickname
+						button.btn.btn-warning.dropdown-toggle(data-toggle="dropdown", aria-haspopup="true", aria-expanded="false")
+							span.caret
+							span.sr-only Toggle Dropdown
+						ul.dropdown-menu
+							li: a(href="#") Panel
+							li: a(href="#") Aciton
+							li(role="separator").divider
+							li: a(href="#") Logout
 			- break;
 		when 'not-login'
 				.row.actions
 					.col-xs-6
-						a(href="#").btn.btn-default Добавить прибытие
+						a(href="#").btn.btn-lg.btn-default Добавить прибытие
 					.col-xs-3
-						a(href="login.html").btn.btn-default Войти
+						a(href="login.html").btn.btn-lg.btn-default Войти
 					.col-xs-3
-						a(href="login.html").btn.btn-default Регистрация
+						a(href="login.html").btn.btn-lg.btn-default Регистрация
 		default
 			h3= page + ' state undefined'

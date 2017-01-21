@@ -5,10 +5,10 @@
 }
 .card_square {
   margin: 5px;
-  max-width: 210px;
 }
 .card_square .card__title {
   margin-top: 15px;
+  color: #fff;
 }
 .card:hover .card__img-info {
   opacity: 1;
@@ -40,10 +40,6 @@
   -ms-flex-pack: justify;
       justify-content: space-between;
 }
-.card__title {
-  margin-top: 0;
-  font-size: 1.75rem;
-}
 .card__likes {
   font-size: 18px;
 }
@@ -54,8 +50,7 @@
   padding-right: 5px;
 }
 .card__liked {
-  font-size: 18px;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 .card__like-count {
   font-family: "Georgia", sans-serif;
@@ -64,7 +59,7 @@
   position: absolute;
   bottom: -1px;
   left: 20px;
-  padding: 0 10px;
+  padding: 0 3px;
   background-color: #fff;
   color: #000;
 }
@@ -84,38 +79,16 @@
 .menu-title {
   margin-top: 20px;
 }
-#search .form-group {
-  padding-right: 15px;
-  padding-left: 15px;
-}
-#search .bootstrap-select .dropdown-toggle,
-#search #date .form-control {
-  background-color: #82ca87;
-  color: #555;
-}
-#header {
+.intro {
   color: #fff;
   background-image: url("../img/bg-header.png");
   background-size: cover;
+  min-height: 100vh;
+  margin-bottom: 22px;
 }
-#header .navbar #q {
-  width: 500px;
-  min-width: 100px;
-}
-@media screen and (max-width: 768px) {
-  #header .navbar #q {
-    width: 100%;
-  }
-}
-#header .help-block {
+.intro .help-block {
   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #fff;
-}
-#header .site-description {
-  font-family: "Georgia", sans-serif;
-}
-#header .site-description a {
-  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 #footer {
   background-color: #0c0d0d;
@@ -131,11 +104,12 @@
   display: inline-block;
 }
 #project {
+  padding: 100px 0;
   background: url("../img/bg-section.png");
   background-size: cover;
   color: #fff;
 }
-#project h3 {
+#project h2 {
   margin: 0;
   padding: 0;
 }
@@ -150,17 +124,73 @@
 #history .jumbotron {
   background-color: transparent;
 }
-#history .jumbotron h2 {
-  margin-bottom: 40px;
-}
-#history .jumbotron p {
-  font-size: 19px;
-}
 #search .form-group {
   min-width: 200px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+#search .bootstrap-select .dropdown-toggle,
+#search #date .form-control {
+  background-color: #82ca87;
+  color: #000;
 }
 #search-results {
   padding: 40px 0;
+}
+#add {
+  padding: 50px 0;
+}
+#add .jumbotron {
+  background-color: #e6e5e6;
+}
+.fz1 {
+  font-size: 41px;
+}
+.fz2 {
+  font-size: 34px;
+}
+.fz3 {
+  font-size: 28px;
+}
+.fz4 {
+  font-size: 20px;
+}
+.fz5 {
+  font-size: 16px;
+}
+.fz6 {
+  font-size: 14px;
+}
+.site-title {
+  font-size: 4em;
+}
+.site-description {
+  margin-bottom: 100px;
+  font-family: "Georgia", sans-serif;
+}
+.site-description a {
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.text-white {
+  color: #fff;
+}
+.section {
+  position: relative;
+}
+.section-title {
+  position: absolute;
+  left: -15px;
+  padding-left: 0;
+  height: 100%;
+}
+.section-title h2 {
+  -webkit-writing-mode: vertical-lr;
+      -ms-writing-mode: tb-lr;
+          writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  margin: 0 0 0 -5px;
+  font-size: 2rem;
+  height: calc(100% - 22px);
 }
 .select-lang {
   display: inline-block;
@@ -181,7 +211,7 @@
   padding: 0;
 }
 .select-lang button img {
-  width: 30px;
+  width: 40px;
 }
 .select-lang .dropdown-menu {
   background-color: transparent;
@@ -221,6 +251,7 @@
 }
 .actions #add-arrive {
   width: 100%;
+  margin-top: 15px;
 }
 #registration-section {
   margin: 50px auto;
@@ -234,7 +265,6 @@
   font-weight: 800;
   text-align: center;
   margin: 25px auto;
-  max-width: 300px;
   background-color: #f5cf8c;
   box-shadow: 0 10px 10px rgba(10,10,10,0.7);
 }
@@ -243,26 +273,24 @@
 }
 .login-form {
   background-color: #fff;
-  max-width: 600px;
+  max-width: 855px;
   border-radius: 5px;
-  margin: 20px auto;
-  padding: 50px;
+  margin: 20px auto 100px;
+  padding: 50px 100px;
 }
-.login-form .login-reginfo {
-  margin: 20px auto;
+.login-form .input-group,
+.login-form .menu {
+  width: 80%;
+  margin: 20px auto 40px;
 }
-.login-form-container {
-  max-width: 420px;
-  margin: auto;
-}
-.login-form .login-container {
-  max-width: 350px;
-  margin: auto;
+.login-form input[type="email"] {
+  width: 100% !important;
+  border-radius: 5px !important;
 }
 .login-form .login-help {
   text-align: center;
   margin: 40px auto;
-  max-width: 240px;
+  max-width: 360px;
 }
 .login-form .login-help_full {
   margin: 20px auto;
@@ -273,6 +301,46 @@
 }
 .like-block__block i {
   margin-right: 5px;
+}
+.search {
+  max-width: 550px;
+}
+@media screen and (max-width: 768px) {
+  .search {
+    max-width: none;
+  }
+}
+.search-input {
+  height: 60px;
+}
+.search-input-wrapper {
+  position: relative;
+}
+.search #q {
+  width: 100%;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+.search #submit {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 16px;
+  border: none;
+  background-color: #fff;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+}
+.search #submit i {
+  color: #b3b3b3;
+}
+.navbar-form .input-group.input-group-lg {
+  width: 500px;
+  max-width: 500px;
+}
+@media screen and (max-width: 768px) {
+  .navbar-form .input-group.input-group-lg {
+    width: 100%;
+    max-width: none;
+  }
 }
 .slide-stats {
   max-width: 970px;
@@ -300,45 +368,6 @@
 }
 .mirror {
   transform: scale(-1, 1);
-}
-.section {
-  position: relative;
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-.section-title {
-  position: absolute;
-  left: -15px;
-  padding-left: 0;
-}
-.section-title h2 {
-  -webkit-writing-mode: vertical-lr;
-      -ms-writing-mode: tb-lr;
-          writing-mode: vertical-lr;
-  transform: rotate(180deg);
-  padding: 20px 5px;
-  margin: 0 0 0 -5px;
-  height: 340px;
-  font-size: 2rem;
-}
-.search {
-  max-width: 550px;
-  position: relative;
-  margin-top: 50px;
-}
-#q {
-  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: bold;
-}
-#submit {
-  position: absolute;
-  right: 0;
-  top: 9px;
-  border: none;
-  background-color: transparent;
-}
-#submit i {
-  color: #b3b3b3;
 }
 .text-brand {
   color: #80c785;
@@ -377,9 +406,6 @@
 }
 .lang.active {
   display: block;
-}
-#add .jumbotron {
-  background-color: #e6e5e6;
 }
 #carousel-imgs .carousel-control.left,
 #carousel-imgs .carousel-control.right {
@@ -473,18 +499,34 @@
   width: auto !important;
 }
 .btn-group.bootstrap-select button {
+  background-color: #82ca87;
   box-shadow: 0 10px 10px rgba(10,10,10,0.7);
   border-radius: 5px;
   overflow: hidden;
+  border: none;
 }
 .input-group.date {
+  background-color: #82ca87;
   box-shadow: 0 10px 10px rgba(10,10,10,0.7);
   border-radius: 5px;
   overflow: hidden;
   width: 200px;
+  color: #000;
+}
+.input-group.date .form-control,
+.input-group.date input-group-addon {
+  border: none;
 }
 .image-title img {
   margin: 0 10px;
+}
+.image-container {
+  max-width: 931px;
+  margin: 20px auto;
+}
+.member {
+  max-width: 120px;
+  margin: 15px;
 }
 
 /*# sourceMappingURL=style.css.map */

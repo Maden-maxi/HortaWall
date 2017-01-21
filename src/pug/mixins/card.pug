@@ -39,36 +39,33 @@ mixin card(card, withFooter)
                     .card__img-info
                         .card__routes
                         .card__members
-                            div.card__from-to
-                                p.text-warning Откуда
+                            div
+                                p.fz4.text-warning Откуда
                                 p
                                     span.fa.fa-arrow-right.text-warning
                                     b=card.from
                             div
-                                p.text-warning Куда
+                                p.fz4s.text-warning Куда
                                 p
                                     span.fa.fa-arrow-right.text-warning
                                     b=card.to
-                    .text-muted.card__date=card.date
+                    .text-muted.card__date.fz6=card.date
                 .panel-body
                     .card__meta
                         .pull-left
-                            h3.card__title: a(href="#")= card.title
-                            .card__likes
-                                .card__like.pull-left.text-success
-                                    span.fa.fa-thumbs-up
-                                    span.card__like-count=card.likes
-                                .card__dislike.pull-left.text-warning
-                                    span.fa.fa-thumbs-down
-                                    span.card__dislike-count=card.dislikes
+                            h4.card__title: a(href="#")= card.title
+                            .like-block.lead
+                                .like-block__block.pull-left
+                                    a.text-success.text-success_hover(href="#"): i.fa.fa-thumbs-up
+                                    span.card__like-count.text-success=card.likes
+                                .like-block__block.pull-left
+                                    a.text-warning.text-warning_hover(href="#"): i.fa.fa-thumbs-down
+                                    span.card__dislike-count.text-warning=card.dislikes
                         .pull-right
                             .card__flag
                                 img(src=card.flag, alt="flag")
-                            .card__liked.text-danger.text-center
-                                if card.isLiked
-                                    span.fa.fa-heart
-                                else
-                                    span.fa.fa-heart-o
+                            .card__liked.text-center
+                                a.lead.text-danger(href="#"): i(class="fa fa-heart" + ( !card.isLiked ? "-o" : "" ) )
     else
         .card.card_square
             .card__img-container
@@ -78,17 +75,14 @@ mixin card(card, withFooter)
                     .card__meta
                         .card__flag
                             img.center-block(src=card.flag, alt="flag")
-                        h3.card__title.text-center: a(href="#")= card.title
-                    .card__likes.card__likes_pb.text-center
-                        span.card__like.text-success
-                            span.glyphicon.glyphicon-thumbs-up
-                            span.card__like-count= card.likes
-                        span.card__dislikes.text-warning
-                            span.glyphicon.glyphicon-thumbs-down
-                            span.card__dislike-count= card.dislikes
-                        span.card__liked.text-danger
-                            if card.isLiked
-                                span.glyphicon.glyphicon-heart
-                            else
-                                span.glyphicon.glyphicon-heart-empty
-                    .text-muted.card__date.card__date_center=card.date
+                        h3.text-center: a.text-white(href="#")= card.title
+                    .like-block.card__likes_pb.text-center.lead
+                        span.like-block__block
+                            a.text-success(href="#"): i.fa.fa-thumbs-up
+                            span.card__like-count.text-success= card.likes
+                        span.like-block__block
+                            a.text-warning(href="#"): i.fa.fa-thumbs-down
+                            span.card__dislike-count.text-warning= card.dislikes
+                        span.like-block__block
+                            a.text-danger(href="#"): i(class="fa fa-heart" +  (!card.isLiked ? "-o" : "") )
+                    .text-muted.card__date.card__date_center.fz6=card.date

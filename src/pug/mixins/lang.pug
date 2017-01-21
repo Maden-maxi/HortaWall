@@ -29,11 +29,11 @@ mixin selectLang(langs, drop)
 	div(class=drop + ' select-lang')
 		each lang, id in langs
 			if id == 0
-				button(id="selectedLang", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false")
+				button.fz5(id="selectedLang", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false")
 					li.language
 						img(class="img-circle", src=lang.img, alt=lang.code)
 						span=lang.code
-		ul.dropdown-menu(aria-labelledby="selectedLang")
+		ul.fz6.dropdown-menu(aria-labelledby="selectedLang")
 			each lang, id in langs
 				if id != 0
 					li.language

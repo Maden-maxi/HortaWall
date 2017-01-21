@@ -3,5 +3,6 @@ src/bower_components
 .bowerr
 dist
 src/assets/css
-src/*.html
+src/assets/js
+src/**/*.html
 .idea
