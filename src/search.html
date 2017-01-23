@@ -6,10 +6,10 @@
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
 		<!--build:css assets/css/vendor.css-->
 		<!--bower:css-->
-		<link rel="stylesheet" href="bower_components/bootstrap-select/dist/css/bootstrap-select.css" />
-		<link rel="stylesheet" href="bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.css" />
-		<link rel="stylesheet" href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css" />
-		<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+		<link rel="stylesheet" href="../bower_components/bootstrap-select/dist/css/bootstrap-select.css" />
+		<link rel="stylesheet" href="../bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.css" />
+		<link rel="stylesheet" href="../bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css" />
+		<link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css" />
 		<!--endbower-->
 		<!--endbuild-->
 		<!--build:css assets/css/style.css-->
@@ -25,11 +25,9 @@
 			<nav class="navbar navbar-default navbar-black">
 				<div class="container">
 					<div class="row">
-						<div class="col-xs-12">
-							<div class="navbar-header">
-								<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="navbar"><span class="sr-only">Toggle nav</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-								</button>
-								<div class="navbar-bran">
+						<div class="col-xs-12 col-lg-6">
+							<div class="row">
+								<div class="col-xs-2">
 											<div class="dropdown select-lang">
 												<button class="fz5" id="selectedLang" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 													<li class="language"><img class="img-circle" src="assets/img/langs/ru.png" alt="RU"><span>RU</span></li>
@@ -40,23 +38,23 @@
 												</ul>
 											</div>
 								</div>
-							</div>
-							<form class="navbar-form navbar-left" role="search">
-								<div class="form-group">
-									<div class="search">
-										<div class="input-group input-group-lg">
-											<input class="form-control" id="q" type="text" placeholder="Искать фото..."><span class="input-group-btn">
-												<button class="btn btn-default" id="submit" type="submit"><i class="fa fa-2x fa-search"></i></button></span>
+								<div class="col-xs-10">
+									<form class="navbar-form search-form" role="search">
+										<div class="form-group">
+											<div class="search">
+												<div class="input-group input-group-lg">
+													<input class="form-control" id="q" type="text" placeholder="Искать фото..."><span class="input-group-btn">
+														<button class="btn btn-default" id="submit" type="submit"><i class="fa fa-2x fa-search"></i></button></span>
+												</div>
+											</div>
 										</div>
-									</div>
+									</form>
 								</div>
-							</form>
-							<div class="nav navbar-right">
-										<div class="actions">
-											<div class="pull-left"><a class="btn btn-lg btn-primary" href="#">Добавить прибытие</a></div>
-											<div class="pull-left"><a class="btn btn-lg btn-transparent" id="login" href="login.html">Войти</a></div>
-											<div class="pull-left"><a class="btn btn-lg btn-transparent" id="registration" href="login.html">Регистрация</a></div>
-										</div>
+							</div>
+						</div>
+						<div class="col-xs-12 col-lg-6">
+							<div class="nav navbar-form text-center">
+										<div class="actions"><a class="btn btn-lg btn-primary" href="#">Добавить прибытие</a><a class="btn btn-lg btn-transparent" id="login" href="login.html">Войти</a><a class="btn btn-lg btn-transparent" id="registration" href="login.html">Регистрация</a></div>
 							</div>
 						</div>
 					</div>
@@ -292,7 +290,7 @@
 				<h2>Новые фото</h2>
 				<div class="row">
 					<div class="col-xs-12 col-sm-6 col-md-3">
-									<div class="card">
+									<div class="card card_footer">
 										<div class="panel panel-default">
 											<div class="panel-heading card__img-container"><img class="card__img img-responsive" src="assets/img/cards/card2.png" alt="assets/img/cards/card2.png">
 												<div class="card__img-info">
@@ -329,7 +327,7 @@
 									</div>
 					</div>
 					<div class="col-xs-12 col-sm-6 col-md-3">
-									<div class="card">
+									<div class="card card_footer">
 										<div class="panel panel-default">
 											<div class="panel-heading card__img-container"><img class="card__img img-responsive" src="assets/img/cards/card3.png" alt="assets/img/cards/card3.png">
 												<div class="card__img-info">
@@ -366,7 +364,7 @@
 									</div>
 					</div>
 					<div class="col-xs-12 col-sm-6 col-md-3">
-									<div class="card">
+									<div class="card card_footer">
 										<div class="panel panel-default">
 											<div class="panel-heading card__img-container"><img class="card__img img-responsive" src="assets/img/cards/card4.png" alt="assets/img/cards/card4.png">
 												<div class="card__img-info">
@@ -403,7 +401,7 @@
 									</div>
 					</div>
 					<div class="col-xs-12 col-sm-6 col-md-3">
-									<div class="card">
+									<div class="card card_footer">
 										<div class="panel panel-default">
 											<div class="panel-heading card__img-container"><img class="card__img img-responsive" src="assets/img/cards/card7.png" alt="assets/img/cards/card7.png">
 												<div class="card__img-info">
@@ -443,7 +441,7 @@
 				<h2>Лучшие фото</h2>
 				<div class="row">
 					<div class="col-xs-12 col-sm-6 col-md-3">
-									<div class="card">
+									<div class="card card_footer">
 										<div class="panel panel-default">
 											<div class="panel-heading card__img-container"><img class="card__img img-responsive" src="assets/img/cards/card2.png" alt="assets/img/cards/card2.png">
 												<div class="card__img-info">
@@ -480,7 +478,7 @@
 									</div>
 					</div>
 					<div class="col-xs-12 col-sm-6 col-md-3">
-									<div class="card">
+									<div class="card card_footer">
 										<div class="panel panel-default">
 											<div class="panel-heading card__img-container"><img class="card__img img-responsive" src="assets/img/cards/card3.png" alt="assets/img/cards/card3.png">
 												<div class="card__img-info">
@@ -517,7 +515,7 @@
 									</div>
 					</div>
 					<div class="col-xs-12 col-sm-6 col-md-3">
-									<div class="card">
+									<div class="card card_footer">
 										<div class="panel panel-default">
 											<div class="panel-heading card__img-container"><img class="card__img img-responsive" src="assets/img/cards/card4.png" alt="assets/img/cards/card4.png">
 												<div class="card__img-info">
@@ -554,7 +552,7 @@
 									</div>
 					</div>
 					<div class="col-xs-12 col-sm-6 col-md-3">
-									<div class="card">
+									<div class="card card_footer">
 										<div class="panel panel-default">
 											<div class="panel-heading card__img-container"><img class="card__img img-responsive" src="assets/img/cards/card7.png" alt="assets/img/cards/card7.png">
 												<div class="card__img-info">
@@ -643,12 +641,12 @@
 		</footer>
 		<!--build:js assets/js/vendor.js-->
 		<!--bower:js-->
-		<script src="bower_components/jquery/dist/jquery.js"></script>
-		<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-		<script src="bower_components/bootstrap-select/dist/js/bootstrap-select.js"></script>
-		<script src="bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.js"></script>
-		<script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-		<script src="bower_components/masonry/dist/masonry.pkgd.js"></script>
+		<script src="../bower_components/jquery/dist/jquery.js"></script>
+		<script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+		<script src="../bower_components/bootstrap-select/dist/js/bootstrap-select.js"></script>
+		<script src="../bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.js"></script>
+		<script src="../bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+		<script src="../bower_components/masonry/dist/masonry.pkgd.js"></script>
 		<!--endbower-->
 		<!--endbuild-->
 		<!--build:js assets/js/app.js-->

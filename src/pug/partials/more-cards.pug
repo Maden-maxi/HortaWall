@@ -26,11 +26,6 @@ include ../mixins/card
     ];
 section#more
     .grid-results
-        each card in cards
-            +card(card, true)
-.container
-    h2 More Photos
-section#more2
-    .flex-container
+        .card_sizer
         each card in cards
             +card(card, true)

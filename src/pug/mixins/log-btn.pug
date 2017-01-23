@@ -11,11 +11,8 @@ mixin logBtn(page)
 			- break;
 		when 'page'
 			.actions
-				.pull-left
 					a.btn.btn-lg.btn-primary(href="#") Добавить прибытие
-				.pull-left
 					a#login.btn.btn-lg.btn-transparent(href="login.html") Войти
-				.pull-left
 					a#registration.btn.btn-lg.btn-transparent(href="login.html") Регистрация
 			- break;
 		when 'login-page'
@@ -27,19 +24,17 @@ mixin logBtn(page)
 			- break;
 		when 'login'
 			.actions
-				.pull-left
-					a(href="#").btn.btn-lg.btn-primary Добавить прибытие
-				.pull-left
-					.btn-group.logged-in
-						button.btn.btn-warning Nickname
-						button.btn.btn-warning.dropdown-toggle(data-toggle="dropdown", aria-haspopup="true", aria-expanded="false")
-							span.caret
-							span.sr-only Toggle Dropdown
-						ul.dropdown-menu
-							li: a(href="#") Panel
-							li: a(href="#") Aciton
-							li(role="separator").divider
-							li: a(href="#") Logout
+				a(href="#").btn.btn-lg.btn-primary Добавить прибытие
+				.btn-group.logged-in
+					button.btn.btn-warning Nickname
+					button.btn.btn-warning.dropdown-toggle(data-toggle="dropdown", aria-haspopup="true", aria-expanded="false")
+						span.caret
+						span.sr-only Toggle Dropdown
+					ul.dropdown-menu
+						li: a(href="#") Panel
+						li: a(href="#") Aciton
+						li(role="separator").divider
+						li: a(href="#") Logout
 			- break;
 		when 'not-login'
 				.row.actions

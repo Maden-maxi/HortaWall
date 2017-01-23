@@ -1,9 +1,15 @@
+.grid-results {
+  margin: 0 auto;
+}
 .card {
-  margin: auto;
-  max-width: 310px;
   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+.card_footer {
+  max-width: 284px;
+  margin: auto;
+}
 .card_square {
+  float: left;
   margin: 5px;
 }
 .card_square .card__title {
@@ -18,6 +24,7 @@
 }
 .card__img {
   padding: 0;
+  margin: auto;
 }
 .card__img-container {
   position: relative;
@@ -79,12 +86,19 @@
 .menu-title {
   margin-top: 20px;
 }
+#header .navbar-form {
+  border: none;
+  box-shadow: none;
+}
 .intro {
   color: #fff;
   background-image: url("../img/bg-header.png");
   background-size: cover;
-  min-height: 100vh;
+  min-height: 590px;
   margin-bottom: 22px;
+}
+.intro .form-horizontal {
+  max-width: 692px;
 }
 .intro .help-block {
   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -213,6 +227,9 @@
 .section {
   position: relative;
 }
+.section_with-title {
+  padding-left: 40px;
+}
 .section-title {
   position: absolute;
   left: -15px;
@@ -307,15 +324,14 @@
 .btn-transparent:hover {
   border-color: #fff;
 }
-.actions {
-  margin-top: 15px;
+.actions .btn {
+  margin: 5px;
 }
-@media screen and (max-width: 767px) {
-  .actions {
-    margin-bottom: 80px;
-  }
+.actions .btn.btn-warning {
+  margin: 0;
 }
 .actions .pull-left {
+  float: none;
   margin-right: 15px;
 }
 .actions .bootstrap-select {
@@ -354,6 +370,11 @@
   margin: 20px auto 100px;
   padding: 50px 100px;
 }
+@media screen and (max-width: 768px) {
+  .login-form {
+    padding: 20px;
+  }
+}
 .login-form .input-group,
 .login-form .menu {
   width: 80%;
@@ -379,7 +400,7 @@
   margin-right: 5px;
 }
 .search {
-  max-width: 550px;
+  width: 100%;
 }
 @media screen and (max-width: 768px) {
   .search {
@@ -409,13 +430,19 @@
   color: #b3b3b3;
 }
 .navbar-form .input-group.input-group-lg {
-  width: 500px;
-  max-width: 500px;
+  width: 100%;
 }
-@media screen and (max-width: 768px) {
-  .navbar-form .input-group.input-group-lg {
-    width: 100%;
-    max-width: none;
+.search-form {
+  border: none;
+}
+.search-form .form-group {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .search-form .navbar-form .input-group .input-group-addon,
+  .search-form .navbar-form .input-group .input-group-btn,
+  .search-form .navbar-form .input-group .form-control {
+    width: 1%;
   }
 }
 .slide-img {

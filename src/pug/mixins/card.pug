@@ -32,7 +32,7 @@
     }
 mixin card(card, withFooter)
     if !withFooter
-        .card
+        .card.card_footer
             .panel.panel-default
                 .panel-heading.card__img-container
                     img.card__img.img-responsive(src=card.img, alt=card.img)

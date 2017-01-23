@@ -5,7 +5,9 @@ jQuery(document).ready(function ($) {
     console.time("app");
     setInterval(function () {
         var $grid = $(".grid-results").masonry({
-            itemSelector: ".card"
+            itemSelector: ".card_square",
+            fitWidth: true,
+            percentPosition: true
         });
     }, 100);
     $("#date").datepicker();
