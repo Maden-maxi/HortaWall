@@ -8,6 +8,9 @@
   max-width: 284px;
   margin: auto;
 }
+.card_footer .card__title {
+  margin-top: 0;
+}
 .card_square {
   float: left;
   margin: 5px;
@@ -57,10 +60,10 @@
   padding-right: 5px;
 }
 .card__liked {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .card__like-count {
-  font-family: "Georgia", sans-serif;
+  font-family: "Georgia", serif;
 }
 .card__date {
   position: absolute;
@@ -119,9 +122,12 @@
 }
 #project {
   padding: 100px 0;
-  background: url("../img/bg-section.png");
-  background-size: cover;
+  background: url("../img/fon.jpg") no-repeat;
+  background-position: 50% 50%;
   color: #fff;
+}
+#project .title-border {
+  padding: 20px 30px;
 }
 #project h2 {
   margin: 0;
@@ -129,6 +135,16 @@
 }
 #project p {
   margin: 10px 0 50px 0;
+}
+#project .btn {
+  margin: 10px;
+}
+@media screen and (max-width: 500px) {
+  #project .btn {
+    margin: 10px 0;
+    margin-right: 0 !important;
+    font-size: 1em;
+  }
 }
 #history {
   background: url("../img/bg-light.png");
@@ -181,6 +197,11 @@
 .site-title {
   font-size: 4em;
 }
+@media screen and (max-width: 500px) {
+  .site-title {
+    font-size: 3em;
+  }
+}
 .text-underline {
   text-decoration: underline;
 }
@@ -188,12 +209,12 @@
   padding: 10px;
   display: inline-block;
   border-radius: 5px;
-  border: 1px solid #80c785;
-  background-color: rgba(10,10,10,0.7);
+  border: 2px solid #80c785;
+  background-color: rgba(0,0,0,0.4);
 }
 .site-description {
   margin-bottom: 100px;
-  font-family: "Georgia", sans-serif;
+  font-family: "Georgia", serif;
 }
 .site-description .lead {
   margin-bottom: 0;
@@ -314,7 +335,11 @@
 }
 .select-lang .dropdown-menu li {
   cursor: pointer;
+  padding-left: 8px;
   margin-bottom: 10px;
+}
+.select-lang .dropdown-menu li img {
+  width: 23px;
 }
 .btn-transparent {
   color: #fff !important;
@@ -386,7 +411,7 @@
 }
 .login-form .login-help {
   text-align: center;
-  margin: 40px auto;
+  margin: 40px auto 0;
   max-width: 360px;
 }
 .login-form .login-help_full {
@@ -477,6 +502,11 @@
 .border-brand-wrapper img {
   padding: 5px;
   border: 10px solid #82ca87;
+}
+@media screen and (max-width: 500px) {
+  .image-title {
+    font-size: 2em;
+  }
 }
 .image-title img {
   margin: 0 10px;
