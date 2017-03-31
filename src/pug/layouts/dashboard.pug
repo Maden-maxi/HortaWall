@@ -1,0 +1,62 @@
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
+        meta(http-equiv="x-ua-compatible", content="ie=edge")
+        title Administration Panel
+        block link
+            //build:css assets/css/vendor.css
+            //bower:css
+            //endbower
+            //endbuild
+
+            //build:css assets/css/style.css
+            link(href="assets/css/bootstrap.css", rel="stylesheet", type="text/css")
+            link(href="assets/css/style.css", rel="stylesheet", type="text/css")
+            //endbuild
+            = '\n'
+            != "<!--[if IE]>"
+            script(src="//html5shiv.googlecode.com/svn/trunk/html5.js")
+            != "<![endif]-->"
+        block title
+            title Главная
+    body
+        .sidenav#sidenav
+            a(href="#", class="closebtn") &times;
+            ul.nav.nav-pills.nav-stacked
+                li.active(role="presentation"): a(href="dashboard.html") Home
+                li(role="presentation"): a(href="dashboard-article.html") Articles
+                li(role="presentation"): a(href="#") Profile
+        main#main
+            .overlay
+            .navbar.navbar-default.navbar-fixed-top.top-bar
+                .container-fluid
+                    .row
+                        .col-xs-4
+                            ul.nav.navbar-nav
+                                li: a#open-sidenav(href="#"): i.fa.fa-bars
+                                li: a(href="dashboard.html"): i.fa.fa-dashboard
+                                li: a(href="index.html"): i.fa.fa-home
+                        .col-xs-4
+                            h3.page-title.text-center Page title
+                        .col-xs-4
+                            .text-right.user-action
+                                a.btn.btn-primary(href="#"): i.fa.fa-user
+                                a.btn.btn-danger(href="index.html"): i.fa.fa-sign-out
+            .container-fluid
+                .row
+                    .col-xs-12
+                        block content
+                            h1 Welcome to Dashboard
+                            p: a(href="index.html") Go to main page
+        block scripts
+            // build:js assets/js/vendor.js
+            // bower:js
+            // endbower
+
+            // endbuild
+
+            //build:js assets/js/app.js
+            script(src="assets/js/app.js")
+            //endbuild

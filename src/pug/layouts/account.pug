@@ -1,0 +1,58 @@
+doctype html
+html(lang="ru")
+    head
+        block meta
+            meta(charset="UTF-8")
+            meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
+            meta(http-equiv="x-ua-compatible", content="ie=edge")
+        block link
+            //build:css assets/css/vendor.css
+            //bower:css
+            //endbower
+            //endbuild
+
+            //build:css assets/css/style.css
+            link(href="assets/css/bootstrap.css", rel="stylesheet", type="text/css")
+            link(href="assets/css/style.css", rel="stylesheet", type="text/css")
+            //endbuild
+            = '\n'
+            != "<!--[if IE]>"
+            script(src="//html5shiv.googlecode.com/svn/trunk/html5.js")
+            != "<![endif]-->"
+        block title
+            title Главная
+    body
+        block header
+            include ../partials/navbar
+        #wrapper
+            .container-fluid.account
+                .container
+                    a(href="index.html"): b « Назад
+                .container
+                    .row
+                        .col-xs-12.col-md-3.col-md-push-9
+                            ul.nav.nav-pills.nav-stacked.nav-warning
+                                -
+                                    var menu = [
+                                        {label: 'Основное', url: 'account.html'},
+                                        {label: 'Контакты', url: 'account-contacts.html'},
+                                        {label: 'Лодка', url: 'account-boat.html'}
+                                    ];
+                                li.active: a(href="account.html"): b Основное
+                                li: a(href="account-contacts.html"): b Контакты
+                                li: a(href="account-boat.html"): b Лодка
+                        .col-xs-12.col-md-9.col-md-pull-3
+                            block content
+        block footer
+            include ../partials/adds
+            include ../partials/footer
+        block scripts
+            //build:js assets/js/vendor.js
+            //bower:js
+            //endbower
+
+            //endbuild
+
+            //build:js assets/js/app.js
+            script(src="assets/js/app.js")
+            //endbuild

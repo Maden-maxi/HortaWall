@@ -1,0 +1,59 @@
+extends layouts/dashboard
+block content
+    .container
+        .row
+            .col-xs-12
+                .page-header
+                    h1 Article page
+                form.row(method="POST")
+                    .col-xs-12.col-sm-9
+                        .row
+                            .col-xs-12
+                                .form-group
+                                    label(for="title") Title
+                                    input#title.form-control(name="title", placeholder="Title")
+                            .col-xs-12.col-sm-6
+                                .form-group
+                                    label(for="shipe_name") Shipe name
+                                    input#shipe_name.form-control(name="shipe_name", placeholder="Shipe name")
+                                .form-group
+                                    label(for="shipe_type") Shipe type
+                                    input#shipe_type.form-control(name="shipe_type", placeholder="Shipe type")
+                            .col-xs-12.col-sm-6
+                                .form-group
+                                    label(for="year_arive") Year arive
+                                    input#year_arive.form-control(name="year_arive", placeholder="Year arive")
+                                .form-group
+                                    label(for="nationality") Nationality
+                                    input#nationality.form-control(name="nationality", placeholder="Nationality")
+                            .col-xs-12
+                                .form-group
+                                    label(for="content") Content
+                                    textarea#content.form-control(name="content", placeholder="Content")
+                    .col-xs-12.col-sm-3
+                        .preview.img-wrapper
+                        .form-group.file-upload-wrapper
+                            input#image.file-upload-native(type="file", name="image", accept="image/*", placeholder="Upload image")
+                            input#image-upload-button.file-upload-text(placeholder="Upload image", disabled="disabled")
+                        .form-group
+                            label(for="image_description") Image description
+                            textarea#image_description.form-control(name="image_description", placeholder="Image description")
+
+                    .clearfix
+                    .col-xs-12
+                        h2 Team:
+                        .row
+                            .col-xs-12.col-sm-3
+                                .preview.img-wrapper
+                                .form-group.file-upload-wrapper
+                                    input#image_member.file-upload-native(type="file", name="image_member", accept="image/*", placeholder="Upload image")
+                                    input#image_member-upload-button.file-upload-text(placeholder="Member Avatar", disabled="disabled")
+                            .col-xs-12.col-xs-9
+                                .form-group
+                                    label(for="name") Name
+                                    input#name.form-control(name="name", placeholder="Name")
+                                .form-group
+                                    label(for="position") Position
+                                    input#position.form-control(name="position", placeholder="Position")
+                                .form-group
+                                    button.btn.btn-primary(type="submit") Submit

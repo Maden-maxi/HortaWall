@@ -1,0 +1,16 @@
+extends layouts/account
+block title
+    title Account
+block header
+    include partials/navb
+block content
+    h1.h1 Редактировать: Контакты
+    form.form-horizontal#user_contacts(method="POST", name="user_contacts")
+        .form-group
+            label.col-xs-12.col-md-3.control-label(for="some_field") Какойто инпут:
+            .col-xs-12.col-md-6
+                input.form-control(id="some_field", name="some_field")
+        .form-group.text-right
+            label.col-xs-12.col-md-3.control-label
+            .col-xs-12.col-md-6
+                button.btn.btn-primary(type="submit") Сохранить

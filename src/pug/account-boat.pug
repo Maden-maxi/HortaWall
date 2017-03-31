@@ -1,0 +1,49 @@
+extends layouts/account
+block title
+    title Account
+block header
+    include partials/navb
+block content
+    h1.h1 Редактировать: Лодка
+    form.form-horizontal#user_boat(method="POST", name="user_boat")
+        .form-group
+            label.col-xs-12.col-md-3.control-label(for="title") Название лодки:
+            .col-xs-12.col-md-6
+                input.form-control(id="title", name="title")
+        .form-group
+            label.col-xs-12.col-md-3.control-label(for="image") Загрузить картинку:
+            .col-xs-12.col-md-6
+                .preview.img-wrapper
+                .file-upload-wrapper
+                    input#image.file-upload-native(type="file", name="image", accept="image/*", placeholder="Upload image")
+                    button.btn.btn-primary.file-upload-text(type="button") Загрузить картинку
+        .form-group
+            label.col-xs-12.col-md-3.control-label(for="image_description") Описание картинки:
+            .col-xs-12.col-md-6
+                textarea.form-control(id="image_description", name="image_description")
+        .form-group
+            label.col-xs-12.col-md-3.control-label(for="boar_type") Тип лодки:
+            .col-xs-12.col-md-6
+                select#boar_type.selectpicker(name="boar_type")
+                    each type in [ 'Яхта', 'Катер', 'Крейсер']
+                        option(value=type)=type
+        .form-group
+            label.col-xs-12.col-md-3.control-label(for="arrive") Год прибытия:
+            .col-xs-12.col-md-6
+                .input-group.date.field-birthday(data-provide="datepicker-inline")
+                    input.form-control(type="text", id="arrive", name="arrive")
+                    .input-group-addon
+                        span.glyphicon.glyphicon-th
+        .form-group
+            label.col-xs-12.col-md-3.control-label(for="nationality") Национальность:
+            .col-xs-12.col-md-6
+                input.form-control.autocomplite.autocomplite-countries(id="nationality", name="nationality")
+        .form-group
+            label.col-xs-12.col-md-3.control-label(for="description") Контент:
+            .col-xs-12.col-md-6
+                textarea.form-control(id="description", name="description")
+
+        .form-group.text-right
+            label.col-xs-12.col-md-3.control-label
+            .col-xs-12.col-md-6
+                button.btn.btn-primary(type="submit") Сохранить

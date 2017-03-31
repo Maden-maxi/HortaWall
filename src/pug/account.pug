@@ -1,0 +1,41 @@
+extends layouts/account
+block title
+    title Account
+block header
+    include partials/navb
+block content
+    -
+        var userfields = [
+            {label: 'Имя', id: 'firstname'},
+            {label: 'Фамилия', id: 'lastname'},
+            {label: 'Пол', id: 'sex'},
+            {label: 'Дата рождения', id: 'birthday'},
+            {label: 'Родной город', id: 'hometown'},
+            {label: 'Национальность', id: 'nationality'},
+            {label: 'Интересы', id: 'savours'}
+        ];
+    h1.h1 Редактировать: Основное
+    form.form-horizontal#user_basic(method="POST", name="user_basic")
+            each field in userfields
+                .form-group
+                    label.col-xs-12.col-md-3.control-label(for=field.id)= field.label + ':'
+                    .col-xs-12.col-md-6
+                        if field.id == 'savours'
+                            textarea.form-control(id=field.id, name=field.id)
+                        else if field.id == 'sex'
+                            select.selectpicker(id=field.id, name=field.id)
+                                each option, idx in ['Мужской','Женский']
+                                    option(value=option)=option
+                        else if field.id == 'hometown' || field.id == 'nationality'
+                                input.form-control.autocomplite(id=field.id, name=field.id)
+                        else if field.id == 'birthday'
+                            .input-group.date.field-birthday(data-provide="datepicker-inline")
+                                input.form-control(type="text", id=field.id, name=field.id)
+                                .input-group-addon
+                                    span.glyphicon.glyphicon-th
+                        else
+                            input.form-control(id=field.id, name=field.id)
+            .form-group.text-right
+                label.col-xs-12.col-md-3.control-label
+                .col-xs-12.col-md-6
+                    button.btn.btn-primary(type="submit") Сохранить

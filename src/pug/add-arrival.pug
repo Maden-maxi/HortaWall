@@ -1,0 +1,73 @@
+extends layouts/page
+block content
+    .contaienr-fluid
+        .container
+            .row
+                .col-xs-12
+                    a(href="index.html"): b « Назад
+                    h1.h1 Добавить прибытие
+                    form.form-horizontal#add_arrival(method="POST", name="add_arrival")
+                        .form-group
+                            label.col-xs-12.col-md-3.control-label(for="from") Откуда:
+                            .col-xs-12.col-md-6
+                                input.form-control.autocomplite.autocomplite-cities(id="from", name="from")
+                        .form-group
+                            label.col-xs-12.col-md-3.control-label(for="to") Куда:
+                            .col-xs-12.col-md-6
+                                input.form-control.autocomplite.autocomplite-countries(id="to", name="to")
+                        .form-group
+                            label.col-xs-12.col-md-3.control-label(for="date_fo_arrive") Дата:
+                            .col-xs-12.col-md-6
+                                .input-group.date.field-birthday(data-provide="datepicker-inline")
+                                    input.form-control(type="text", id="date_fo_arrive", name="date_fo_arrive")
+                                    .input-group-addon
+                                        span.glyphicon.glyphicon-th
+                        .form-group
+                            label.col-xs-12.col-md-3.control-label(for="image") Загрузить картинку:
+                            .col-xs-12.col-md-6
+                                .preview.img-wrapper
+                                .file-upload-wrapper
+                                    input#image.file-upload-native(type="file", name="image", accept="image/*", placeholder="Upload image")
+                                    button.btn.btn-primary.file-upload-text(type="button") Загрузить картинку
+
+                        h3.h3 Экипаж
+                        .form-group
+                            label.col-xs-12.col-md-3.control-label Добавить персону:
+                            .col-xs-12.col-md-6
+                                button.btn.btn-success(type="button", data-toggle="modal", data-target=".modal-person") Добавить
+                                .modal.modal-person.fade(tabindex="-1", role="dialog", aria-labelledby="Add person")
+                                    .modal-dialog.modal-lg(role="document")
+                                        .modal-content
+                                            .modal-header
+                                                button.close(type="button", data-dismiss="modal", aria-hidden="true") &times;
+                                                h4.modal-title Добавить персону
+                                            .modal-body
+                                                .form-group
+                                                    label.col-xs-12.col-md-3.control-label(for="avatar") Загрузить аватар:
+                                                    .col-xs-12.col-md-9
+                                                        .preview.img-wrapper
+                                                        .file-upload-wrapper
+                                                            input#avatar.file-upload-native(type="file", name="avatar", accept="image/*", placeholder="Upload image")
+                                                            button.btn.btn-primary.file-upload-text(type="button") Загрузить картинку
+                                                .form-group
+                                                    label.col-xs-12.col-md-3.control-label(for="fullname") Имя Фамилия:
+                                                    .col-xs-12.col-md-6
+                                                        input.form-control(id="fullname", name="fullname")
+                                                .form-group
+                                                    label.col-xs-12.col-md-3.control-label(for="nationality") Национальность:
+                                                    .col-xs-12.col-md-6
+                                                        input.form-control.autocomplite.autocomplite-countries(id="nationality", name="nationality")
+                                                .form-group
+                                                    label.col-xs-12.col-md-3.control-label(for="position") Позиция:
+                                                    .col-xs-12.col-md-6
+                                                        select#position.selectpicker(name="position")
+                                                            each type in [ 'Капитан', 'Первий помошник', 'Матрос']
+                                                                option(value=type)=type
+                                            .modal-footer
+                                                button.btn.btn-default(type="button", data-dismiss="modal") Закрыть
+                                                button#add_person_modal.btn.btn-success(type="button") Добавить
+                        #team
+                        .form-group.text-right
+                            label.col-xs-12.col-md-3.control-label
+                            .col-xs-12.col-md-6
+                                button.btn.btn-primary(type="submit") Сохранить

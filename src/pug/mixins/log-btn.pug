@@ -5,14 +5,14 @@ mixin logBtn(page)
 				.pull-right
 					a#registration.btn.btn-lg.btn-transparent(href="login.html") Регистрация
 				.pull-right
-					a#login.btn.btn-lg.btn-transparent(href="login.html") Войти
+					a#login.btn.btn-lg.btn-transparent(href="dashboard.html") Войти
 				.center-block
-					a#add-arrive.btn.btn-lg.btn-primary(href="#") Добавить прибытие
+					a#add-arrive.btn.btn-lg.btn-primary(href="add-arrival.html") Добавить прибытие
 			- break;
 		when 'page'
 			.actions
-					a.btn.btn-lg.btn-primary(href="#") Добавить прибытие
-					a#login.btn.btn-lg.btn-transparent(href="login.html") Войти
+					a.btn.btn-lg.btn-primary(href="add-arrival.html") Добавить прибытие
+					a#login.btn.btn-lg.btn-transparent(href="dashboard.html") Войти
 					a#registration.btn.btn-lg.btn-transparent(href="login.html") Регистрация
 			- break;
 		when 'login-page'
@@ -20,28 +20,29 @@ mixin logBtn(page)
 				.col-xs-12
 					a(href="login.html").btn.btn-lg.btn-default Войти в свой аккаунт
 				.col-xs-12
-					a(href="#").btn.btn-lg.btn-primary Добавить прибытие
+					a(href="add-arrival.html").btn.btn-lg.btn-primary Добавить прибытие
 			- break;
 		when 'login'
 			.actions
-				a(href="#").btn.btn-lg.btn-primary Добавить прибытие
+				a(href="add-arrival.html").btn.btn-lg.btn-primary Добавить прибытие
 				.btn-group.logged-in
-					button.btn.btn-warning Nickname
+					a(href="account.html").btn.btn-warning Nickname
 					button.btn.btn-warning.dropdown-toggle(data-toggle="dropdown", aria-haspopup="true", aria-expanded="false")
 						span.caret
 						span.sr-only Toggle Dropdown
 					ul.dropdown-menu
-						li: a(href="#") Panel
-						li: a(href="#") Aciton
+						li: a(href="account.html") Моя страница
+						li: a(href="#") Редактировать
+						li: a(href="#") Настройки
 						li(role="separator").divider
-						li: a(href="#") Logout
+						li: a(href="#") Выйти
 			- break;
 		when 'not-login'
 				.row.actions
 					.col-xs-6
-						a(href="#").btn.btn-lg.btn-default Добавить прибытие
+						a(href="add-arrival.html").btn.btn-lg.btn-default Добавить прибытие
 					.col-xs-3
-						a(href="login.html").btn.btn-lg.btn-default Войти
+						a(href="dashboard.html").btn.btn-lg.btn-default Войти
 					.col-xs-3
 						a(href="login.html").btn.btn-lg.btn-default Регистрация
 		default
